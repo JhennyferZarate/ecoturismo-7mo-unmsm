@@ -3,15 +3,15 @@ const pool = require('../database')
 const autenticacion = {}
 
 autenticacion.registro = async (req,res) => {
-    res.send('registro')
+    res.render('autenticacion/registro')
 }
 
 autenticacion.ingreso = async (req,res) => {
-    res.send('ingreso')
+    res.render('autenticacion/ingreso')
 }
 
 autenticacion.salida = async (req,res) => {
-    res.send('salida')
+    res.redirect('/')
 }
 
 module.exports = autenticacion

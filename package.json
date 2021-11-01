@@ -11,12 +11,18 @@
   "author": "Grupo 1 Metodos Formales UNMSM 2021-2 FISI 7mo ciclo",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "express": "^4.17.1",
+    "express-handlebars": "^5.3.4",
     "express-mysql-session": "^2.1.7",
+    "express-passport": "^0.1.0",
     "express-session": "^1.17.2",
     "express-validator": "^6.13.0",
     "morgan": "^1.10.0",
-    "mysql": "^2.18.1"
+    "mysql": "^2.18.1",
+    "passport": "^0.5.0",
+    "passport-local": "^1.0.0",
+    "timeago": "^1.6.7"
   },
   "devDependencies": {
     "nodemon": "^2.0.14"

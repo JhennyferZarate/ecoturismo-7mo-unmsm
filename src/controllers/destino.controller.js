@@ -3,7 +3,7 @@ const pool = require('../database')
 const destino = {}
 
 destino.inicio = async (req,res) => {
-    res.send('destinos')
+    res.render('destinos/destinos')
 }
 
 module.exports = destino

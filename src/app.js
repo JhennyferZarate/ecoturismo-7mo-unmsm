@@ -9,6 +9,16 @@ const app = express()
 
 //configuracion
 app.set('port', process.env.PORT || 7000)
+app.set('views', path.join(__dirname, 'views')); //mostrar donde se encuentra views
+app.engine('.hbs', exphbs({ //configuración para usar handlebars
+    defaultLayout: 'main', //función principan de handlebars
+    layoutsDir: path.join(app.get('views'), 'layouts'), //concatenar la dirección de views con layouts ,en html se utiliza  {{(nombre de carpeta)}}
+    partialsDir: path.join(app.get('views'), 'partials'), //concatenar la dirección de views con partials
+    extname: '.hbs',
+    helpers: require('./lib/handlebars'),
+
+}));
+app.set('view engine', '.hbs');
 
 //Middlewares
 app.use(morgan('dev'))
