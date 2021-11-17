@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,8 +18,8 @@
 	<meta name="theme-color" content="#FFC5C5">
 	<link rel="shortcut icon" href="/img/logo_principal.png">
     <title>Ecoturismo</title>
-  </head>
-  <body>
+</head>
+<body>
     {{>header}}
 
     {{{body}}}
@@ -31,16 +31,16 @@
 			<div class="modal-content">
 				<div class="modal-body">
 					<div class="container px-4">
-						<form action="">
+						<form action="/" method="POST">
 							<div class="row text-center">
 								<div class="col-12 py-4">
 									<h5 class="text-center fw-bold text-uppercase">Iniciar Sesion</h5>
 								</div>
 								<div class="col-12 mb-3">
-									<input class="form-control" type="email" placeholder="Correo Electrónico" id="emailIniciarSesion">
+									<input class="form-control" type="email" id="email_usuario" name="email_usuario" placeholder="Correo Electrónico" id="emailIniciarSesion">
 								</div>
 								<div class="col-12 mb-3">
-									<input class="form-control" type="password" placeholder="Contraseña" id="passwordIniciarSesion">
+									<input class="form-control" type="password" id="pass_usuario" name="pass_usuario" placeholder="Contraseña" id="passwordIniciarSesion">
 								</div>
 								<div class="col-12">
 									<button type="submit" class="btn text-light">Iniciar Sesion</button>
@@ -70,7 +70,7 @@
 			<div class="modal-content">
 				<div class="modal-body">
 					<div class="container px-4">
-						<form action="">
+						<form action="/" method="POST">
 							<div class="row text-center">
 								<div class="col-12 py-4">
 									<h5 class="text-center fw-bold text-uppercase">Registrate</h5>
@@ -87,19 +87,19 @@
 									<p class="mb-0">o registrate llenando</p>
 								</div>
 								<div class="col-12 col-md-6 mb-3">
-									<input class="form-control" type="text" placeholder="Nombre" id="nombreRegistro">
+									<input class="form-control" type="text" placeholder="Nombre" name="nombre_perfil" id="nombre_perfil">
 								</div>
 								<div class="col-12 col-md-6 mb-3">
-									<input class="form-control" type="text" placeholder="Apellido" id="apellidoRegistro">
+									<input class="form-control" type="text" placeholder="Apellido" name="apellido_perfil" id="apellido_perfil">
 								</div>
 								<div class="col-12 mb-3">
-									<input class="form-control" type="email" placeholder="Correo Electrónico" id="correoRegistro">
+									<input class="form-control" type="email" placeholder="Correo Electrónico" name="email_usuario" id="email_usuario">
 								</div>
 								<div class="col-12 col-md-6 mb-3">
 									<div class="input-group">
-										<input class="form-control" type="password" placeholder="Contraseña" id="passwordRegistro">
+										<input class="form-control" type="password" placeholder="Contraseña" name="pass_usuario" id="pass_usuario">
 										<div class="input-group-append">
-											<button class="btn btn-primary" type="button" onclick="mostrarPassword('passwordRegistro', 'iconPass')"> <span id="iconPass"  class="fa fa-eye-slash"></span> </button>
+											<button class="btn btn-primary" type="button" onclick="mostrarPassword('pass_usuario', 'iconPass')"> <span id="iconPass"  class="fa fa-eye-slash"></span> </button>
 										</div>
 									</div>
 								</div>
