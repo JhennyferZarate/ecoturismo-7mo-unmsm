@@ -9,6 +9,12 @@
     }
 }
 
+$primary-color: #195C2C;
+
+input::placeholder{
+    color: white;
+}
+
 .bg{
     &-landing-eco{
         background-image: url("/img/background_landing.png");
@@ -21,25 +27,37 @@
         color: white;
     }
     &-primary-eco{
-        background-color: #FFC5C5;
+        background-color: $primary-color;
+        color: white;
+        &:hover{
+            color: white;
+        }
+    }
+    &-parrent-eco{
+        background:
+            linear-gradient(45deg, #92baac 45px, transparent 45px)64px 64px,
+            linear-gradient(45deg, #92baac 45px, transparent 45px,transparent 91px, #e1ebbd 91px, #e1ebbd 135px, transparent 135px),
+            linear-gradient(-45deg, #92baac 23px, transparent 23px, transparent 68px,#92baac 68px,#92baac 113px,transparent 113px,transparent 158px,#92baac 158px);
+            background-color:#e1ebbd;
+            background-size: 128px 128px;
     }
 }
 
 .color{
     &-primary-eco{
         &:hover{
-            color: #FFC5C5;
+            color: $primary-color;
         }
-        color: #FFC5C5;
+        color: $primary-color;
     }
 }
 
 a{
     &:hover{
-        color: #FFC5C5;
+        color: $primary-color;
         text-decoration: underline!important;
     }
-    color: #FFC5C5;
+    color: $primary-color;
 }
 
 .btn-flotante {

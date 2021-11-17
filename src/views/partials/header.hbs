@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg fixed-top bg-landing-eco">
+<nav class="navbar navbar-expand-lg fixed-top bg-landing-eco shadow">
     <div class="container px-5">
         <a class="navbar-brand bg-light rounded-circle p-2" href="/">
             <img src="/img/logo_principal.png" alt="" width="75" height="75">
@@ -19,8 +19,15 @@
                         <i class="fas fa-user-circle" style="font-size: 42px;"></i>
                     </p>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="min-width: 0px;">
-                        <li><a class="dropdown-item" href="" data-bs-toggle="modal" data-bs-target="#iniciarSesionModal">Iniciar Sesión</a></li>
-                        <li><a class="dropdown-item" href="" data-bs-toggle="modal" data-bs-target="#registroModal">Registrarse</a></li>
+                        {{#if user}}
+                            <li><a class="dropdown-item text-uppercase" href="">Mi perfil</a></li>
+                            <li><a class="dropdown-item text-uppercase" href="">Cambiar datos</a></li>
+                            <li><a class="dropdown-item text-uppercase" href="">Cambar contraseña</a></li>
+                            <li><a class="dropdown-item text-uppercase" href="">Cerrar sesion</a></li>
+                        {{else}}
+                            <li><a class="dropdown-item text-uppercase" href="" data-bs-toggle="modal" data-bs-target="#iniciarSesionModal">Iniciar Sesión</a></li>
+                            <li><a class="dropdown-item text-uppercase" href="" data-bs-toggle="modal" data-bs-target="#registroModal">Registrarse</a></li>
+                        {{/if}}
                     </ul>
                 </li>
             </ul>
