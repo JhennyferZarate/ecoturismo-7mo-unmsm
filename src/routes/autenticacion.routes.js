@@ -15,7 +15,6 @@ router.post('/registro',passport.authenticate('local.signup', {
 router.get('/ingreso', autenticacion.get_ingreso)
 
 router.post('/ingreso', (req, res, next) => {
-    console.log(req.body);
     passport.authenticate('local.signin', {
         successRedirect: '/',
         failureRedirect: '/ingreso',

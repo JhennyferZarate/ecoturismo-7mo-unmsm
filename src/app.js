@@ -14,10 +14,12 @@ require('./library/passport')
 //configuracion
 app.set('port', process.env.PORT || 7000)
 app.set('views', path.join(__dirname, 'views'));
-app.engine('.hbs', exphbs({
-    layoutsDir: path.join(app.get('views'), 'layouts'),
-    partialsDir: path.join(app.get('views'), 'partials'),
+app.engine('.hbs', exphbs({ //configuración para usar handlebars
+    defaultLayout: 'main', //función principan de handlebars
+    layoutsDir: path.join(app.get('views'), 'layouts'), //concatenar la dirección de views con layouts ,en html se utiliza  {{(nombre de carpeta)}}
+    partialsDir: path.join(app.get('views'), 'partials'), //concatenar la dirección de views con partials
     extname: '.hbs',
+    helpers: require('./library/handlebars'),
 }));
 app.set('view engine', '.hbs');
 
@@ -34,6 +36,14 @@ app.use(session({
 app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
+
+//Global Variables
+app.use((req, res, next) => {
+    //app.locals.success = req.flash('success');
+    //app.locals.message = req.flash('message');
+    app.locals.user = req.user;
+    next();
+});
 
 //Variables globales
 

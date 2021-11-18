@@ -1,7 +1,9 @@
+USE ecoturismo;
+
 CREATE TABLE `ecoturismo`.`usuarios` (
     `id_usuario` INT NOT NULL AUTO_INCREMENT,
     `email_usuario` VARCHAR(45) NOT NULL,
-    `pass_usuario` VARCHAR(45) NOT NULL,
+    `pass_usuario` VARCHAR(255) NOT NULL,
     PRIMARY KEY (`id_usuario`)
 );
 
