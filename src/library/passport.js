@@ -9,6 +9,7 @@ passport.use('local.signin', new LocalStrategy({
     passwordField: 'pass_usuario',
     passReqToCallback: true
 }, async (req, email_usuario, pass_usuario, done) => {
+    console.log("registrando")
     const rows = await pool.query('SELECT * FROM usuarios WHERE email_usuario = ?', [email_usuario]);
     if (rows.length > 0) {
         const user = rows[0];
@@ -28,11 +29,10 @@ passport.use('local.signup', new LocalStrategy({
     passwordField: 'pass_usuario',
     passReqToCallback: true
 }, async (req, email_usuario, pass_usuario, done) => {
+    console.log("ingresando")
     const {
         nombre_perfil,
-        apellido_perfil,
-        email_usuario,
-        pass_usuario
+        apellido_perfil
     } = req.body
 
     const nuevoUsuario = {
@@ -40,7 +40,7 @@ passport.use('local.signup', new LocalStrategy({
         pass_usuario
     }
 
-    const row = await pool.query(`SELECT * FROM usuarios WHERE email_usuario = ?`. [email_usuario])
+    const row = await pool.query(`SELECT * FROM usuarios WHERE email_usuario = ?`, [email_usuario])
     
     if (row.length > 0) {
         console.log("usuario ya registrado")
