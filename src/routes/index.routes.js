@@ -5,5 +5,4 @@ const index = require('../controllers/index.controller')
 
 router.get('/', index.inicioGet)
 
-router.post('/', index.inicioPost)
 module.exports = router

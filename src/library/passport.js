@@ -9,7 +9,6 @@ passport.use('local.signin', new LocalStrategy({
     passwordField: 'pass_usuario',
     passReqToCallback: true
 }, async (req, email_usuario, pass_usuario, done) => {
-    console.log("registrando")
     const rows = await pool.query('SELECT * FROM usuarios WHERE email_usuario = ?', [email_usuario]);
     if (rows.length > 0) {
         const user = rows[0];
@@ -29,7 +28,6 @@ passport.use('local.signup', new LocalStrategy({
     passwordField: 'pass_usuario',
     passReqToCallback: true
 }, async (req, email_usuario, pass_usuario, done) => {
-    console.log("ingresando")
     const {
         nombre_perfil,
         apellido_perfil
@@ -41,27 +39,24 @@ passport.use('local.signup', new LocalStrategy({
     }
 
     const row = await pool.query(`SELECT * FROM usuarios WHERE email_usuario = ?`, [email_usuario])
-    
+
     if (row.length > 0) {
         console.log("usuario ya registrado")
         return done(null, false);
     } else {
         nuevoUsuario.pass_usuario = await helpers.encryptPassword(pass_usuario);
-
         const resultUsuario = await pool.query('INSERT INTO usuarios SET ?', [nuevoUsuario]);
-
-        const id_usuario = nuevoUsuario.id
+        nuevoUsuario.id = resultUsuario.insertId;
+        
         const nuevoPerfil = {
-            id_usuario,
+            id_usuario: nuevoUsuario.id,
             img_perfil: null,
             nombre_perfil,
             apellido_perfil
         }
 
         await pool.query(`INSERT INTO perfiles SET ?`, [nuevoPerfil])
-
-        nuevoUsuario.id = resultUsuario.insertId;
-
+        console.log(nuevoUsuario)
         return done(null, nuevoUsuario);
     }
 }));
@@ -72,5 +67,6 @@ passport.serializeUser((user, done) => {
 
 passport.deserializeUser(async(id, done) => {
     const rows = await pool.query('SELECT * FROM usuarios WHERE id_usuario = ?', [id]);
+    console.log(rows[0])
     done(null, rows[0]);
 });
