@@ -3,7 +3,22 @@ const pool = require('../database')
 const perfil = {}
 
 perfil.inicio = async (req,res) => {
-    res.render('perfil/pefil')
+    //console.log(req.user.id_usuario);
+    const id_usuario = req.user.id_usuario
+    const Perfil = await pool.query(
+        `
+            SELECT
+                *
+            FROM
+                perfiles
+            INNER
+                JOIN usuarios
+                    ON perfiles.id_usuario = usuarios.id_usuario
+            WHERE usuarios.id_usuario = ?
+        `
+    ,[id_usuario])
+    
+    res.render('perfil/perfil', {perfil: Perfil[0]})
 }
 
 perfil.actualizar = async (req,res) => {

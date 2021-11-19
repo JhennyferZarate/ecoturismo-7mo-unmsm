@@ -37,7 +37,7 @@ CREATE TABLE `ecoturismo`.`comentarios` (
     `id_comentario` INT NOT NULL,
     `id_perfil` INT NULL,
     `id_destino` INT NULL,
-    `califiacion_comentario` INT NULL,
+    `calificacion_comentario` INT NULL,
     `fecha_comentario` TIMESTAMP NOT NULL,
     `contenido_comentario` VARCHAR(250) NULL,
     PRIMARY KEY (`id_comentario`),
