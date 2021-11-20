@@ -13,8 +13,8 @@
                         <div class="p-3" style="background-color: white; border-radius: 30px;">
                             <h5 class="text-uppercase text-center fw-bold">usuario: {{perfil.nombre_perfil}}</h5>
                             <div class="p-4 text-light" style="background-color: #5F5EA1; border-radius: 30px;">
-                                <p class="text-uppercase">total de publicaciones: {nro} publicaciones</p>
-                                <p class="text-uppercase">fecha de inicio: {fecha}</p>
+                                <p class="text-uppercase">total de publicaciones: {{perfil.N_publicaciones}}</p>
+                                <p class="text-uppercase">fecha de inicio: {{timeago perfil.fecha_creacion_perfil}}</p>
                                 <div class="text-center">
                                     <button class="btn btn-primary text-uppercase m-2" style="background-color: #802121; border-radius: 20px">actualizar datos</button>
                                     <button class="btn btn-primary text-uppercase m-2" style="background-color: #802121; border-radius: 20px">cambiar contraseña</button>

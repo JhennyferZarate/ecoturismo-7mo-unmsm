@@ -50,7 +50,6 @@ passport.use('local.signup', new LocalStrategy({
         
         const nuevoPerfil = {
             id_usuario: nuevoUsuario.id,
-            img_perfil: null,
             nombre_perfil,
             apellido_perfil
         }
@@ -63,7 +62,8 @@ passport.use('local.signup', new LocalStrategy({
 }));
 
 passport.serializeUser((user, done) => {
-    done(null, user.id_usuario);
+    //console.log(user)
+    done(null, user.id)
 });
 
 passport.deserializeUser(async(id, done) => {
