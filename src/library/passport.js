@@ -62,8 +62,8 @@ passport.use('local.signup', new LocalStrategy({
 }));
 
 passport.serializeUser((user, done) => {
-    //console.log(user)
-    done(null, user.id)
+    // console.log(user)
+    done(null, user.id_usuario)
 });
 
 passport.deserializeUser(async(id, done) => {

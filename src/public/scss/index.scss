@@ -9,7 +9,8 @@
     }
 }
 
-$primary-color: #195C2C;
+$primary-color: #802121;
+$secondary-color: #195C2C;
 
 input::placeholder{
     color: white;
@@ -32,14 +33,6 @@ input::placeholder{
         &:hover{
             color: white;
         }
-    }
-    &-parrent-eco{
-        background:
-            linear-gradient(45deg, #92baac 45px, transparent 45px)64px 64px,
-            linear-gradient(45deg, #92baac 45px, transparent 45px,transparent 91px, #e1ebbd 91px, #e1ebbd 135px, transparent 135px),
-            linear-gradient(-45deg, #92baac 23px, transparent 23px, transparent 68px,#92baac 68px,#92baac 113px,transparent 113px,transparent 158px,#92baac 158px);
-            background-color:#e1ebbd;
-            background-size: 128px 128px;
     }
 }
 
@@ -106,6 +99,25 @@ a{
         &:hover {
             box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
             transform: translateY(-7px);
+        }
+    }
+}
+
+.btn{
+    &-primary-eco{
+        background-color: $primary-color;
+        border-radius: 20px;
+        color: white;
+        &:hover{
+            color: white;
+        }
+    }
+    &-secondary-eco{
+        background-color: $secondary-color;
+        border-radius: 20px;
+        color: white;
+        &:hover{
+            color: white;
         }
     }
 }

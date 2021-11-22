@@ -31,5 +31,13 @@
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script type="text/javascript" src="/js/carousel.js"></script>
 	<script type="text/javascript" src="/js/show_password.js"></script>
+
+    <script>
+        $("#guardarPass").click(function(){
+            if($("#confirmPassword").val() != $("#nuevaPassword").val()){
+                alert("Contraseñas no coinciden");
+            }
+        });
+    </script>
 </body>
 </html>

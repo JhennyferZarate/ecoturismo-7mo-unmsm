@@ -2,55 +2,65 @@
     <div class="container mt-5">
         <div class="row min-vh-100 justify-content-center align-items-center">
             <div class="col-12">
-                <form action="/registro" method="POST">
-                    <div class="row text-center">
-                        <div class="col-12 py-4">
-                            <h5 class="text-center fw-bold text-uppercase">Registrate</h5>
+                <div class="card mb-3">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="https://blog.foto24.com/wp-content/uploads/2019/02/2.2-683x1024.jpg" class="img-fluid rounded-start">
                         </div>
-                        <div class="col-12">
-                            <p class="mb-0">con</p>
-                        </div>
-                        <div class="col-12">
-                            <button type="button" class="btn bt-block col-12 my-2 bg-primary text-light">Facebook</button>
-                            <button type="button" class="btn bt-block col-12 my-2 bg-danger text-light">Google</button>
-                            <button type="button" class="btn bt-block col-12 my-2 bg-secondary text-light">Celular</button>
-                        </div>
-                        <div class="col-12 my-4">
-                            <p class="mb-0">o registrate llenando</p>
-                        </div>
-                        <div class="col-12 col-md-6 mb-3">
-                            <input class="form-control" type="text" placeholder="Nombre" id="nombre_perfil" name="nombre_perfil">
-                        </div>
-                        <div class="col-12 col-md-6 mb-3">
-                            <input class="form-control" type="text" placeholder="Apellido" id="apellido_perfil" name="apellido_perfil">
-                        </div>
-                        <div class="col-12 mb-3">
-                            <input class="form-control" type="email" placeholder="Correo Electrónico" id="email_usuario" name="email_usuario">
-                        </div>
-                        <div class="col-12 col-md-6 mb-3">
-                            <div class="input-group">
-                                <input class="form-control" type="password" placeholder="Contraseña" id="pass_usuario" name="pass_usuario">
-                                <div class="input-group-append">
-                                    <button class="btn btn-primary" type="button" onclick="mostrarPassword('pass_usuario', 'iconPass')"> <span id="iconPass"  class="fa fa-eye-slash"></span> </button>
-                                </div>
+                        <div class="col-md-8 px-5">
+                            <div class="card-body">
+                                <form action="/registro" method="POST">
+                                    <div class="row text-center">
+                                        <div class="col-12 py-4">
+                                            <h5 class="text-center fw-bold text-uppercase">Registrate</h5>
+                                        </div>
+                                        <div class="col-12">
+                                            <p class="mb-0">con</p>
+                                        </div>
+                                        <div class="col-12">
+                                            <button type="button" class="btn bt-block col-12 my-2 bg-primary text-light">Facebook</button>
+                                            <button type="button" class="btn bt-block col-12 my-2 bg-danger text-light">Google</button>
+                                        </div>
+                                        <div class="col-12 my-4">
+                                            <p class="mb-0">o registrate llenando</p>
+                                        </div>
+                                        <div class="col-12 col-md-6 mb-3">
+                                            <input class="form-control" type="text" placeholder="Nombre" id="nombre_perfil" name="nombre_perfil">
+                                        </div>
+                                        <div class="col-12 col-md-6 mb-3">
+                                            <input class="form-control" type="text" placeholder="Apellido" id="apellido_perfil" name="apellido_perfil">
+                                        </div>
+                                        <div class="col-12 mb-3">
+                                            <input class="form-control" type="email" placeholder="Correo Electrónico" id="email_usuario" name="email_usuario">
+                                        </div>
+                                        <div class="col-12 col-md-6 mb-3">
+                                            <div class="input-group">
+                                                <input class="form-control" type="password" placeholder="Contraseña" id="pass_usuario" name="pass_usuario">
+                                                <div class="input-group-append">
+                                                    <button class="btn btn-primary" type="button" onclick="mostrarPassword('pass_usuario', 'iconPass')"> <span id="iconPass"  class="fa fa-eye-slash"></span> </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-6 mb-3">
+                                            <div class="input-group">
+                                                <input class="form-control" type="password" placeholder="ConfirmarContraseña" id="confirmarPasswordRegistro">
+                                                <div class="input-group-append">
+                                                    <button class="btn btn-primary" type="button" onclick="mostrarPassword('confirmarPasswordRegistro', 'iconConfirmarPass')"> <span id="iconConfirmarPass"  class="fa fa-eye-slash"></span> </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <button type="submit" class="btn btn-secondary-eco mb-3">Registrarme</button>
+                                        </div>
+                                        <div class="col-12">
+                                            <p>Si tengo cuenta... <a href="ingreso">Inicia Sesión</a></p>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
-                        </div>
-                        <div class="col-12 col-md-6 mb-3">
-                            <div class="input-group">
-                                <input class="form-control" type="password" placeholder="ConfirmarContraseña" id="confirmarPasswordRegistro">
-                                <div class="input-group-append">
-                                    <button class="btn btn-primary" type="button" onclick="mostrarPassword('confirmarPasswordRegistro', 'iconConfirmarPass')"> <span id="iconConfirmarPass"  class="fa fa-eye-slash"></span> </button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <button type="submit" class="btn bg-secondary text-light">Registrarme</button>
-                        </div>
-                        <div class="col-12">
-                            <p>¿Tienes una cuenta? <a href="ingreso">Inicia Sesion</a></p>
                         </div>
                     </div>
-                </form>
+                </div>
             </div>
         </div>
     </div>

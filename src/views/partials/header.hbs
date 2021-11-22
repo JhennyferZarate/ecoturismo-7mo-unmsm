@@ -7,7 +7,7 @@
             <i class="fas fa-bars color-primary-eco"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <form class="d-flex mx-auto w-100">
+            <form class="d-flex mx-auto w-75">
                 <div class="input-group mb-3">
                     <span class="input-group-text ms-5" id="search"><button class="btn"><i class="fas fa-search color-primary-eco"></i></button></span>
                     <input type="text" class="form-control me-5" placeholder="Busca un destino o ubicacón..." aria-label="Busca un destino o ubicacón" aria-describedby="search">
@@ -20,19 +20,15 @@
                             <i class="fas fa-user-circle" style="font-size: 42px;"></i>
                         </p>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="min-width: 0px;">
-                            {{#if user}}
-                                <li><a class="dropdown-item text-uppercase" href="/perfil">Mi perfil</a></li>
-                                <li><a class="dropdown-item text-uppercase" href="/perfil/cambiar_datos">Cambiar datos</a></li>
-                                <li><a class="dropdown-item text-uppercase" href="/perfil/cambiar_pass">Cambar contraseña</a></li>
-                                <li><a class="dropdown-item text-uppercase" href="/salida">Cerrar sesion</a></li>
-                            {{else}}
-                                <li><a class="dropdown-item text-uppercase" href="/ingreso">Iniciar Sesión</a></li>
-                                <li><a class="dropdown-item text-uppercase" href="/registro">Registrarse</a></li>
-                            {{/if}}
+                            <li><a class="dropdown-item text-uppercase" href="/perfil">Mi perfil</a></li>
+                            <li><a class="dropdown-item text-uppercase" href="/perfil/cambiar_datos">Cambiar datos</a></li>
+                            <li><a class="dropdown-item text-uppercase" href="/perfil/cambiar_pass">Cambar contraseña</a></li>
+                            <li><a class="dropdown-item text-uppercase" href="/salida">Cerrar sesion</a></li>
                         </ul>
                     </li>
                 {{else}}
-                    <button></button>
+                    <a href="/ingreso"><button class="btn btn-primary-eco m-2">Iniciar Sesión</button></a>
+                    <a href="/registro"><button class="btn btn-primary-eco m-2">Registrarse</button></a>
                 {{/if}}
             </ul>
         </div>
