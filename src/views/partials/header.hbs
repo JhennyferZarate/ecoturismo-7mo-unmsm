@@ -14,22 +14,26 @@
                 </div>
             </form>
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li class="nav-item dropdown">
-                    <p class="nav-link dropdown-toggle color-primary-eco bg-light rounded-pill" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fas fa-user-circle" style="font-size: 42px;"></i>
-                    </p>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="min-width: 0px;">
-                        {{#if user}}
-                            <li><a class="dropdown-item text-uppercase" href="/perfil">Mi perfil</a></li>
-                            <li><a class="dropdown-item text-uppercase" href="/perfil/cambiar_datos">Cambiar datos</a></li>
-                            <li><a class="dropdown-item text-uppercase" href="/perfil/cambiar_pass">Cambar contraseña</a></li>
-                            <li><a class="dropdown-item text-uppercase" href="/salida">Cerrar sesion</a></li>
-                        {{else}}
-                            <li><a class="dropdown-item text-uppercase" href="/ingreso">Iniciar Sesión</a></li>
-                            <li><a class="dropdown-item text-uppercase" href="/registro">Registrarse</a></li>
-                        {{/if}}
-                    </ul>
-                </li>
+                {{#if user}}
+                    <li class="nav-item dropdown">
+                        <p class="nav-link dropdown-toggle color-primary-eco bg-light rounded-pill" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-user-circle" style="font-size: 42px;"></i>
+                        </p>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="min-width: 0px;">
+                            {{#if user}}
+                                <li><a class="dropdown-item text-uppercase" href="/perfil">Mi perfil</a></li>
+                                <li><a class="dropdown-item text-uppercase" href="/perfil/cambiar_datos">Cambiar datos</a></li>
+                                <li><a class="dropdown-item text-uppercase" href="/perfil/cambiar_pass">Cambar contraseña</a></li>
+                                <li><a class="dropdown-item text-uppercase" href="/salida">Cerrar sesion</a></li>
+                            {{else}}
+                                <li><a class="dropdown-item text-uppercase" href="/ingreso">Iniciar Sesión</a></li>
+                                <li><a class="dropdown-item text-uppercase" href="/registro">Registrarse</a></li>
+                            {{/if}}
+                        </ul>
+                    </li>
+                {{else}}
+                    <button></button>
+                {{/if}}
             </ul>
         </div>
     </div>
