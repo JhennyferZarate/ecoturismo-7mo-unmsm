@@ -60,7 +60,7 @@ perfil.post_cambiar_datos = async (req,res) => {
         apellido_perfil,
     }
 
-    await pool(`
+    await pool.query(`
         UPDATE
             perfiles
         SET 
@@ -70,7 +70,7 @@ perfil.post_cambiar_datos = async (req,res) => {
             id_usuario = ?
     `,[nuevo_perfil,id_usuario])
 
-    await pool(`
+    await pool.query(`
         UPDATE
             usuarios
         SET 
@@ -88,7 +88,7 @@ perfil.get_cambiar_pass = async (req, res) => {
 
 perfil.post_cambiar_pass = async (req, res) => {
     const id_usuario = req.user.id_usuario
-
+    console.log(req.body);
     const {
         pass_usuario,
         nuevo_pass_usuario,
@@ -107,17 +107,16 @@ perfil.post_cambiar_pass = async (req, res) => {
         `,[id_usuario]);
 
         const validPassword = await helpers.matchPassword(pass_usuario, rows[0].pass_usuario)
-        pass_usuario = await helpers.encryptPassword(pass_usuario);
-
         if (validPassword){
-            await pool(`
+            const new_pass = await helpers.encryptPassword(pass_usuario);
+            await pool.query(`
             UPDATE
                 usuarios
             SET 
                 pass_usuario = ?
             WHERE
                 id_usuario = ?
-        `,[pass_usuario,id_usuario])
+            `,[new_pass,id_usuario])
         } else {
             res.redirect('/perfil')
         }

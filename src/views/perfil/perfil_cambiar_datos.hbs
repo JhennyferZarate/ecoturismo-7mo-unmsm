@@ -11,25 +11,26 @@
                             <img height="300px" class="m-3 rounded-circle" src="https://fotos-ayvisa.s3.eu-west-3.amazonaws.com/wp-content/uploads/2021/02/23202742/descargar-foto-perfil-instagram.jpg" alt="Foto de perfil">
                         </div>
                         <div class="col-12 col-md-6">
-                            <form action="">
+                            <form action="/perfil/cambiar_datos" method="POST">
                                 <div class="mb-3">
                                     <label for="nombre" class="form-label fw-bold">Nombres</label>
-                                    <input type="text" class="form-control" id="nombre_perfil" name="nombre_perfil" placeholder="Ingrese los nombres">
+                                    <input type="text" class="form-control" id="nombre_perfil" name="nombre_perfil" placeholder="Ingrese los nombres" value={{perfil.nombre_perfil}}>
                                 </div>
                                 <div class="mb-3">
                                     <label for="apellido_p" class="form-label fw-bold">Apellidos</label>
-                                    <input type="text" class="form-control" id="apellido_perfil" name="apellido_perfil"  placeholder="Ingrese los apellidos">
+                                    <input type="text" class="form-control" id="apellido_perfil" name="apellido_perfil"  placeholder="Ingrese los apellidos" value={{perfil.apellido_perfil}}>
                                 </div>
                                 <div class="mb-3">
                                     <label for="correo" class="form-label fw-bold">Correo</label>
-                                    <input type="email" class="form-control" id="email_usuario" name="email_usuario" placeholder="Ingrese el correo">
+                                    <input type="email" class="form-control" id="email_usuario" name="email_usuario" placeholder="Ingrese el correo" value={{perfil.email_usuario}}>
+                                </div>
+                                <div class="col-12 text-center">
+                                    <button type="submit" class="btn btn-secondary-eco text-uppercase m-2">guardar</button>
+                                    <button type="submit" class="btn btn-secondary-eco text-uppercase m-2">cancelar</button>
                                 </div>
                             </form>
                         </div>
-                        <div class="col-12 text-center">
-                            <button type="submit" class="btn btn-secondary-eco text-uppercase m-2">guardar</button>
-                            <button type="submit" class="btn btn-secondary-eco text-uppercase m-2">cancelar</button>
-                        </div>
+                        
                     </div>
                 </div>
             </div>

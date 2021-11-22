@@ -11,7 +11,7 @@ router.post('/cambiar_datos', perfil.post_cambiar_datos)
 
 router.get('/cambiar_pass', perfil.get_cambiar_pass)
 
-router.post('/cambiar_pass', perfil.get_cambiar_pass)
+router.post('/cambiar_pass', perfil.post_cambiar_pass)
 
 router.get('/buscar', perfil.buscar)
 

@@ -46,10 +46,10 @@ passport.use('local.signup', new LocalStrategy({
     } else {
         nuevoUsuario.pass_usuario = await helpers.encryptPassword(pass_usuario);
         const resultUsuario = await pool.query('INSERT INTO usuarios SET ?', [nuevoUsuario]);
-        nuevoUsuario.id = resultUsuario.insertId;
+        nuevoUsuario.id_usuario = resultUsuario.insertId;
         
         const nuevoPerfil = {
-            id_usuario: nuevoUsuario.id,
+            id_usuario: nuevoUsuario.id_usuario,
             nombre_perfil,
             apellido_perfil
         }
@@ -62,7 +62,7 @@ passport.use('local.signup', new LocalStrategy({
 }));
 
 passport.serializeUser((user, done) => {
-    // console.log(user)
+    //console.log(user)
     done(null, user.id_usuario)
 });
 
