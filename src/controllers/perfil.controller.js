@@ -94,7 +94,8 @@ perfil.post_cambiar_pass = async (req, res) => {
         nuevo_pass_usuario,
         copia_nuevo_pass_usuario
     } = req.body
-
+    console.log(nuevo_pass_usuario)
+    console.log(copia_nuevo_pass_usuario)
     if (nuevo_pass_usuario == copia_nuevo_pass_usuario){
 
         const rows = await pool.query(`
@@ -105,10 +106,12 @@ perfil.post_cambiar_pass = async (req, res) => {
             WHERE
                 id_usuario = ?            
         `,[id_usuario]);
-
+        console.log(rows);
         const validPassword = await helpers.matchPassword(pass_usuario, rows[0].pass_usuario)
         if (validPassword){
-            const new_pass = await helpers.encryptPassword(pass_usuario);
+            console.log(nuevo_pass_usuario)
+            const new_pass = await helpers.encryptPassword(nuevo_pass_usuario);
+            console.log(new_pass)
             await pool.query(`
             UPDATE
                 usuarios
@@ -117,12 +120,15 @@ perfil.post_cambiar_pass = async (req, res) => {
             WHERE
                 id_usuario = ?
             `,[new_pass,id_usuario])
+            //console.log(cambio)
         } else {
-            res.redirect('/perfil')
+            console.log("contraseñas distintas")
+            return res.redirect('/perfil')
         }
         
     } else {
-        res.redirect('/perfil')
+        console.log("copia distinta")
+        return res.redirect('/perfil')
     }
     res.redirect('/perfil')
 }
