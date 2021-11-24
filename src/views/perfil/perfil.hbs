@@ -1,161 +1,126 @@
 <section class="container-fluid min-vh-100 py-5">
     <div class="container mt-5 pt-5">
-        <div class="row min-vh-100 justify-content-center align-items-center">
+        <div class="row py-5">
             <div class="col-12">
-                <h2 class="text-center text-capitalize fw-bold">perfil</h2>
-            </div>
-            <div class="card p-3">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-12 col-md-6 text-center">
-                            <img height="300px" class="m-3 rounded-circle" src="https://fotos-ayvisa.s3.eu-west-3.amazonaws.com/wp-content/uploads/2021/02/23202742/descargar-foto-perfil-instagram.jpg" alt="Foto de perfil">
-                        </div>
-                        <div class="col-12 col-md-6">
-                            <form action="">
-                                <div class="mb-3">
-                                    <label for="nombre" class="form-label fw-bold">Nombres</label>
-                                    <input type="text" class="form-control" id="nombre_perfil" name="nombre_perfil" value="{{perfil.nombre_perfil}}" disabled>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="apellido_p" class="form-label fw-bold">Apellidos</label>
-                                    <input type="text" class="form-control" id="apellido_perfil" name="apellido_perfil" value="{{perfil.apellido_perfil}}" disabled>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="correo" class="form-label fw-bold">Correo</label>
-                                    <input type="email" class="form-control" id="email_usuario" name="email_usuario" value="{{perfil.email_usuario}}" disabled>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="col-12 text-center">
-                            <a href="/perfil/cambiar_datos"><button type="submit" class="btn btn-secondary-eco m-2">Editar Perfil</button></a>
-                            <a href="/perfil/cambiar_pass"><button type="submit" class="btn btn-secondary-eco m-2">Editar Contraseñas</button></a>
+                <h2 class="text-center text-capitalize fw-bold">mi perfil</h2>
+                <div class="card p-3 shadow">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-12 col-md-6 text-center">
+                                <img height="300px" class="m-3 rounded-circle" src="https://fotos-ayvisa.s3.eu-west-3.amazonaws.com/wp-content/uploads/2021/02/23202742/descargar-foto-perfil-instagram.jpg" alt="Foto de perfil">
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <form action="">
+                                    <div class="mb-3 border-top border-3 p-2">
+                                        <label for="nombre" class="form-label fw-bold">Nombres</label>
+                                        <input type="text" class="form-control" id="nombre_perfil" name="nombre_perfil" value="{{perfil.nombre_perfil}}" disabled>
+                                    </div>
+                                    <div class="mb-3 border-top border-3 p-2">
+                                        <label for="apellido_p" class="form-label fw-bold">Apellidos</label>
+                                        <input type="text" class="form-control" id="apellido_perfil" name="apellido_perfil" value="{{perfil.apellido_perfil}}" disabled>
+                                    </div>
+                                    <div class="mb-3 border-top border-3 p-2">
+                                        <label for="correo" class="form-label fw-bold">Correo</label>
+                                        <input type="email" class="form-control" id="email_usuario" name="email_usuario" value="{{perfil.email_usuario}}" disabled>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="col-12 text-center">
+                                <a href="/perfil/cambiar_datos"><button type="submit" class="btn btn-secondary-eco m-2 px-4 py-2">Editar Perfil</button></a>
+                                <a href="/perfil/cambiar_pass"><button type="submit" class="btn btn-secondary-eco m-2 px-4 py-2">Editar Contraseñas</button></a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row py-5">
-            <div class="col">
-                <h2 class="text-center text-uppercase fw-bold">ultimas pulicaciones</h2>
+        <div class="row py-5 g-5">
+            <div class="col-12">
+                <h2 class="text-center text-capitalize fw-bold">mis posters</h2>
             </div>
-            <div class="col-12 my-4">
-                <div class="row justify-content-center align-items-center">
-                    <div class="col-12 col-md-10">
-                        <h5 class="fw-bold">Mi gran experiencia en, Paracas</h5>
-                        <div class="card bg-dark text-white">
-                            <img src="https://cdn.pixabay.com/photo/2017/09/30/13/20/landscape-2802077_960_720.jpg" class="card-img" alt="Foto experiencia" style="height: 300px; object-fit: cover">
-                            <div class="card-img-overlay">
-                                <div class="row justify-content-between">
-                                    <div class="col">
-                                        <img width="150px" height="150px" class="m-3 rounded-circle" src="https://fotos-ayvisa.s3.eu-west-3.amazonaws.com/wp-content/uploads/2021/02/23202742/descargar-foto-perfil-instagram.jpg" alt="Foto de perfil">
-                                    </div>
-                                    <div class="col-3 text-center">
-                                        <div class="m-2 d-flex align-items-center">
-                                            <div class="rounded-circle p-2 m-3 d-flex justify-content-center align-items-center" style="background: pink">
-                                                <i class="fas fa-heart" style="color: #2E3A59;"></i>
-                                            </div>
-                                            <p class="m-0">23</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+            <div class="col-12 col-md-4">
+                <div class="card text-center" style="width: 18rem;">
+                    <div class="card-header">
+                        <p>Mi gran experiencia en Paracas con mis hijos</p>
                     </div>
-                    <div class="col-12 col-md-2 text-center">
-                        <button class="btn btn-primary text-uppercase m-2" style="background-color: #802121; border-radius: 20px">eliminar</button>
+                    <div class="card-body p-0">
+                        <img src="https://www.nationalgeographic.com.es/medio/2018/02/27/playa-de-isuntza-lekeitio__1280x720.jpg" class="card-img-top" alt="...">
                     </div>
-                </div>
-            </div>
-            
-            {{!-- ELIMINAR --}}
-
-            <div class="col-12 my-4">
-                <div class="row justify-content-center align-items-center">
-                    <div class="col-12 col-md-10">
-                        <h5 class="fw-bold">Mi gran experiencia en, Paracas</h5>
-                        <div class="card bg-dark text-white">
-                            <img src="https://cdn.pixabay.com/photo/2017/09/30/13/20/landscape-2802077_960_720.jpg" class="card-img" alt="Foto experiencia" style="height: 300px; object-fit: cover">
-                            <div class="card-img-overlay">
-                                <div class="row justify-content-between">
-                                    <div class="col">
-                                        <img width="150px" height="150px" class="m-3 rounded-circle" src="https://fotos-ayvisa.s3.eu-west-3.amazonaws.com/wp-content/uploads/2021/02/23202742/descargar-foto-perfil-instagram.jpg" alt="Foto de perfil">
-                                    </div>
-                                    <div class="col-3 text-center">
-                                        <div class="m-2 d-flex align-items-center">
-                                            <div class="rounded-circle p-2 m-3 d-flex justify-content-center align-items-center" style="background: pink">
-                                                <i class="fas fa-heart" style="color: #2E3A59;"></i>
-                                            </div>
-                                            <p class="m-0">23</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-2 text-center">
-                        <button class="btn btn-primary text-uppercase m-2" style="background-color: #802121; border-radius: 20px">eliminar</button>
+                    <div class="card-footer">
+                        <p><a href="">Ver más</a><span class="visually-hidden">extra</span></p>
                     </div>
                 </div>
             </div>
 
-            <div class="col-12 my-4">
-                <div class="row justify-content-center align-items-center">
-                    <div class="col-12 col-md-10">
-                        <h5 class="fw-bold">Mi gran experiencia en, Paracas</h5>
-                        <div class="card bg-dark text-white">
-                            <img src="https://cdn.pixabay.com/photo/2017/09/30/13/20/landscape-2802077_960_720.jpg" class="card-img" alt="Foto experiencia" style="height: 300px; object-fit: cover">
-                            <div class="card-img-overlay">
-                                <div class="row justify-content-between">
-                                    <div class="col">
-                                        <img width="150px" height="150px" class="m-3 rounded-circle" src="https://fotos-ayvisa.s3.eu-west-3.amazonaws.com/wp-content/uploads/2021/02/23202742/descargar-foto-perfil-instagram.jpg" alt="Foto de perfil">
-                                    </div>
-                                    <div class="col-3 text-center">
-                                        <div class="m-2 d-flex align-items-center">
-                                            <div class="rounded-circle p-2 m-3 d-flex justify-content-center align-items-center" style="background: pink">
-                                                <i class="fas fa-heart" style="color: #2E3A59;"></i>
-                                            </div>
-                                            <p class="m-0">23</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-2 text-center">
-                        <button class="btn btn-primary text-uppercase m-2" style="background-color: #802121; border-radius: 20px">eliminar</button>
-                    </div>
-                </div>
-            </div>
+            {{!-- ELIMINAME --}}
 
-            <div class="col-12 my-4">
-                <div class="row justify-content-center align-items-center">
-                    <div class="col-12 col-md-10">
-                        <h5 class="fw-bold">Mi gran experiencia en, Paracas</h5>
-                        <div class="card bg-dark text-white">
-                            <img src="https://cdn.pixabay.com/photo/2017/09/30/13/20/landscape-2802077_960_720.jpg" class="card-img" alt="Foto experiencia" style="height: 300px; object-fit: cover">
-                            <div class="card-img-overlay">
-                                <div class="row justify-content-between">
-                                    <div class="col">
-                                        <img width="150px" height="150px" class="m-3 rounded-circle" src="https://fotos-ayvisa.s3.eu-west-3.amazonaws.com/wp-content/uploads/2021/02/23202742/descargar-foto-perfil-instagram.jpg" alt="Foto de perfil">
-                                    </div>
-                                    <div class="col-3 text-center">
-                                        <div class="m-2 d-flex align-items-center">
-                                            <div class="rounded-circle p-2 m-3 d-flex justify-content-center align-items-center" style="background: pink">
-                                                <i class="fas fa-heart" style="color: #2E3A59;"></i>
-                                            </div>
-                                            <p class="m-0">23</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                <div class="col-12 col-md-4">
+                    <div class="card text-center" style="width: 18rem;">
+                        <div class="card-header">
+                            <p>Mi gran experiencia en Paracas con mis hijos</p>
+                        </div>
+                        <div class="card-body p-0">
+                            <img src="https://www.nationalgeographic.com.es/medio/2018/02/27/playa-de-isuntza-lekeitio__1280x720.jpg" class="card-img-top" alt="...">
+                        </div>
+                        <div class="card-footer">
+                            <p><a href="">Ver más</a><span class="visually-hidden">extra</span></p>
                         </div>
                     </div>
-                    <div class="col-12 col-md-2 text-center">
-                        <button class="btn btn-primary text-uppercase m-2" style="background-color: #802121; border-radius: 20px">eliminar</button>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="card text-center" style="width: 18rem;">
+                        <div class="card-header">
+                            <p>Mi gran experiencia en Paracas con mis hijos</p>
+                        </div>
+                        <div class="card-body p-0">
+                            <img src="https://www.nationalgeographic.com.es/medio/2018/02/27/playa-de-isuntza-lekeitio__1280x720.jpg" class="card-img-top" alt="...">
+                        </div>
+                        <div class="card-footer">
+                            <p><a href="">Ver más</a><span class="visually-hidden">extra</span></p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            {{!-- FIN ELIMINAR --}}
+                <div class="col-12 col-md-4">
+                    <div class="card text-center" style="width: 18rem;">
+                        <div class="card-header">
+                            <p>Mi gran experiencia en Paracas con mis hijos</p>
+                        </div>
+                        <div class="card-body p-0">
+                            <img src="https://www.nationalgeographic.com.es/medio/2018/02/27/playa-de-isuntza-lekeitio__1280x720.jpg" class="card-img-top" alt="...">
+                        </div>
+                        <div class="card-footer">
+                            <p><a href="">Ver más</a><span class="visually-hidden">extra</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="card text-center" style="width: 18rem;">
+                        <div class="card-header">
+                            <p>Mi gran experiencia en Paracas con mis hijos</p>
+                        </div>
+                        <div class="card-body p-0">
+                            <img src="https://www.nationalgeographic.com.es/medio/2018/02/27/playa-de-isuntza-lekeitio__1280x720.jpg" class="card-img-top" alt="...">
+                        </div>
+                        <div class="card-footer">
+                            <p><a href="">Ver más</a><span class="visually-hidden">extra</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="card text-center" style="width: 18rem;">
+                        <div class="card-header">
+                            <p>Mi gran experiencia en Paracas con mis hijos</p>
+                        </div>
+                        <div class="card-body p-0">
+                            <img src="https://www.nationalgeographic.com.es/medio/2018/02/27/playa-de-isuntza-lekeitio__1280x720.jpg" class="card-img-top" alt="...">
+                        </div>
+                        <div class="card-footer">
+                            <p><a href="">Ver más</a><span class="visually-hidden">extra</span></p>
+                        </div>
+                    </div>
+                </div>
+
+            {{!-- FIN ELIMINAME --}}
         </div>
     </div>
 </section>
