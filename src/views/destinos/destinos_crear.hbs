@@ -2,35 +2,65 @@
     <div class="container mt-5 py-5">
         <form method="post">
             <div class="row g-5">
-                <div class="col-12 mb-3">
-                    <input type="text" class="form-control" placeholder="Ingresa el titulo">
-                </div>
-                <div class="col-12 col-md-6 bg-secondary">
-                    {carga de imagenes}
-                </div>
-                <div class="col-12 col-md-6 text-center">
-                    <p>La pimera imagen es la portada</p>
-                    <input type="file" class="form-control" multiple>
-                </div>
-
-                <div class="col-12 col-md-6">
-                    <p>Recomendacion N1</p>
-                    <div class="mb-3">
-                        <input type="text" class="form-control" placeholder="Escribe algo">
+                <h5>¡Comparte tu experiencia de viaje!</h5>
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-12 col-md-4">
+                            <input type="file" multiple>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <div class="mb-3">
+                                <label for="titulo">Titulo de tu publicación:</label>
+                                <input class="form-control" type="text" id="titulo" placeholder="Ingresa el título de tu publicación">
+                            </div>
+                            <div class="mb-3">
+                                <label for="region">Región:</label>
+                                <input class="form-control" type="text" id="region" placeholder="Seleccione una opción">
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <div class="mb-3">
+                                <label for="macroregion">Macrorregión:</label>
+                                <input class="form-control" type="text" id="macroregion" placeholder="Seleccione una opción">
+                            </div>
+                            <div class="mb-3">
+                                <label for="lugar">Lugar turístico ecológico:</label>
+                                <input class="form-control" type="text" id="lugar" placeholder="Seleccione una opción">
+                            </div>
+                        </div>
                     </div>
-                    <p>Recomendacion N2</p>
-                    <div class="mb-3">
-                        <input type="text" class="form-control" placeholder="Escribe algo">
-                    </div>
-                    <p>Recomendacion N3</p>
-                    <div class="mb-3">
-                        <input type="text" class="form-control" placeholder="Escribe algo">
+                </div>
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-12 col-md-4 text-center">
+                            <p>Escoje una fotografía que represente tu experiencia...</p>
+                            <p>¿No encuentras la ubicación?</p>
+                            <a href="">Agrégala a esta lista</a>
+                            <input type="text" class="form-control" placeholder="Ingresa tu ubicacion ->deuda tecnida<-">
+                        </div>
+                        <div class="col-12 col-md-4 text-center">
+                            <p>Ingresa el contenido de tu publicación:</p>
+                            <textarea name="" id="contenidoPublicacion"></textarea>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <p>Ingresa 3 recomendaciones:</p>
+                            <div class="mb-3">
+                                <label for="primera-recomendacion">1ra recomendacion:</label>
+                                <input class="form-control" type="text" id="primera-recomendacion" placeholder="Ingresa tu primera recomendación">
+                            </div>
+                            <div class="mb-3">
+                                <label for="segunda-recomendacion">2da recomendacion:</label>
+                                <input class="form-control" type="text" id="segunda-recomendacion" placeholder="Ingresa tu segunda recomendación">
+                            </div>
+                            <div class="mb-3">
+                                <label for="tercera-recomendacion">3ra recomendacion:</label>
+                                <input class="form-control" type="text" id="tercera-recomendacion" placeholder="Ingresa tu tercera recomendación">
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 text-center">
-                    <div class="rounded-circle bg-primary-eco p-5" style="width: 200px; height: 200px">
-                        Brinda 3 recomendaciones al visitar
-                    </div>
+                <div class="col-12 text-center">
+                    <button class=" btn btn-primary-eco" type="submit">Publicar</button>
                 </div>
             </div>
         </form>

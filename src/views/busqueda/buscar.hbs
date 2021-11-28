@@ -1,51 +1,51 @@
 <main class="container-fluid py-5">
     <div class="container mt-5 py-5">
         <div class="row">
-            <div class="col">
-                <h2><b>Resultados para: ICA</b></h2>
-            </div>
-        </div>
-        <div class="row">
             <div class="col-lg-3 col-md">
                 <form name="container-form"  method="POST" action="">
                     <ul class="list-group">
                         <li class="list-group-item mx-0" style="background: rgba(61,50,66,0.1); color: #162A35;"><b>Filtros</b></li>
-                        <li class="list-group-item mx-0" style="background: rgba(61,50,66,0.1); color: #162A35;"><b>Cuidad</b>
-                            
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" id="medica" name="categoria" class="custom-control-input" value="Área Médica">
-                                <label class="custom-control-label" for="medica">Lima</label>
-                            </div>
+                        <li class="list-group-item mx-0" style="background: rgba(61,50,66,0.1); color: #162A35;">
+                            <div class="bg-light p-2" style="border-radius: 20px;">
+                                <b>Cuidad</b>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="medica" name="categoria" class="custom-control-input" value="Área Médica">
+                                    <label class="custom-control-label" for="medica">Lima</label>
+                                </div>
 
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" id="tecnica" name="categoria" class="custom-control-input" value="Área Técnica">
-                                <label class="custom-control-label" for="tecnica">Ica</label>
-                            </div>
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" id="psico" name="categoria" class="custom-control-input" value="Área psicología, terapéutica, etología">
-                                <label class="custom-control-label" for="psico">Ayacucho</label>
-                            </div>
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" id="cuidado" name="categoria" class="custom-control-input" value="Cuidado y pretección animal">
-                                <label class="custom-control-label" for="cuidado">Loreto</label>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="tecnica" name="categoria" class="custom-control-input" value="Área Técnica">
+                                    <label class="custom-control-label" for="tecnica">Ica</label>
+                                </div>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="psico" name="categoria" class="custom-control-input" value="Área psicología, terapéutica, etología">
+                                    <label class="custom-control-label" for="psico">Ayacucho</label>
+                                </div>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="cuidado" name="categoria" class="custom-control-input" value="Cuidado y pretección animal">
+                                    <label class="custom-control-label" for="cuidado">Loreto</label>
+                                </div>
                             </div>
                         </li>
-                        <li class="list-group-item mx-0" style="background: rgba(61,50,66,0.1); color: #162A35;"><b>Magnitud</b>
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" id="bachiller" name="rango" class="custom-control-input" value="Bachiller">
-                                <label class="custom-control-label" for="bachiller">Gran viaje</label>
-                            </div>
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" id="práctica pre-profesional" name="rango" class="custom-control-input" value="Práctica pre-profesional">
-                                <label class="custom-control-label" for="práctica pre-profesional">Viaje duradero</label>
-                            </div>
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" id="profesional con titulación" name="rango" class="custom-control-input" value="Profesional con titulación">
-                                <label class="custom-control-label" for="profesional con titulación">Viaje corto</label>
-                            </div>
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" id="tecnico" name="rango" class="custom-control-input" value="Técnico">
-                                <label class="custom-control-label" for="tecnico">Full day</label>
+                        <li class="list-group-item mx-0" style="background: rgba(61,50,66,0.1); color: #162A35;">
+                            <div class="bg-light p-2" style="border-radius: 20px;">
+                                <b>Magnitud</b>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="bachiller" name="rango" class="custom-control-input" value="Bachiller">
+                                    <label class="custom-control-label" for="bachiller">Gran viaje</label>
+                                </div>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="práctica pre-profesional" name="rango" class="custom-control-input" value="Práctica pre-profesional">
+                                    <label class="custom-control-label" for="práctica pre-profesional">Viaje duradero</label>
+                                </div>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="profesional con titulación" name="rango" class="custom-control-input" value="Profesional con titulación">
+                                    <label class="custom-control-label" for="profesional con titulación">Viaje corto</label>
+                                </div>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="tecnico" name="rango" class="custom-control-input" value="Técnico">
+                                    <label class="custom-control-label" for="tecnico">Full day</label>
+                                </div>
                             </div>
                         </li>
                         <li class="list-group-item mx-0 text-center" style="background: rgba(61,50,66,0.1); color: #162A35;">
@@ -57,24 +57,38 @@
 
             <div class="col-lg-9 col-md">
                 <div class="container">
-                    <div class="row">
+                    <div class="row justify-content-center">
+                        <div class="col-12">
+                            Resultados de búsqueda: ->query/-
+                        </div>
                         <div class="col-12 col-md-10 my-3">
-                            <h5 class="fw-bold">Mi gran experiencia en, Paracas</h5>
-                            <div class="card bg-dark text-white">
-                                <img src="https://cdn.pixabay.com/photo/2017/09/30/13/20/landscape-2802077_960_720.jpg" class="card-img" alt="Foto experiencia" style="height: 300px; object-fit: cover">
-                                <div class="card-img-overlay">
-                                    <div class="row justify-content-between">
-                                        <div class="col">
-                                            <img width="150px" height="150px" class="m-3 rounded-circle" src="https://fotos-ayvisa.s3.eu-west-3.amazonaws.com/wp-content/uploads/2021/02/23202742/descargar-foto-perfil-instagram.jpg" alt="Foto de perfil">
-                                        </div>
-                                        <div class="col-3 text-center">
-                                            <div class="m-2 d-flex align-items-center">
-                                                <div class="rounded-circle p-2 m-3 d-flex justify-content-center align-items-center" style="background: pink">
-                                                    <i class="fas fa-heart" style="color: #2E3A59;"></i>
+                            <div class="card mb-3 shadow" style="height: 300px;">
+                                <div class="row g-0">
+                                    <div class="col-md-8">
+                                        <div class="card-body text-center">
+                                            <div class="row">
+                                                <div class="col-md-6 mb-3">
+                                                    <div class="row">
+                                                        <div class="col-4">
+                                                            <img class="rounded-circle" src="https://www.nationalgeographic.com.es/medio/2018/02/27/playa-de-isuntza-lekeitio__1280x720.jpg" alt="" width="50px" height="50px">
+                                                        </div>
+                                                        <div class="col">
+                                                            <p class="m-0">/perfil name\</p>
+                                                            <p class="m-0">/date create\</p>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                                <p class="m-0">23</p>
+                                                <div class="col-md-6">
+                                                    <i class="fas fa-map-marker-alt m-2"></i><span>/ubicacion\</span>
+                                                </div>
                                             </div>
+                                            <h5 class="card-title">/destino title\</h5>
+                                            <p class="card-text ">/destino descript\</p>
+                                            <a href=""><p>Ver más</p></a>
                                         </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <img src="https://img.freepik.com/foto-gratis/disparo-vertical-hermosa-puesta-sol-playa_181624-18213.jpg?size=338&ext=jpg" class="rounded-end" alt="..." height="300px" width="100%">
                                     </div>
                                 </div>
                             </div>
@@ -82,73 +96,106 @@
 
                         {{!-- ELIMINAME --}}
 
-                        <div class="col-12 col-md-10 my-3">
-                            <h5 class="fw-bold">Mi gran experiencia en, Paracas</h5>
-                            <div class="card bg-dark text-white">
-                                <img src="https://cdn.pixabay.com/photo/2017/09/30/13/20/landscape-2802077_960_720.jpg" class="card-img" alt="Foto experiencia" style="height: 300px; object-fit: cover">
-                                <div class="card-img-overlay">
-                                    <div class="row justify-content-between">
-                                        <div class="col">
-                                            <img width="150px" height="150px" class="m-3 rounded-circle" src="https://fotos-ayvisa.s3.eu-west-3.amazonaws.com/wp-content/uploads/2021/02/23202742/descargar-foto-perfil-instagram.jpg" alt="Foto de perfil">
-                                        </div>
-                                        <div class="col-3 text-center">
-                                            <div class="m-2 d-flex align-items-center">
-                                                <div class="rounded-circle p-2 m-3 d-flex justify-content-center align-items-center" style="background: pink">
-                                                    <i class="fas fa-heart" style="color: #2E3A59;"></i>
+                            <div class="col-12 col-md-10 my-3">
+                            <div class="card mb-3 shadow" style="height: 300px;">
+                                <div class="row g-0">
+                                    <div class="col-md-8">
+                                        <div class="card-body text-center">
+                                            <div class="row">
+                                                <div class="col-md-6 mb-3">
+                                                    <div class="row">
+                                                        <div class="col-4">
+                                                            <img class="rounded-circle" src="https://www.nationalgeographic.com.es/medio/2018/02/27/playa-de-isuntza-lekeitio__1280x720.jpg" alt="" width="50px" height="50px">
+                                                        </div>
+                                                        <div class="col">
+                                                            <p class="m-0">/perfil name\</p>
+                                                            <p class="m-0">/date create\</p>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                                <p class="m-0">23</p>
+                                                <div class="col-md-6">
+                                                    <i class="fas fa-map-marker-alt m-2"></i><span>/ubicacion\</span>
+                                                </div>
                                             </div>
+                                            <h5 class="card-title">/destino title\</h5>
+                                            <p class="card-text ">/destino descript\</p>
+                                            <a href=""><p>Ver más</p></a>
                                         </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <img src="https://img.freepik.com/foto-gratis/disparo-vertical-hermosa-puesta-sol-playa_181624-18213.jpg?size=338&ext=jpg" class="rounded-end" alt="..." height="300px" width="100%">
                                     </div>
                                 </div>
                             </div>
                         </div>
 
                         <div class="col-12 col-md-10 my-3">
-                            <h5 class="fw-bold">Mi gran experiencia en, Paracas</h5>
-                            <div class="card bg-dark text-white">
-                                <img src="https://cdn.pixabay.com/photo/2017/09/30/13/20/landscape-2802077_960_720.jpg" class="card-img" alt="Foto experiencia" style="height: 300px; object-fit: cover">
-                                <div class="card-img-overlay">
-                                    <div class="row justify-content-between">
-                                        <div class="col">
-                                            <img width="150px" height="150px" class="m-3 rounded-circle" src="https://fotos-ayvisa.s3.eu-west-3.amazonaws.com/wp-content/uploads/2021/02/23202742/descargar-foto-perfil-instagram.jpg" alt="Foto de perfil">
-                                        </div>
-                                        <div class="col-3 text-center">
-                                            <div class="m-2 d-flex align-items-center">
-                                                <div class="rounded-circle p-2 m-3 d-flex justify-content-center align-items-center" style="background: pink">
-                                                    <i class="fas fa-heart" style="color: #2E3A59;"></i>
+                            <div class="card mb-3 shadow" style="height: 300px;">
+                                <div class="row g-0">
+                                    <div class="col-md-8">
+                                        <div class="card-body text-center">
+                                            <div class="row">
+                                                <div class="col-md-6 mb-3">
+                                                    <div class="row">
+                                                        <div class="col-4">
+                                                            <img class="rounded-circle" src="https://www.nationalgeographic.com.es/medio/2018/02/27/playa-de-isuntza-lekeitio__1280x720.jpg" alt="" width="50px" height="50px">
+                                                        </div>
+                                                        <div class="col">
+                                                            <p class="m-0">/perfil name\</p>
+                                                            <p class="m-0">/date create\</p>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                                <p class="m-0">23</p>
+                                                <div class="col-md-6">
+                                                    <i class="fas fa-map-marker-alt m-2"></i><span>/ubicacion\</span>
+                                                </div>
                                             </div>
+                                            <h5 class="card-title">/destino title\</h5>
+                                            <p class="card-text ">/destino descript\</p>
+                                            <a href=""><p>Ver más</p></a>
                                         </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <img src="https://img.freepik.com/foto-gratis/disparo-vertical-hermosa-puesta-sol-playa_181624-18213.jpg?size=338&ext=jpg" class="rounded-end" alt="..." height="300px" width="100%">
                                     </div>
                                 </div>
                             </div>
                         </div>
 
                         <div class="col-12 col-md-10 my-3">
-                            <h5 class="fw-bold">Mi gran experiencia en, Paracas</h5>
-                            <div class="card bg-dark text-white">
-                                <img src="https://cdn.pixabay.com/photo/2017/09/30/13/20/landscape-2802077_960_720.jpg" class="card-img" alt="Foto experiencia" style="height: 300px; object-fit: cover">
-                                <div class="card-img-overlay">
-                                    <div class="row justify-content-between">
-                                        <div class="col">
-                                            <img width="150px" height="150px" class="m-3 rounded-circle" src="https://fotos-ayvisa.s3.eu-west-3.amazonaws.com/wp-content/uploads/2021/02/23202742/descargar-foto-perfil-instagram.jpg" alt="Foto de perfil">
-                                        </div>
-                                        <div class="col-3 text-center">
-                                            <div class="m-2 d-flex align-items-center">
-                                                <div class="rounded-circle p-2 m-3 d-flex justify-content-center align-items-center" style="background: pink">
-                                                    <i class="fas fa-heart" style="color: #2E3A59;"></i>
+                            <div class="card mb-3 shadow" style="height: 300px;">
+                                <div class="row g-0">
+                                    <div class="col-md-8">
+                                        <div class="card-body text-center">
+                                            <div class="row">
+                                                <div class="col-md-6 mb-3">
+                                                    <div class="row">
+                                                        <div class="col-4">
+                                                            <img class="rounded-circle" src="https://www.nationalgeographic.com.es/medio/2018/02/27/playa-de-isuntza-lekeitio__1280x720.jpg" alt="" width="50px" height="50px">
+                                                        </div>
+                                                        <div class="col">
+                                                            <p class="m-0">/perfil name\</p>
+                                                            <p class="m-0">/date create\</p>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                                <p class="m-0">23</p>
+                                                <div class="col-md-6">
+                                                    <i class="fas fa-map-marker-alt m-2"></i><span>/ubicacion\</span>
+                                                </div>
                                             </div>
+                                            <h5 class="card-title">/destino title\</h5>
+                                            <p class="card-text ">/destino descript\</p>
+                                            <a href=""><p>Ver más</p></a>
                                         </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <img src="https://img.freepik.com/foto-gratis/disparo-vertical-hermosa-puesta-sol-playa_181624-18213.jpg?size=338&ext=jpg" class="rounded-end" alt="..." height="300px" width="100%">
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        {{!-- ELIMINAR FIN --}}
+                        {{!-- FIN ELMINAME --}}
 
                         <nav aria-label="Page navigation example">
                             <ul class="pagination">
