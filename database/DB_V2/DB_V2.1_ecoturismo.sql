@@ -75,15 +75,28 @@ CREATE TABLE `ecoturismo`.`destinos` (
     ON UPDATE CASCADE);
 
 #tabla recomendaciones
-CREATE TABLE `ecoturismo`.`recomendaciones` (
-  `id_destino` INT NOT NULL,
-  `recomendacion` VARCHAR(255) NOT NULL,
-  PRIMARY KEY (`id_destino`),
-  CONSTRAINT `fk_recomendacion_destino`
-    FOREIGN KEY (`id_destino`)
-    REFERENCES `ecoturismo`.`destinos` (`id_destino`)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE);
+-- CREATE TABLE `ecoturismo`.`recomendaciones` (
+--   `id_destino` INT NOT NULL,
+--   `recomendacion` VARCHAR(255) NOT NULL,
+--   PRIMARY KEY (`id_destino`),
+--   CONSTRAINT `fk_recomendacion_destino`
+--     FOREIGN KEY (`id_destino`)
+--     REFERENCES `ecoturismo`.`destinos` (`id_destino`)
+--     ON DELETE CASCADE
+--     ON UPDATE CASCADE);
+
+CREATE TABLE `recomendaciones` (
+	`id_recomendaciones` INT(11) NOT NULL,
+	`id_destino` INT(11) NOT NULL,
+	`recomendacion` VARCHAR(255) NOT NULL COLLATE 'utf8_general_ci',
+	PRIMARY KEY (`id_recomendaciones`) USING BTREE,
+	INDEX `id_destino` (`id_destino`) USING BTREE,
+	CONSTRAINT `fk_recomendacion_destino` FOREIGN KEY (`id_recomendaciones`) REFERENCES `ecoturismo`.`destinos` (`id_destino`) ON UPDATE CASCADE ON DELETE CASCADE
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB
+;
+
 
 #tabla comentarios
 CREATE TABLE `ecoturismo`.`comentarios` (
