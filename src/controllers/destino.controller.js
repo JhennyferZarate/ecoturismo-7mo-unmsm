@@ -3,52 +3,35 @@ const pool = require('../database')
 const destino = {}
 
 destino.get_filtro = async (req,res) => {
-
+    
     const destinos = await pool.query(
         `
         SELECT
             *
         FROM
-            destinos
-            INNER JOIN publicaciones
-                ON publicaciones.id_destino = destinos.id_destino
-            RIGHT JOIN perfiles
-                ON publicaciones.id_usuario = perfiles.id_usuario
-            INNER JOIN ubicaciones
-                ON destinos.id_ubicacion = ubicaciones.id_ubicacion
-            INNER JOIN regiones
-                ON ubicaciones.id_region = regiones.id_region
-            INNER JOIN regiones
-                ON ubicaciones.id_macroregion = regiones.id_macroregion
+            destinos as d
+                INNER JOIN publicaciones as pub
+                    ON d.id_destino = pub.id_destino
+                INNER JOIN ubicaciones as u
+                    ON d.id_ubicacion = u.id_ubicacion
+                INNER JOIN regiones as r
+                    ON u.id_region = r.id_region
+                INNER JOIN macroregiones as m
+                    ON u.id_macroregion = m.id_macroregion
+                INNER JOIN perfiles as p
+                    ON pub.id_usuario = p.id_usuario
         `)
+    
     res.render('busqueda/buscar',{destinos})
+    //res.render('busqueda/buscar')
 }
 
 destino.post_filtro = async (req,res) => {
-
-    const destinos = await pool.query(
-        `
-        SELECT
-            *
-        FROM
-            destinos
-            INNER JOIN publicaciones
-                ON publicaciones.id_destino = destinos.id_destino
-            RIGHT JOIN perfiles
-                ON publicaciones.id_usuario = perfiles.id_usuario
-            INNER JOIN ubicaciones
-                ON destinos.id_ubicacion = ubicaciones.id_ubicacion
-            INNER JOIN regiones
-                ON ubicaciones.id_region = regiones.id_region
-            INNER JOIN regiones
-                ON ubicaciones.id_macroregion = regiones.id_macroregion
-        `)
     res.render('busqueda/buscar',{destinos})
 }
 
 destino.get_inicio = async (req,res) => {
-    
-
+    /*
     const id_usuario = req.user.id_usuario
     const id_destino = req.params
     const destinos = await pool.query(
@@ -61,14 +44,12 @@ destino.get_inicio = async (req,res) => {
                 ON destinos.id_destino = publicaciones.id_destino
             RIGHT JOIN comentarios
                 ON destinos.id_destino = comentarios.id_destino
-            RIGHT JOIN publicaciones
-                ON destinos.id_destino = publicaciones.id_destino
             LEFT JOIN perfiles
                 ON publicaciones.id_usuario = perfiles.id_usuario
     WHERE
         destinos.id_destino = ?
-        
     `,[id_destino])
+    */
     res.render('destinos/destinos')
 }
 
@@ -81,6 +62,7 @@ destino.get_crear = async (req, res) => {
 }
 
 destino.post_crear = async (req, res) => {
+    /*
     const id_usuario = req.user.id_usuario
 
     const {
@@ -93,9 +75,6 @@ destino.post_crear = async (req, res) => {
         recomendacion_3,
         contenido_destino
     } = req.body
-
-    
-
 
     const nueva_region = await pool.query(
     `
@@ -163,7 +142,7 @@ destino.post_crear = async (req, res) => {
     SET
         ?
     `[publicacion])
-
+    */
     res.redirect('/perfil')
 }
 
