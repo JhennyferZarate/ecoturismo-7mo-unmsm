@@ -3,9 +3,13 @@ const express = require('express')
 const router = express.Router()
 const destino = require('../controllers/destino.controller')
 
-router.get('/', destino.get_inicio)
+router.get('/filtro_destinos',destino.get_filtro)
 
-router.post('/', destino.post_inicio)
+router.post('/filtro_destinos',destino.post_filtro)
+
+router.get('/:id', destino.get_inicio)
+
+router.post('/:id', destino.post_inicio)
 
 router.get('/crear', destino.get_crear)
 
