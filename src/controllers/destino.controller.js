@@ -23,7 +23,6 @@ destino.get_filtro = async (req,res) => {
         `)
     
     res.render('busqueda/buscar',{destinos})
-    //res.render('busqueda/buscar')
 }
 
 destino.post_filtro = async (req,res) => {
@@ -31,9 +30,13 @@ destino.post_filtro = async (req,res) => {
 }
 
 destino.get_inicio = async (req,res) => {
-    /*
+    
     const id_usuario = req.user.id_usuario
-    const id_destino = req.params
+    const id_destino = req.params.id
+
+    console.log(id_destino)
+    console.log(id_usuario)
+    /*
     const destinos = await pool.query(
     `
     SELECT
@@ -62,9 +65,10 @@ destino.get_crear = async (req, res) => {
 }
 
 destino.post_crear = async (req, res) => {
-    /*
+    
     const id_usuario = req.user.id_usuario
-
+    
+    /*
     const {
         titulo_destino,
         region,
