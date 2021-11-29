@@ -1,6 +1,6 @@
 <section class="container-fluid py-5 bg-light">
     <div class="container mt-5 py-5">
-        <form method="post">
+        <form action="/destinos/crear" method="post">
             <div class="row g-5">
                 <h5>¡Comparte tu experiencia de viaje!</h5>
                 <div class="col-12">
@@ -11,21 +11,21 @@
                         <div class="col-12 col-md-4">
                             <div class="mb-3">
                                 <label for="titulo">Titulo de tu publicación:</label>
-                                <input class="form-control" type="text" id="titulo" placeholder="Ingresa el título de tu publicación">
+                                <input class="form-control" type="text" id="titulo" name="titulo_destino" placeholder="Ingresa el título de tu publicación">
                             </div>
                             <div class="mb-3">
                                 <label for="region">Región:</label>
-                                <input class="form-control" type="text" id="region" placeholder="Seleccione una opción">
+                                <input class="form-control" type="text" id="region" name="region" placeholder="Seleccione una opción">
                             </div>
                         </div>
                         <div class="col-12 col-md-4">
                             <div class="mb-3">
                                 <label for="macroregion">Macrorregión:</label>
-                                <input class="form-control" type="text" id="macroregion" placeholder="Seleccione una opción">
+                                <input class="form-control" type="text" id="macroregion" name="macroregion" placeholder="Seleccione una opción">
                             </div>
                             <div class="mb-3">
                                 <label for="lugar">Lugar turístico ecológico:</label>
-                                <input class="form-control" type="text" id="lugar" placeholder="Seleccione una opción">
+                                <input class="form-control" type="text" id="lugar" name="ciudad_ubicacion" placeholder="Seleccione una opción">
                             </div>
                         </div>
                     </div>
@@ -40,21 +40,21 @@
                         </div>
                         <div class="col-12 col-md-4 text-center">
                             <p>Ingresa el contenido de tu publicación:</p>
-                            <textarea name="" id="contenidoPublicacion"></textarea>
+                            <textarea name="contenido_destino" id="contenidoPublicacion"></textarea>
                         </div>
                         <div class="col-12 col-md-4">
                             <p>Ingresa 3 recomendaciones:</p>
                             <div class="mb-3">
                                 <label for="primera-recomendacion">1ra recomendacion:</label>
-                                <input class="form-control" type="text" id="primera-recomendacion" placeholder="Ingresa tu primera recomendación">
+                                <input class="form-control" type="text" id="primera-recomendacion" name="recomendacion_1" placeholder="Ingresa tu primera recomendación">
                             </div>
                             <div class="mb-3">
                                 <label for="segunda-recomendacion">2da recomendacion:</label>
-                                <input class="form-control" type="text" id="segunda-recomendacion" placeholder="Ingresa tu segunda recomendación">
+                                <input class="form-control" type="text" id="segunda-recomendacion" name="recomendacion_2" placeholder="Ingresa tu segunda recomendación">
                             </div>
                             <div class="mb-3">
                                 <label for="tercera-recomendacion">3ra recomendacion:</label>
-                                <input class="form-control" type="text" id="tercera-recomendacion" placeholder="Ingresa tu tercera recomendación">
+                                <input class="form-control" type="text" id="tercera-recomendacion" name="recomendacion_3" placeholder="Ingresa tu tercera recomendación">
                             </div>
                         </div>
                     </div>
