@@ -2,8 +2,52 @@ const pool = require('../database')
 
 const destino = {}
 
+destino.get_filtro = async (req,res) => {
+
+    const destinos = await pool.query(
+        `
+        SELECT
+            *
+        FROM
+            destinos
+            INNER JOIN publicaciones
+                ON publicaciones.id_destino = destinos.id_destino
+            RIGHT JOIN perfiles
+                ON publicaciones.id_usuario = perfiles.id_usuario
+            INNER JOIN ubicaciones
+                ON destinos.id_ubicacion = ubicaciones.id_ubicacion
+            INNER JOIN regiones
+                ON ubicaciones.id_region = regiones.id_region
+            INNER JOIN regiones
+                ON ubicaciones.id_macroregion = regiones.id_macroregion
+        `)
+    res.render('busqueda/buscar',{destinos})
+}
+
+destino.post_filtro = async (req,res) => {
+
+    const destinos = await pool.query(
+        `
+        SELECT
+            *
+        FROM
+            destinos
+            INNER JOIN publicaciones
+                ON publicaciones.id_destino = destinos.id_destino
+            RIGHT JOIN perfiles
+                ON publicaciones.id_usuario = perfiles.id_usuario
+            INNER JOIN ubicaciones
+                ON destinos.id_ubicacion = ubicaciones.id_ubicacion
+            INNER JOIN regiones
+                ON ubicaciones.id_region = regiones.id_region
+            INNER JOIN regiones
+                ON ubicaciones.id_macroregion = regiones.id_macroregion
+        `)
+    res.render('busqueda/buscar',{destinos})
+}
+
 destino.get_inicio = async (req,res) => {
-    res.render('destinos/destinos')
+    
 
     const id_usuario = req.user.id_usuario
     const id_destino = req.params
@@ -25,6 +69,7 @@ destino.get_inicio = async (req,res) => {
         destinos.id_destino = ?
         
     `,[id_destino])
+    res.render('destinos/destinos')
 }
 
 destino.post_inicio = async (req,res) => {
