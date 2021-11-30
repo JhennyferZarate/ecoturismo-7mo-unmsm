@@ -18,13 +18,17 @@
                             </div>
                             <div class="mb-3">
                                 <label class="fw-bold" for="region">Región:</label>
-                                <input class="form-control" type="text" id="region" name="region" placeholder="Seleccione una opción">
+                                {{#each regiones}}
+                                    <input class="form-control" type="text" id="region" name="region" placeholder="Seleccione una opción" value={{region}}>
+                                {{/each}}
                             </div>
                         </div>
                         <div class="col-12 col-md-4">
                             <div class="mb-3">
                                 <label class="fw-bold" for="macroregion">Macrorregión:</label>
-                                <input class="form-control" type="text" id="macroregion" name="macroregion" placeholder="Seleccione una opción">
+                                {{#each macroregiones}}
+                                    <input class="form-control" type="text" id="macroregion" name="macroregion" placeholder="Seleccione una opción" value={{macroregion}}>
+                                {{/each}}
                             </div>
                             <div class="mb-3">
                                 <label class="fw-bold" for="lugar">Lugar turístico ecológico:</label>

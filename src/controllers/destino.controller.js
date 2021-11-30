@@ -61,7 +61,25 @@ destino.post_inicio = async (req,res) => {
 }
 
 destino.get_crear = async (req, res) => {
-    res.render('destinos/destinos_crear')
+    const regiones = await pool.query(
+    `
+    SELECT
+        *
+    FROM
+        regiones
+    `
+    )
+    console.log(regiones)
+    const macroregiones = await pool.query(
+        `
+        SELECT
+            *
+        FROM
+            macroregiones
+        `
+        )
+    console.log(macroregiones)
+    res.render('destinos/destinos_crear',{regiones,macroregiones})
 }
 
 destino.post_crear = async (req, res) => {
@@ -111,7 +129,7 @@ destino.post_crear = async (req, res) => {
     
     if (verficar_region == false){
         //console.log("vacio")
-        
+
     } else {
         //console.log("lleno")
     }
