@@ -67,8 +67,9 @@ destino.get_crear = async (req, res) => {
 destino.post_crear = async (req, res) => {
     
     const id_usuario = req.user.id_usuario
+
+    //console.log(id_usuario)
     
-    /*
     const {
         titulo_destino,
         region,
@@ -80,6 +81,60 @@ destino.post_crear = async (req, res) => {
         contenido_destino
     } = req.body
 
+    const datos = {
+        titulo_destino,
+        region,
+        macroregion,
+        ciudad_ubicacion,
+        recomendacion_1,
+        recomendacion_2,
+        recomendacion_3,
+        contenido_destino
+    }
+
+    console.log(datos)
+
+    /**
+     * Reconocer Region
+     */
+    const verficar_region = await pool.query(
+    `
+    SELECT
+        *
+    FROM 
+        regiones
+    WHERE
+        regiones.region = ?
+    `,[datos.region])
+
+    //console.log(verficar_region)
+    
+    if (verficar_region == false){
+        //console.log("vacio")
+        
+    } else {
+        //console.log("lleno")
+    }
+
+    /**
+     * Reconocer Macroregion
+     */
+
+    /**
+     * insertar region y macroregion
+     */
+
+    /**
+     * insertar ubicacion
+    */
+    
+    /**
+     * insertar recomendaciones
+     */
+
+
+
+    /*
     const nueva_region = await pool.query(
     `
     INSERT INTO
@@ -147,6 +202,7 @@ destino.post_crear = async (req, res) => {
         ?
     `[publicacion])
     */
+    
     res.redirect('/perfil')
 }
 
