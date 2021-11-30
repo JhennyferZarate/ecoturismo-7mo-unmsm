@@ -99,22 +99,13 @@ destino.post_crear = async (req, res) => {
         contenido_destino
     } = req.body
 
-    const datos = {
-        titulo_destino,
-        region,
-        macroregion,
-        ciudad_ubicacion,
-        recomendacion_1,
-        recomendacion_2,
-        recomendacion_3,
-        contenido_destino
-    }
-
-    console.log(datos)
+    //console.log(req.body)
+    //console.log(ciudad_ubicacion)
 
     /**
      * Reconocer Region
      */
+
     const verficar_region = await pool.query(
     `
     SELECT
@@ -123,104 +114,94 @@ destino.post_crear = async (req, res) => {
         regiones
     WHERE
         regiones.region = ?
-    `,[datos.region])
+    `,[region])
 
-    //console.log(verficar_region)
+    //console.log(verficar_region[0].id_region)
     
-    if (verficar_region == false){
-        //console.log("vacio")
-
-    } else {
-        //console.log("lleno")
-    }
-
     /**
      * Reconocer Macroregion
      */
-
-    /**
-     * insertar region y macroregion
-     */
+    
+    const verficar_macroregion = await pool.query(
+        `
+        SELECT
+            *
+        FROM 
+            macroregiones
+        WHERE
+            macroregiones.macroregion = ?
+        `,[macroregion])
+    
+    //console.log(verficar_macroregion[0].id_macroregion)
 
     /**
      * insertar ubicacion
     */
-    
-    /**
-     * insertar recomendaciones
-     */
-
-
-
-    /*
-    const nueva_region = await pool.query(
-    `
-    INSERT INTO
-        regiones (region)
-    VALUES 
-        (?)
-    `,[region])
-
-    const nueva_macroregion = await pool.query(
-    `
-    INSERT INTO
-        macroregiones (macroregion)
-    VALUES
-        (?)
-    `,[macroregion])
-
-    const ubicacion = {
-        id_macroregion: nueva_macroregion.insertId,
-        id_region: nueva_region.insertId,
+    const nueva_ubicacion = {
+        id_macroregion: verficar_macroregion[0].id_macroregion,
+        id_region: verficar_region[0].id_region,
         ciudad_ubicacion
     }
-
-    const nueva_ubicacion = await pool.query(
+    
+    const ubicacion = await pool.query(
     `
     INSERT INTO
         ubicaciones
     SET
         ?
-    `,[ubicacion])
+    `,[nueva_ubicacion])
 
-    const destino = {
-        id_ubicacion: nueva_ubicacion.insertId,
+    //console.log(ubicacion.insertId)
+
+    /**
+     * Insertar Destino
+     */
+    
+    const nuevo_destino = {
+        id_ubicacion: ubicacion.insertId,
         titulo_destino,
         contenido_destino
     }
 
-    const nuevo_destino = await pool.query(
+    const destino = await pool.query(
     `
     INSERT INTO 
         destinos
     SET
         ?
-    `,[destino])
+    `,[nuevo_destino])
 
-    const nuevas_recomendaciones = await pool.query(
+    /**
+     * Insertar recomendaciones
+     */
+    
+    await pool.query(
     `
     INSERT INTO
         recomendaciones (id_destino,recomendacion)
     VALUES
-        (${nuevo_destino.insertId},'${recomendacion_1}'),
-        (${nuevo_destino.insertId},'${recomendacion_2}'),
-        (${nuevo_destino.insertId},'${recomendacion_3}')
+        (${destino.insertId},'${recomendacion_1}'),
+        (${destino.insertId},'${recomendacion_2}'),
+        (${destino.insertId},'${recomendacion_3}')
     `)
+
+    /**
+     * Insertar en Publicaciones
+     */
     
-    const publicacion = {
+    const nueva_publicacion = {
         id_usuario,
-        id_destino: nuevo_destino.insertId
+        id_destino: destino.insertId
     }
 
-    const nueva_publicacion = await pool.query(
+    await pool.query(
     `
     INSERT INTO
         publicaciones
     SET
         ?
-    `[publicacion])
-    */
-    
+    `[nueva_publicacion])
+
     res.redirect('/perfil')
 }
 
