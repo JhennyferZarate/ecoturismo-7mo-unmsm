@@ -7,6 +7,10 @@ perfil.get_inicio = async (req,res) => {
     // console.log(req.user.id_usuario);
     
     const id_usuario = req.user.id_usuario
+
+    /**
+     * Información del usuario
+     */
     const Perfil = await pool.query(
         `
         SELECT
@@ -23,7 +27,25 @@ perfil.get_inicio = async (req,res) => {
         `
     ,[id_usuario])
     
-    res.render('perfil/perfil', {perfil: Perfil[0]})
+    /**
+     * Destinos creados por el usuario
+     */
+    const destinos = await pool.query(
+        `
+        SELECT
+            d.*
+        FROM
+            destinos as d
+        INNER JOIN publicaciones as pub
+            ON pub.id_destino = d.id_destino
+        INNER JOIN perfiles as p
+            ON pub.id_usuario = p.id_usuario
+        WHERE p.id_usuario = ?
+        order by d.fecha_creacion_destino ASC
+        `
+    ,[id_usuario])
+
+    res.render('perfil/perfil', {perfil: Perfil[0],destinos})
     //res.render('perfil/perfil')
 }
 

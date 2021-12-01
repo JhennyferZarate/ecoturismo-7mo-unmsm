@@ -81,7 +81,7 @@ destino.get_inicio = async (req,res) => {
             ON c.id_destino = d.id_destino
         INNER JOIN perfiles as p
             ON p.id_usuario = c.id_usuario
-        WHERE d.id_destino = 1
+        WHERE d.id_destino = ?
         order by c.fecha_creacion_comentario ASC
         `,[id_destino])
 
