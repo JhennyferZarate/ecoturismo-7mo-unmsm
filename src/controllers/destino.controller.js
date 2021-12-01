@@ -5,7 +5,7 @@ const destino = {}
 destino.get_filtro = async (req,res) => {
     
     const destinos = await pool.query(
-        `
+    `
         SELECT
             *
         FROM
@@ -20,7 +20,7 @@ destino.get_filtro = async (req,res) => {
                     ON u.id_macroregion = m.id_macroregion
                 INNER JOIN perfiles as p
                     ON pub.id_usuario = p.id_usuario
-        `)
+    `)
     
     res.render('busqueda/buscar',{destinos})
 }
@@ -36,24 +36,57 @@ destino.get_inicio = async (req,res) => {
 
     console.log(id_destino)
     console.log(id_usuario)
-    /*
+
+    /**
+     * Destino y Usuario
+     */
+
     const destinos = await pool.query(
     `
-    SELECT
-        *
-    FROM
-        destinos
-            RIGHT JOIN publicaciones
-                ON destinos.id_destino = publicaciones.id_destino
-            RIGHT JOIN comentarios
-                ON destinos.id_destino = comentarios.id_destino
-            LEFT JOIN perfiles
-                ON publicaciones.id_usuario = perfiles.id_usuario
-    WHERE
-        destinos.id_destino = ?
+        SELECT
+            *
+        FROM	
+            destinos AS d
+        INNER JOIN publicaciones AS pub
+            ON d.id_destino = pub.id_destino
+        INNER JOIN perfiles as p
+            ON pub.id_usuario = p.id_usuario
+        WHERE d.id_destino = ?
     `,[id_destino])
-    */
-    res.render('destinos/destinos')
+    
+    /**
+     * Comentarios
+     */
+    const recomendaciones = await pool.query(
+    `
+        SELECT
+            *
+        FROM
+            recomendaciones as r
+        INNER JOIN destinos as d
+            ON r.id_destino = d.id_destino
+        WHERE d.id_destino = ?
+    `,[id_destino])
+
+    /**
+     * Comentarios
+     */
+    const comentarios = await pool.query(
+        `
+        SELECT
+            *
+        FROM
+            destinos as d
+        INNER JOIN comentarios as c
+            ON c.id_destino = d.id_destino
+        INNER JOIN perfiles as p
+            ON p.id_usuario = c.id_usuario
+        WHERE d.id_destino = 1
+        order by c.fecha_creacion_comentario ASC
+        `,[id_destino])
+
+
+    res.render('destinos/destinos',{destino: destinos[0],recomendaciones,comentarios})
 }
 
 destino.post_inicio = async (req,res) => {
