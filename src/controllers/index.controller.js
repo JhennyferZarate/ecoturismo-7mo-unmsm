@@ -31,7 +31,7 @@ index.get_inicio = async (req, res) => {
         `
         )
     
-    res.render('index',[Mejores,Ultimos])
+    res.render('index',{Mejores,Ultimos})
 }
 
 module.exports = index

@@ -34,11 +34,8 @@ destino.get_inicio = async (req,res) => {
     const id_usuario = req.user.id_usuario
     const id_destino = req.params.id
 
-    console.log(id_destino)
-    console.log(id_usuario)
-
     /**
-     * Destino y Usuario
+     * Destino
      */
 
     const destinos = await pool.query(
@@ -53,7 +50,19 @@ destino.get_inicio = async (req,res) => {
             ON pub.id_usuario = p.id_usuario
         WHERE d.id_destino = ?
     `,[id_destino])
-    
+
+    /**
+     * Usuario
+     */
+    const usuarios = await pool.query(
+        `
+            SELECT
+                *
+            FROM	
+                perfiles
+            WHERE id_usuario = ?
+        `,[id_usuario])
+
     /**
      * Comentarios
      */
@@ -86,7 +95,7 @@ destino.get_inicio = async (req,res) => {
         `,[id_destino])
 
 
-    res.render('destinos/destinos',{destino: destinos[0],recomendaciones,comentarios})
+    res.render('destinos/destinos',{destino: destinos[0],usuario: usuarios[0],recomendaciones,comentarios})
 }
 
 destino.post_inicio = async (req,res) => {

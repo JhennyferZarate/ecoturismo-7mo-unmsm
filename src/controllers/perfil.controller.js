@@ -4,8 +4,6 @@ const helpers = require('../library/helpers');
 const perfil = {}
 
 perfil.get_inicio = async (req,res) => {
-    // console.log(req.user.id_usuario);
-    
     const id_usuario = req.user.id_usuario
 
     /**
@@ -46,7 +44,6 @@ perfil.get_inicio = async (req,res) => {
     ,[id_usuario])
 
     res.render('perfil/perfil', {perfil: Perfil[0],destinos})
-    //res.render('perfil/perfil')
 }
 
 perfil.get_cambiar_datos = async (req,res) => {
@@ -142,7 +139,6 @@ perfil.post_cambiar_pass = async (req, res) => {
             WHERE
                 id_usuario = ?
             `,[new_pass,id_usuario])
-            //console.log(cambio)
         } else {
             console.log("contraseñas distintas")
             return res.redirect('/perfil')

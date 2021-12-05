@@ -55,20 +55,15 @@ passport.use('local.signup', new LocalStrategy({
         }
 
         await pool.query(`INSERT INTO perfiles SET ?`, [nuevoPerfil])
-        //console.log("Ingresando")
-        //console.log(nuevoUsuario)
         return done(null, nuevoUsuario);
     }
 }));
 
 passport.serializeUser((user, done) => {
-    //console.log(user)
     done(null, user.id_usuario)
 });
 
 passport.deserializeUser(async(id, done) => {
     const rows = await pool.query('SELECT * FROM usuarios WHERE id_usuario = ?', [id]);
-    //console.log("deserilizando")
-    //console.log(rows[0]);
     done(null, rows[0]);
 });
