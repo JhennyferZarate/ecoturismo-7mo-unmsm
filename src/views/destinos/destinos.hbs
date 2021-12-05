@@ -18,16 +18,16 @@
                                 <img src="https://www.movilzona.es/app/uploads-movilzona.es/2019/05/Foto-de-Perfil-en-WhatsApp.jpg?x=480&y=375&quality=40" alt="" width="90px" height="90px" class="rounded-circle">
                             </div>
                             <div class="col-auto">
-                                <p class="fw-bold m-0">{{destino.nombre_perfil}}</p>
-                                <p class="m-0" style="font-size: 8px;">{{destino.fecha_creacion_destino}}</p>
-                                <p class="m-0"><i class="fas fa-map-marker-alt m-2"></i>ubicacion</p>
+                                <p class="fw-bold m-0">{{destino.nombre_perfil}} {{destino.apellido_perfil}}</p>
+                                <p class="m-0" style="font-size: 8px;">{{timeago destino.fecha_creacion_destino}}</p>
+                                <p class="m-0"><i class="fas fa-map-marker-alt m-2"></i>{{destino.ciudad_ubicacion}}</p>
                             </div>
                             <div class="col-auto">
                                 <div class="m-2 d-flex align-items-center">
                                     <div class="rounded-circle p-2 m-3 d-flex justify-content-center align-items-center" style="background: pink">
                                         <i class="fas fa-heart" style="color: #2E3A59;"></i>
                                     </div>
-                                    <span>23 Me gusta</span>
+                                    <span>{{destino.like_publicacion}} Me gusta</span>
                                 </div>
                             </div>
                         </div>
@@ -62,8 +62,8 @@
                             <img src="https://www.movilzona.es/app/uploads-movilzona.es/2019/05/Foto-de-Perfil-en-WhatsApp.jpg?x=480&y=375&quality=40" alt="" width="90px" height="90px" class="rounded-circle">
                         </div>
                         <div class="col">
-                            <p class="fw-bold m-0">{{destino.nombre_perfil}}</p>
-                            <p class="m-0">/time registro\</p>
+                            <p class="fw-bold m-0">{{destino.nombre_perfil}} {{destino.apellido_perfil}}</p>
+                            <p class="m-0">{{timeago destino.fecha_creacion_perfil}}</p>
                             <button class="btn bg-primary-eco float-end">Comentar</button>
                         </div>
                         <div class="col-12 pt-3">
@@ -79,8 +79,8 @@
                                 <img src="https://www.movilzona.es/app/uploads-movilzona.es/2019/05/Foto-de-Perfil-en-WhatsApp.jpg?x=480&y=375&quality=40" alt="" width="90px" height="90px" class="rounded-circle">
                             </div>
                             <div class="col-2">
-                                <p class="fw-bold m-0">{{nombre_perfil}}</p>
-                                <p class="m-0 text-muted" style="font-size: 8px;">{{fecha_creacion_comentario}}</p>
+                                <p class="fw-bold m-0">{{nombre_perfil}} {{apellido_perfil}}</p>
+                                <p class="m-0 text-muted" style="font-size: 8px;">{{timeago fecha_creacion_comentario}}</p>
                             </div>
                             <div class="col-8">
                                 <p>{{contenido_comentario}}</p>

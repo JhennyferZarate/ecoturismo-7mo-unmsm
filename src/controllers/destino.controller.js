@@ -40,15 +40,17 @@ destino.get_inicio = async (req,res) => {
 
     const destinos = await pool.query(
     `
-        SELECT
-            *
-        FROM	
-            destinos AS d
-        INNER JOIN publicaciones AS pub
-            ON d.id_destino = pub.id_destino
-        INNER JOIN perfiles as p
-            ON pub.id_usuario = p.id_usuario
-        WHERE d.id_destino = ?
+    SELECT
+        *
+    FROM	
+        destinos AS d
+    INNER JOIN publicaciones AS pub
+        ON d.id_destino = pub.id_destino
+    INNER JOIN perfiles as p
+        ON pub.id_usuario = p.id_usuario
+    INNER JOIN ubicaciones as u
+        ON d.id_ubicacion = u.id_ubicacion
+    WHERE d.id_destino = ?
     `,[id_destino])
 
     /**
