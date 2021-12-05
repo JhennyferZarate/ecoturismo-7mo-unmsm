@@ -5,8 +5,8 @@ const pool = require('../database');
 const helpers = require('./helpers');
 
 passport.use('local.signin', new LocalStrategy({
-    usernameField: process.env.USER_ADMIN ||'email_usuario',
-    passwordField: process.env.PASS_ADMIN ||'pass_usuario',
+    usernameField: 'email_usuario',
+    passwordField: 'pass_usuario',
     passReqToCallback: true
 }, async (req, email_usuario, pass_usuario, done) => {
     const rows = await pool.query('SELECT * FROM usuarios WHERE email_usuario = ?', [email_usuario]);
