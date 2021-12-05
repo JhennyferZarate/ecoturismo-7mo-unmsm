@@ -18,17 +18,21 @@
                             </div>
                             <div class="mb-3">
                                 <label class="fw-bold" for="region">Región:</label>
-                                {{#each regiones}}
-                                    <input class="form-control" type="text" id="region" name="region" placeholder="Seleccione una opción" value={{region}}>
-                                {{/each}}
+                                <select class="form-select">
+                                    {{#each regiones}}
+                                        <option value={{id_region}}>{{region}}</option>
+                                    {{/each}}
+                                </select>
                             </div>
                         </div>
                         <div class="col-12 col-md-4">
                             <div class="mb-3">
                                 <label class="fw-bold" for="macroregion">Macrorregión:</label>
-                                {{#each macroregiones}}
-                                    <input class="form-control" type="text" id="macroregion" name="macroregion" placeholder="Seleccione una opción" value={{macroregion}}>
-                                {{/each}}
+                                <select class="form-select">
+                                    {{#each macroregiones}}
+                                        <option value={{id_macroregion}}>{{macroregion}}</option>
+                                    {{/each}}
+                                </select>
                             </div>
                             <div class="mb-3">
                                 <label class="fw-bold" for="lugar">Lugar turístico ecológico:</label>
@@ -43,11 +47,11 @@
                             <p>Escoje una fotografía que represente tu experiencia...</p>
                             <p class="fw-bold">¿No encuentras la ubicación?</p>
                             <a href="">Agrégala a esta lista</a>
-                            <input type="text" class="form-control" placeholder="Ingresa tu ubicacion ->deuda tecnida<-">
+                            <input type="text" class="form-control" placeholder="Ingresa tu ubicacion">
                         </div>
                         <div class="col-12 col-md-4 text-center">
                             <p class="fw-bold">Ingresa el contenido de tu publicación:</p>
-                            <textarea name="contenido_destino" id="contenidoPublicacion"></textarea>
+                            <textarea class="form-control" name="contenido_destino" id="contenidoPublicacion"></textarea>
                         </div>
                         <div class="col-12 col-md-4">
                             <p>Ingresa 3 recomendaciones:</p>

@@ -17,72 +17,31 @@
 			</div>
 			<div class="col-12">
 				<div class="carousel-prymary-eco">
-					<div class="card card-eco shadow m-3">
-						<img class="mx-auto p-0 card-img-top" src="https://i.ytimg.com/vi/BFoZMAud8KE/maxresdefault.jpg" alt="">
-						<div class="card-footer">
-							<p class="fw-bold">Pantanos de villas</p>
+					{{#each Mejores}}
+						<div class="card card-eco shadow m-3">
+							<img class="mx-auto p-0 card-img-top" src="https://i.ytimg.com/vi/BFoZMAud8KE/maxresdefault.jpg" alt="">
+							<div class="card-footer">
+								<p class="fw-bold">{{titulo_destino}}</p>
+							</div>
 						</div>
-					</div>
-					<div class="card card-eco shadow m-3">
-						<img class="mx-auto p-0 card-img-top" src="https://www.unapiquitos.edu.pe/contenido/opiniones/recursos/Loreto-pagagayo.jpg" alt="">
-						<div class="card-footer">
-							<p class="fw-bold">Pantanos de villas</p>
-						</div>
-					</div>
+					{{/each}}
 				</div>
 			</div>
 		</div>
 		<div class="row my-5">
 			<div class="col-12">
-				<h2 class="fw-bold">Por Ubicación</h2>
+				<h2 class="fw-bold">Publicaciones recientes</h2>
 			</div>
 			<div class="col-12">
 				<div class="carousel-prymary-eco">
-					<div class="card card-eco shadow m-3">
-						<img class="mx-auto p-0 card-img-top" src="https://i.ytimg.com/vi/TrLBLghtnc4/maxresdefault.jpg" alt="">
-						<div class="card-footer">
-							<p class="fw-bold">Lima</p>
+					{{#each Ultimos}}
+						<div class="card card-eco shadow m-3">
+							<img class="mx-auto p-0 card-img-top" src="https://i.ytimg.com/vi/TrLBLghtnc4/maxresdefault.jpg" alt="">
+							<div class="card-footer">
+								<p class="fw-bold">{{titulo_destino}}</p>
+							</div>
 						</div>
-					</div>
-					<div class="card card-eco shadow m-3">
-						<img class="mx-auto p-0 card-img-top" src="https://www.unapiquitos.edu.pe/contenido/opiniones/recursos/Loreto-pagagayo.jpg" alt="">
-						<div class="card-footer">
-							<p class="fw-bold">Loreto</p>
-						</div>
-					</div>
-					<div class="card card-eco shadow m-3">
-						<img class="mx-auto p-0 card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Ciudad_de_Ayacucho.jpg" alt="">
-						<div class="card-footer">
-							<p class="fw-bold">Ayacucho</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="row my-5">
-			<div class="col-12">
-				<h2 class="fw-bold">Destinos en la selva</h2>
-			</div>
-			<div class="col-12">
-				<div class="carousel-prymary-eco">
-					<div class="card card-eco shadow m-3">
-						<img class="mx-auto p-0 card-img-top" src="https://i.ytimg.com/vi/TrLBLghtnc4/maxresdefault.jpg" alt="">
-						<div class="card-footer">
-							<p class="fw-bold">Lima</p>
-						</div>
-					</div>
-					<div class="card card-eco shadow m-3">
-						<img class="mx-auto p-0 card-img-top" src="https://www.unapiquitos.edu.pe/contenido/opiniones/recursos/Loreto-pagagayo.jpg" alt="">
-						<div class="card-footer">
-							<p class="fw-bold">Loreto</p>
-						</div>
-					</div>
-					<div class="card card-eco shadow m-3">
-						<img class="mx-auto p-0 card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Ciudad_de_Ayacucho.jpg" alt="">
-						<div class="card-footer">
-							<p class="fw-bold">Ayacucho</p>
-						</div>
-					</div>
+					{{/each}}
 				</div>
 			</div>
 		</div>

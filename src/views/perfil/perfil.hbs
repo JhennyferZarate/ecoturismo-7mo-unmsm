@@ -38,89 +38,25 @@
             <div class="col-12">
                 <h2 class="text-center text-capitalize fw-bold">mis posters</h2>
             </div>
-            <div class="col-12 col-md-4">
-                <div class="card text-center" style="width: 18rem;">
-                    <div class="card-header">
-                        <p>Mi gran experiencia en Paracas con mis hijos</p>
-                    </div>
-                    <div class="card-body p-0">
-                        <img src="https://www.nationalgeographic.com.es/medio/2018/02/27/playa-de-isuntza-lekeitio__1280x720.jpg" class="card-img-top" alt="...">
-                    </div>
-                    <div class="card-footer">
-                        <p><a href="">Ver más</a><span class="visually-hidden">extra</span></p>
-                    </div>
-                </div>
-            </div>
-
-            {{!-- ELIMINAME --}}
-
-                <div class="col-12 col-md-4">
-                    <div class="card text-center" style="width: 18rem;">
-                        <div class="card-header">
-                            <p>Mi gran experiencia en Paracas con mis hijos</p>
-                        </div>
-                        <div class="card-body p-0">
-                            <img src="https://www.nationalgeographic.com.es/medio/2018/02/27/playa-de-isuntza-lekeitio__1280x720.jpg" class="card-img-top" alt="...">
-                        </div>
-                        <div class="card-footer">
-                            <p><a href="">Ver más</a><span class="visually-hidden">extra</span></p>
+            {{#if destinos}}
+                {{#each destinos}}
+                    <div class="col-12 col-md-4">
+                        <div class="card text-center" style="width: 18rem;">
+                            <div class="card-header">
+                                <p>Mi gran experiencia en Paracas con mis hijos</p>
+                            </div>
+                            <div class="card-body p-0">
+                                <img src="https://www.nationalgeographic.com.es/medio/2018/02/27/playa-de-isuntza-lekeitio__1280x720.jpg" class="card-img-top" alt="...">
+                            </div>
+                            <div class="card-footer">
+                                <p><a href="">Ver más</a><span class="visually-hidden">extra</span></p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-12 col-md-4">
-                    <div class="card text-center" style="width: 18rem;">
-                        <div class="card-header">
-                            <p>Mi gran experiencia en Paracas con mis hijos</p>
-                        </div>
-                        <div class="card-body p-0">
-                            <img src="https://www.nationalgeographic.com.es/medio/2018/02/27/playa-de-isuntza-lekeitio__1280x720.jpg" class="card-img-top" alt="...">
-                        </div>
-                        <div class="card-footer">
-                            <p><a href="">Ver más</a><span class="visually-hidden">extra</span></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-4">
-                    <div class="card text-center" style="width: 18rem;">
-                        <div class="card-header">
-                            <p>Mi gran experiencia en Paracas con mis hijos</p>
-                        </div>
-                        <div class="card-body p-0">
-                            <img src="https://www.nationalgeographic.com.es/medio/2018/02/27/playa-de-isuntza-lekeitio__1280x720.jpg" class="card-img-top" alt="...">
-                        </div>
-                        <div class="card-footer">
-                            <p><a href="">Ver más</a><span class="visually-hidden">extra</span></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-4">
-                    <div class="card text-center" style="width: 18rem;">
-                        <div class="card-header">
-                            <p>Mi gran experiencia en Paracas con mis hijos</p>
-                        </div>
-                        <div class="card-body p-0">
-                            <img src="https://www.nationalgeographic.com.es/medio/2018/02/27/playa-de-isuntza-lekeitio__1280x720.jpg" class="card-img-top" alt="...">
-                        </div>
-                        <div class="card-footer">
-                            <p><a href="">Ver más</a><span class="visually-hidden">extra</span></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-4">
-                    <div class="card text-center" style="width: 18rem;">
-                        <div class="card-header">
-                            <p>Mi gran experiencia en Paracas con mis hijos</p>
-                        </div>
-                        <div class="card-body p-0">
-                            <img src="https://www.nationalgeographic.com.es/medio/2018/02/27/playa-de-isuntza-lekeitio__1280x720.jpg" class="card-img-top" alt="...">
-                        </div>
-                        <div class="card-footer">
-                            <p><a href="">Ver más</a><span class="visually-hidden">extra</span></p>
-                        </div>
-                    </div>
-                </div>
-
-            {{!-- FIN ELIMINAME --}}
+                {{/each}}
+            {{else}}
+                <h2>No se encontraron datos</h2>
+            {{/if}}
         </div>
     </div>
 </section>
