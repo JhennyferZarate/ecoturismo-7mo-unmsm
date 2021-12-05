@@ -1,6 +1,10 @@
 require('dotenv').config()
+
 const express = require('express')
 const morgan = require('morgan')
+
+const helmet = require('helmet')
+
 const path = require('path') //importar libreria para señalar camino o URL
 const exphbs = require('express-handlebars') //importar la libreria express-handlebars como HTML
 const session = require('express-session') //almacenar los datos en la memoria del servidor
@@ -8,10 +12,10 @@ const passport = require('passport') //importar passport para utilizar su codigo
 const flash = require('connect-flash') //importar libreria para enviar mensajes a travez de las vistas
 const MySQLStore = require('express-mysql-session')(session) //guardar la sesiones en mysql
 const { database } = require('./keys') //importar la base de datos del archivo keys
-const helmet = require('helmet')
 
 const app = express()
 app.disable('x-powered-by')
+
 require('./library/passport')
 
 //configuracion
@@ -28,7 +32,9 @@ app.set('view engine', '.hbs');
 
 //Middlewares
 app.use(morgan('dev'))
-app.use(helmet())
+
+app.use(helmet.hidePoweredBy())
+
 app.use(express.urlencoded({extended: false}))
 app.use(express.json())
 app.use(session({
@@ -43,6 +49,8 @@ app.use(passport.session());
 
 //Global Variables
 app.use((req, res, next) => {
+    //app.locals.success = req.flash('success');
+    //app.locals.message = req.flash('message');
     app.locals.user = req.user;
     next();
 });
