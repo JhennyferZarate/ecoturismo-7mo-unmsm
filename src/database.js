@@ -1,11 +1,11 @@
 //Importar la base de datos de mysql
-const mysql = require('mysql');
+const mysql = require('mysql')
 
-const { promisify } = require('util');
+const { promisify } = require('util')
 
-const { database } = require('./keys'); //solo importar database
+const { database } = require('./keys') //solo importar database
 
-const pool = mysql.createPool(database);
+const pool = mysql.createPool(database)
 
 pool.getConnection((err, connection) => {
     if (err) {

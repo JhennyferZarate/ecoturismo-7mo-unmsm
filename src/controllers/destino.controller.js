@@ -119,8 +119,6 @@ destino.post_crear = async (req, res) => {
     
     const id_usuario = req.user.id_usuario
 
-    //console.log(id_usuario)
-    
     const {
         titulo_destino,
         region,
@@ -131,9 +129,6 @@ destino.post_crear = async (req, res) => {
         recomendacion_3,
         contenido_destino
     } = req.body
-
-    //console.log(req.body)
-    //console.log(ciudad_ubicacion)
 
     /**
      * Reconocer Region
@@ -148,8 +143,6 @@ destino.post_crear = async (req, res) => {
     WHERE
         regiones.region = ?
     `,[region])
-
-    //console.log(verficar_region[0].id_region)
     
     /**
      * Reconocer Macroregion
@@ -164,8 +157,6 @@ destino.post_crear = async (req, res) => {
         WHERE
             macroregiones.macroregion = ?
         `,[macroregion])
-    
-    //console.log(verficar_macroregion[0].id_macroregion)
 
     /**
      * insertar ubicacion
@@ -183,8 +174,6 @@ destino.post_crear = async (req, res) => {
     SET
         ?
     `,[nueva_ubicacion])
-
-    //console.log(ubicacion.insertId)
 
     /**
      * Insertar Destino
