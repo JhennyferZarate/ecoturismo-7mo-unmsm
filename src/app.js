@@ -3,7 +3,9 @@ require('dotenv').config()
 const express = require('express')
 const morgan = require('morgan')
 
+const cors = require('cors')
 const helmet = require('helmet')
+const bodyParser = require('body-parser')
 
 const path = require('path') //importar libreria para señalar camino o URL
 const exphbs = require('express-handlebars') //importar la libreria express-handlebars como HTML
@@ -34,8 +36,12 @@ app.set('view engine', '.hbs');
 app.use(morgan('dev'))
 
 app.use(helmet.hidePoweredBy())
+app.use(cors())
 
 app.use(express.urlencoded({extended: false}))
+
+app.use(bodyParser.json())
+
 app.use(express.json())
 app.use(session({
     secret: 'MySQL',
