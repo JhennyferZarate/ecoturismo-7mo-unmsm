@@ -3,7 +3,6 @@ const pool = require('../database')
 const destino = {}
 
 destino.get_filtro = async (req,res) => {
-    
     const destinos = await pool.query(
     `
         SELECT
@@ -21,7 +20,6 @@ destino.get_filtro = async (req,res) => {
                 INNER JOIN perfiles as p
                     ON pub.id_usuario = p.id_usuario
     `)
-    
     res.render('busqueda/buscar',{destinos})
 }
 
@@ -30,7 +28,6 @@ destino.post_filtro = async (req,res) => {
 }
 
 destino.get_inicio = async (req,res) => {
-    
     const id_usuario = req.user.id_usuario
     const id_destino = req.params.id
 
@@ -101,6 +98,88 @@ destino.get_inicio = async (req,res) => {
 }
 
 destino.post_inicio = async (req,res) => {
+    const action = req.body;
+    const id_usuario = req.user.id_usuario
+    const id_destino = req.params.id
+
+    if(nuevo_comentario == action.nuevo_comentario){
+        const nuevo_comentario = {
+            id_usuario,
+            id_destino,
+            contenido_comentario
+        }
+    
+        await pool.query(
+        `
+            INSERT INTO
+                comentarios
+            SET
+                ?
+        `,[nuevo_comentario])
+    }
+
+    if(like == action.denuncia){
+        const denuncias = await pool.query(
+        `
+            SELECT 
+                like_publicacion
+            FROM
+                publicaciones
+            WHERE
+                id_destino = ?
+        `,[id_destino])
+
+        denuncias[0].like_publicacion += 1
+
+        
+        const nuevo_like = {
+            id_usuario,
+            id_destino,
+            like_publicacion: denuncias[0].like_publicacion,
+            denuncia_publicacion: denuncias[0].denuncia_publicacion
+        }
+
+        await pool.query(
+        `
+            UPDATE
+                publicaciones.
+            SET
+                ?
+            WHERE
+                id_destino = ?
+        `,[nuevo_like,id_destino])
+    }
+
+    if(like == action.like){
+        const likes = await pool.query(
+        `
+            SELECT 
+                like_publicacion
+            FROM
+                publicaciones
+            WHERE
+                id_destino = ?
+        `,[id_destino])
+
+        likes[0].like_publicacion += 1
+
+        const nuevo_like = {
+            id_usuario,
+            id_destino,
+            like_publicacion: likes[0].like_publicacion,
+            denuncia_publicacion: likes[0].denuncia_publicacion
+        }
+
+        await pool.query(
+        `
+            UPDATE
+                publicaciones.
+            SET
+                ?
+            WHERE
+                id_destino = ?
+        `,[nuevo_like,id_destino])
+    }
     res.redirect('/')
 }
 
@@ -127,7 +206,6 @@ destino.get_crear = async (req, res) => {
 }
 
 destino.post_crear = async (req, res) => {
-    
     const id_usuario = req.user.id_usuario
 
     //console.log(id_usuario)
