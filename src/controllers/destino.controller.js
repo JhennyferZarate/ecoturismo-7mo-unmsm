@@ -26,6 +26,12 @@ destino.get_filtro = async (req,res) => {
 destino.post_filtro = async (req,res) => {
     res.render('busqueda/buscar',{destinos})
 }
+/*
+destino.post_comentar = async (req,res) => {
+    console.log(req.body)
+    res.redirect('/')
+}
+*/
 
 destino.get_inicio = async (req,res) => {
     const id_usuario = req.user.id_usuario
@@ -101,8 +107,8 @@ destino.post_inicio = async (req,res) => {
     const action = req.body;
     const id_usuario = req.user.id_usuario
     const id_destino = req.params.id
-
-    if(nuevo_comentario == action.nuevo_comentario){
+    
+    if(action["comentario"]){
         const nuevo_comentario = {
             id_usuario,
             id_destino,
@@ -117,70 +123,32 @@ destino.post_inicio = async (req,res) => {
                 ?
         `,[nuevo_comentario])
     }
-
-    if(like == action.denuncia){
-        const denuncias = await pool.query(
-        `
-            SELECT 
-                like_publicacion
-            FROM
-                publicaciones
-            WHERE
-                id_destino = ?
-        `,[id_destino])
-
-        denuncias[0].like_publicacion += 1
-
-        
-        const nuevo_like = {
-            id_usuario,
-            id_destino,
-            like_publicacion: denuncias[0].like_publicacion,
-            denuncia_publicacion: denuncias[0].denuncia_publicacion
-        }
-
+    
+    
+    if(action["denuncia"] === ""){
         await pool.query(
         `
             UPDATE
-                publicaciones.
+                publicaciones AS pub
             SET
-                ?
-            WHERE
-                id_destino = ?
-        `,[nuevo_like,id_destino])
-    }
-
-    if(like == action.like){
-        const likes = await pool.query(
-        `
-            SELECT 
-                like_publicacion
-            FROM
-                publicaciones
+                pub.denuncia_publicacion = pub.denuncia_publicacion + 1
             WHERE
                 id_destino = ?
         `,[id_destino])
-
-        likes[0].like_publicacion += 1
-
-        const nuevo_like = {
-            id_usuario,
-            id_destino,
-            like_publicacion: likes[0].like_publicacion,
-            denuncia_publicacion: likes[0].denuncia_publicacion
-        }
-
+    }
+    
+    if(action["like"] === ""){
         await pool.query(
         `
-            UPDATE
-                publicaciones.
-            SET
-                ?
-            WHERE
-                id_destino = ?
-        `,[nuevo_like,id_destino])
+        UPDATE
+            publicaciones AS pub
+        SET
+            pub.like_publicacion = pub.like_publicacion + 1
+        WHERE
+            id_destino = ?
+        `,[id_destino])
     }
-    res.redirect('/')
+    res.redirect(`/destinos/${id_destino}`)
 }
 
 destino.get_crear = async (req, res) => {

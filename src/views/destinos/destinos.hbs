@@ -22,14 +22,16 @@
                                 <p class="m-0">{{timeago destino.fecha_creacion_destino}}</p>
                                 <p class="m-0"><i class="fas fa-map-marker-alt m-2"></i>{{destino.ciudad_ubicacion}}</p>
                             </div>
-                            <div class="col-auto">
-                                <div class="m-2 d-flex align-items-center">
-                                    <div class="rounded-circle p-2 m-3 d-flex justify-content-center align-items-center" style="background: pink">
-                                        <i class="fas fa-heart" style="color: #2E3A59;"></i>
+                            <form action="/destinos/{{destino.id_destino}}" method="POST">
+                                <div class="col-auto">
+                                    <div class="m-2 d-flex align-items-center">
+                                        <button name="like" class="rounded-circle p-2 m-3 d-flex justify-content-center align-items-center" style="background: pink"  type="submit">
+                                                <i class="fas fa-heart" style="color: #2E3A59;"></i>
+                                        </button>
+                                        <span>{{destino.like_publicacion}} Me gusta</span>
                                     </div>
-                                    <a href="/destinos/likes/{{destino.id_destino}}"><span>{{destino.like_publicacion}} Me gusta</span></a>
                                 </div>
-                            </div>
+                            </form>
                         </div>
                         <div class="text-light p-4" style="background-color: #1F711D; border-radius: 30px;">
                             <h5 class="text-center fw-bold mb-3">3 Recomenraciones para Viajar</h5>
@@ -43,7 +45,11 @@
                     <div class="col-md-7 p-3 bg-light" style="border-radius: 20px;">
                         <h5 class="fw-bold">{{destino.titulo_destino}}</h5>
                         <p class="fw-bold">{{destino.contenido_destino}}</p>
-                        <a class="btn btn-primary-eco float-end" href="/destinos/denuncias/{{destino.id_destino}}"><i class="fas fa-exclamation-triangle"></i> Denunciar publicación</a>
+                        <form action="/destinos/{{destino.id_destino}}" method="POST">
+                            <button name="denuncia" class="btn btn-primary-eco float-end"  type="submit">
+                                    <i class="fas fa-exclamation-triangle"></i> Denunciar publicación
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -57,7 +63,7 @@
             <div class="col-12 col-md-8">
                 <h5 class="fw-bold text-center text-md-start">> Comentarios sobre la experiencia</h5>
                 <div class="col-12 p-3" style="background-color: #E9E9E9; border-radius: 30px;">
-                    <form action="/comentar/{{destino.id_publicacion}}" method="post">
+                    <form action="/destinos/{{destino.id_destino}}" method="POST">
                         <div class="row justify-content-center align-items-center p-3">
                             <div class="col-md-auto">
                                 <img src="https://www.movilzona.es/app/uploads-movilzona.es/2019/05/Foto-de-Perfil-en-WhatsApp.jpg?x=480&y=375&quality=40" alt="" width="90px" height="90px" class="rounded-circle">
@@ -68,7 +74,7 @@
                                 <button class="btn bg-primary-eco float-end" type="submit">Comentar</button>
                             </div>
                             <div class="col-12 pt-3">
-                                <textarea class="form-control" name="" id="" rows="3" placeholder="Ingresa tu comentario..."></textarea>
+                                <textarea class="form-control" name="comentario" id="comentario" rows="3" placeholder="Ingresa tu comentario..."></textarea>
                             </div>
                         </div>
                     </form>
