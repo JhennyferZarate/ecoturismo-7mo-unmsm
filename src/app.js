@@ -68,7 +68,7 @@ app.use(require('./routes/index.routes'))
 app.use(require('./routes/autenticacion.routes'))
 app.use('/destinos', require('./routes/destinos.routes'))
 app.use('/perfil', require('./routes/perfil.routes'))
-
+app.use('/admin',require('./routes/admin.routes'))
 
 
 //Public

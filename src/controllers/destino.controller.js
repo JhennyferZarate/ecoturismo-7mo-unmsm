@@ -24,14 +24,12 @@ destino.get_filtro = async (req,res) => {
 }
 
 destino.post_filtro = async (req,res) => {
-    res.render('busqueda/buscar',{destinos})
 }
-/*
-destino.post_comentar = async (req,res) => {
-    console.log(req.body)
-    res.redirect('/')
+
+destino.get_futuro = async (req,res) => {
+    res.render('/destinos/destino_futuro')
 }
-*/
+
 
 destino.get_inicio = async (req,res) => {
     const id_usuario = req.user.id_usuario
@@ -100,7 +98,7 @@ destino.get_inicio = async (req,res) => {
         `,[id_destino])
 
 
-    res.render('destinos/destinos',{destino: destinos[0],usuario: usuarios[0],recomendaciones,comentarios})
+    res.render('/destinos/destinos',{destino: destinos[0],usuario: usuarios[0],recomendaciones,comentarios})
 }
 
 destino.post_inicio = async (req,res) => {
