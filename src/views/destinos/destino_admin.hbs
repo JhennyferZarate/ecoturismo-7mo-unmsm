@@ -47,7 +47,7 @@
                         <p class="fw-bold">{{destino.contenido_destino}}</p>
                         <form action="/destinos/{{destino.id_destino}}" method="POST">
                             <button name="denuncia" class="btn btn-primary-eco float-end m-2"  type="submit">
-                                <i class="fas fa-exclamation-triangle"></i> Denunciar publicación
+                                <i class="fa fa-trash" aria-hidden="true"></i> Eliminar publicación
                             </button>
                         </form>
                         <form action="" method="POST">
@@ -99,10 +99,9 @@
                                 <p>{{contenido_comentario}}</p>
                             </div>
                             <div class="col-auto">
-                                {{!-- <form action="" method="post">
-                                    <button type="submit"><i class="fa fa-trash" aria-hidden="true" style="color: red"></i></button>
-                                </form> --}}
-                                <a href=""><i class="fa fa-trash" aria-hidden="true" style="color: red"></i></a>
+                                <form action="" method="post">
+                                    <button class="btn" type="submit"><i class="fa fa-trash" aria-hidden="true" style="color: red"></i></button>
+                                </form>
                             </div>
                         </div>
                     </div>
