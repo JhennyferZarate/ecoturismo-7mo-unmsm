@@ -93,6 +93,13 @@
                             <div class="col-8">
                                 <p>{{contenido_comentario}}</p>
                             </div>
+                            {{#if id_usuario == perfil.id_usuario}}
+                                <div class="col-auto">
+                                    <form action="" method="post">
+                                        <button class="btn" type="submit"><i class="fa fa-trash" aria-hidden="true" style="color: red"></i></button>
+                                    </form>
+                                </div>
+                            {{/if}}
                         </div>
                     </div>
                 {{/each}}
