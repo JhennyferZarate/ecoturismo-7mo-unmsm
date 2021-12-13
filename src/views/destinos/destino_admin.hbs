@@ -1,0 +1,79 @@
+<section class="container-fluid py-5 bg-light">
+    <div class="container mt-5 py-5">
+        <form action="/destinos/crear" method="post">
+            <div class="row g-5">
+                <h5 class="fw-bold"><i class="fas fa-share" style="transform: scaleX(-1);"></i> ¡Comparte tu experiencia de viaje!</h5>
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-12 col-md-4">
+                            <input type="file" id="seleccionArchivos" accept="image/">
+                            <div class="bg-secondary w-100 p-2 m-3" style="border-radius: 20px">
+                                <img id="imagenPrevisualizacion" width="100%" style="object-fit: cover;">
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <div class="mb-3">
+                                <label class="fw-bold" for="titulo">Titulo de tu publicación:</label>
+                                <input class="form-control" type="text" id="titulo" name="titulo_destino" placeholder="Ingresa el título de tu publicación">
+                            </div>
+                            <div class="mb-3">
+                                <label class="fw-bold" for="region">Región:</label>
+                                <select class="form-select">
+                                    {{#each regiones}}
+                                        <option value={{id_region}}>{{region}}</option>
+                                    {{/each}}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <div class="mb-3">
+                                <label class="fw-bold" for="macroregion">Macrorregión:</label>
+                                <select class="form-select">
+                                    {{#each macroregiones}}
+                                        <option value={{id_macroregion}}>{{macroregion}}</option>
+                                    {{/each}}
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="fw-bold" for="lugar">Lugar turístico ecológico:</label>
+                                <input class="form-control" type="text" id="lugar" name="ciudad_ubicacion" placeholder="Seleccione una opción">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-12 col-md-4 text-center">
+                            <p>Escoje una fotografía que represente tu experiencia...</p>
+                            <p class="fw-bold">¿No encuentras la ubicación?</p>
+                            <a href="">Agrégala a esta lista</a>
+                            <input type="text" class="form-control" placeholder="Ingresa tu ubicacion">
+                        </div>
+                        <div class="col-12 col-md-4 text-center">
+                            <p class="fw-bold">Ingresa el contenido de tu publicación:</p>
+                            <textarea class="form-control" name="contenido_destino" id="contenidoPublicacion"></textarea>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <p>Ingresa 3 recomendaciones:</p>
+                            <div class="mb-3">
+                                <label class="fw-bold" for="primera-recomendacion">1ra recomendacion:</label>
+                                <input class="form-control" type="text" id="primera-recomendacion" name="recomendacion_1" placeholder="Ingresa tu primera recomendación">
+                            </div>
+                            <div class="mb-3">
+                                <label class="fw-bold" for="segunda-recomendacion">2da recomendacion:</label>
+                                <input class="form-control" type="text" id="segunda-recomendacion" name="recomendacion_2" placeholder="Ingresa tu segunda recomendación">
+                            </div>
+                            <div class="mb-3">
+                                <label class="fw-bold" for="tercera-recomendacion">3ra recomendacion:</label>
+                                <input class="form-control" type="text" id="tercera-recomendacion" name="recomendacion_3" placeholder="Ingresa tu tercera recomendación">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 text-center">
+                    <button class=" btn btn-primary-eco" type="submit">Publicar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

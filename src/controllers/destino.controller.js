@@ -27,7 +27,7 @@ destino.post_filtro = async (req,res) => {
 }
 
 destino.get_futuro = async (req,res) => {
-    res.render('/destinos/destino_futuro')
+    res.render('destinos/destino_futuro')
 }
 
 
@@ -98,7 +98,7 @@ destino.get_inicio = async (req,res) => {
         `,[id_destino])
 
 
-    res.render('/destinos/destinos',{destino: destinos[0],usuario: usuarios[0],recomendaciones,comentarios})
+    res.render('destinos/destinos',{destino: destinos[0],usuario: usuarios[0],recomendaciones,comentarios})
 }
 
 destino.post_inicio = async (req,res) => {
