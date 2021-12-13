@@ -79,10 +79,11 @@
                         </div>
                     </form>
                 </div>
-
+                
                 {{#each comentarios}}
                     <div class="col-12 py-5">
                         <div class="row justify-content-center align-items-center">
+                            
                             <div class="col-auto">
                                 <img src="https://www.movilzona.es/app/uploads-movilzona.es/2019/05/Foto-de-Perfil-en-WhatsApp.jpg?x=480&y=375&quality=40" alt="" width="90px" height="90px" class="rounded-circle">
                             </div>
@@ -92,6 +93,7 @@
                             </div>
                             <div class="col-8">
                                 <p>{{contenido_comentario}}</p>
+                                {{eliminacion}}
                             </div>
                         </div>
                     </div>

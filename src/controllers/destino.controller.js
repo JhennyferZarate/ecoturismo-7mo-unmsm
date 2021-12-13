@@ -97,7 +97,17 @@ destino.get_inicio = async (req,res) => {
         order by c.fecha_creacion_comentario ASC
         `,[id_destino])
 
-
+    comentarios.map(comentario => {
+        if(comentario.id_usuario == id_usuario){
+            comentario.eliminacion = `<form action="/destinos/{{destino.id_destino}}" method="POST">
+                <button name="denuncia" class="btn btn-primary-eco float-end"  type="submit">
+                        <i class="fas fa-exclamation-triangle"></i> Denunciar publicación
+                </button>
+            </form>`
+            console.log(comentario)
+        }
+    })
+        
     res.render('destinos/destinos',{destino: destinos[0],usuario: usuarios[0],recomendaciones,comentarios})
 }
 
