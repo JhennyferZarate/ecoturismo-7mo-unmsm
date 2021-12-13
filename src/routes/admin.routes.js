@@ -1,7 +1,7 @@
 const pool = require('../database');
 const express = require('express')
 const router = express.Router()
-const admin = require('../controllers/destino.controller')
+const admin = require('../controllers/admin.controller')
 
 router.get('/filtro_destinos',admin.get_filtro)
 
