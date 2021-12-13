@@ -1,0 +1,131 @@
+<main class="container-fluid min-vh-100 py-5">
+    <div class="container mt-5 py-5">
+        <div class="row">
+            <div class="col-lg-3 col-md">
+                <form name="container-form"  method="POST" action="">
+                    <ul class="list-group">
+                        <li class="list-group-item mx-0" style="background: rgba(61,50,66,0.1); color: #162A35;"><b>Filtros</b></li>
+                        <li class="list-group-item mx-0" style="background: rgba(61,50,66,0.1); color: #162A35;">
+                            <div class="bg-light p-2" style="border-radius: 20px;">
+                                <p class="fw-bold">Tiempo</p>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="masReciente" name="tiempo" class="custom-control-input" value="masReciente">
+                                    <label class="custom-control-label" for="masReciente">Más reciente</label>
+                                </div>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="unDia" name="tiempo" class="custom-control-input" value="unDia">
+                                    <label class="custom-control-label" for="unDia">Hace 24 horas</label>
+                                </div>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="sieteDias" name="tiempo" class="custom-control-input" value="sieteDias">
+                                    <label class="custom-control-label" for="sieteDias">Hace 7 dias</label>
+                                </div>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="masAntiguo" name="tiempo" class="custom-control-input" value="masAntiguo">
+                                    <label class="custom-control-label" for="masAntiguo">Más antiguo</label>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item mx-0" style="background: rgba(61,50,66,0.1); color: #162A35;">
+                            <div class="bg-light p-2" style="border-radius: 20px;">
+                                <p class="fw-bold">Cantidad de denuncias</p>
+                                <div class="mb-2">
+                                    <input type="radio" id="menorMayor" name="denuncias" class="custom-control-input" value="menorMayor">
+                                    <label class="custom-control-label" for="menorMayor">Ver menor a mayor</label>
+                                </div>
+                                <div class="mb-2">
+                                    <input type="radio" id="mayorMenor" name="denuncias" class="custom-control-input" value="mayorMenor">
+                                    <label class="custom-control-label" for="mayorMenor">Ver mayor a menor</label>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item mx-0" style="background: rgba(61,50,66,0.1); color: #162A35;">
+                            <div class="bg-light p-2" style="border-radius: 20px;">
+                                <p class="fw-bold">Macroregiones</p>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="todos" name="macroregiones" class="custom-control-input" value="todos">
+                                    <label class="custom-control-label" for="todos">Todos</label>
+                                </div>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="norte" name="macroregiones" class="custom-control-input" value="norte">
+                                    <label class="custom-control-label" for="norte">Norte</label>
+                                </div>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="centro" name="macroregiones" class="custom-control-input" value="centro">
+                                    <label class="custom-control-label" for="centro">Centro</label>
+                                </div>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="sur" name="macroregiones" class="custom-control-input" value="sur">
+                                    <label class="custom-control-label" for="sur">Sur</label>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item mx-0 text-center" style="background: rgba(61,50,66,0.1); color: #162A35;">
+                            <button class="btn btn-primary m-2" >Buscar</button> 
+                        </li>
+                    </ul>
+                </form>
+            </div>
+
+            <div class="col-lg-9 col-md">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        {{#each destinos}}
+                        <div class="col-12 col-md-10 my-3">
+                            <div class="card mb-3 shadow overflow-hidden" style="max-height: 200px;">
+                                <div class="row g-0">
+                                    <div class="col-md-8">
+                                        <div class="card-body text-center pb-5">
+                                            <div class="row">
+                                                <div class="col-md-6 mb-3">
+                                                    <div class="row">
+                                                        <div class="col-4">
+                                                            <img class="rounded-circle" src="https://www.nationalgeographic.com.es/medio/2018/02/27/playa-de-isuntza-lekeitio__1280x720.jpg" alt="" width="50px" height="50px">
+                                                        </div>
+                                                        <div class="col">
+                                                            <p class="m-0">{{nombre_perfil}} {{apellido_perfil}}</p>
+                                                            <p class="m-0">{{timeago fecha_creacion_perfil}}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <i class="fas fa-map-marker-alt m-2"></i><span>{{ciudad_ubicacion}}, {{region}}</span>
+                                                </div>
+                                            </div>
+                                            <h5 class="card-title">{{titulo_destino}}</h5>
+                                            <p class="card-text text-truncate">{{contenido_destino}}</p>
+                                            <button class="btn btn-secondary" disabled="disabled"><i class="fa fa-calendar me-2" aria-hidden="true"></i>Ultima denuncia hecha:   20/06/2021 </button>
+                                            <a href="/admin/{{id_destino}}"><p>Ver más</p></a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <img src="https://img.freepik.com/foto-gratis/disparo-vertical-hermosa-puesta-sol-playa_181624-18213.jpg?size=338&ext=jpg" class="rounded-end" alt="..." height="300px" width="100%">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {{/each}}
+
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination">
+                                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script>
+    const url = "http://localhost:7000/destinos/filtro_destinos"
+    fetch(url)
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .then(e => console.log(e))
+</script>

@@ -1,0 +1,112 @@
+<section class="container-fluid min-vh-100 py-5">
+    <div class="container mt-5 pt-5">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="text-uppercase fw-bold text-center text-md-start">{{destino.titulo_destino}}</h1>
+            </div>
+        </div>
+
+        <div class="container" style="height: 200px; width: 100%; background-position: center center; background-repeat: no-repeat; background: url('https://1.bp.blogspot.com/-PI4rAOQbLMQ/Vv01sSTkJQI/AAAAAAAEEKY/zolRbvCxZkEjedW2pRwWRZTNbWsih2DtQ/s1600/atardeceres-y-amaneceres-%2Bpaisajes-andinos-colombianos_06.jpg'); background-size: cover;">
+        </div>
+
+        <div class="row py-5">
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-md-5 py-3">
+                        <div class="row justify-content-center align-items-center p-3">
+                            <div class="col-auto">
+                                <img src="https://www.movilzona.es/app/uploads-movilzona.es/2019/05/Foto-de-Perfil-en-WhatsApp.jpg?x=480&y=375&quality=40" alt="" width="90px" height="90px" class="rounded-circle">
+                            </div>
+                            <div class="col-auto">
+                                <p class="fw-bold m-0">{{destino.nombre_perfil}} {{destino.apellido_perfil}}</p>
+                                <p class="m-0">{{timeago destino.fecha_creacion_destino}}</p>
+                                <p class="m-0"><i class="fas fa-map-marker-alt m-2"></i>{{destino.ciudad_ubicacion}}</p>
+                            </div>
+                            <form action="/destinos/{{destino.id_destino}}" method="POST">
+                                <div class="col-auto">
+                                    <div class="m-2 d-flex align-items-center">
+                                        <button name="like" class="rounded-circle p-2 m-3 d-flex justify-content-center align-items-center" style="background: pink"  type="submit">
+                                                <i class="fas fa-heart" style="color: #2E3A59;"></i>
+                                        </button>
+                                        <span>{{destino.like_publicacion}} Me gusta</span>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="text-light p-4" style="background-color: #1F711D; border-radius: 30px;">
+                            <h5 class="text-center fw-bold mb-3">3 Recomenraciones para Viajar</h5>
+                            <ol>
+                                {{#each recomendaciones}}
+                                    <li><p>{{recomendacion}}</p></li>
+                                {{/each}}
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="col-md-7 p-3 bg-light" style="border-radius: 20px;">
+                        <h5 class="fw-bold">{{destino.titulo_destino}}</h5>
+                        <p class="fw-bold">{{destino.contenido_destino}}</p>
+                        <form action="/destinos/{{destino.id_destino}}" method="POST">
+                            <button name="denuncia" class="btn btn-primary-eco float-end m-2"  type="submit">
+                                <i class="fa fa-trash" aria-hidden="true"></i> Eliminar publicación
+                            </button>
+                        </form>
+                        <form action="" method="POST">
+                            <button name="" class="btn btn-success float-end m-2"  type="submit" style="border-radius: 20px;">
+                                <i class="fas fa-check"></i> Mantener publicacion
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-5 py-5">
+            <div class="col-12 col-md-4">
+                <h5 class="fw-bold text-center text-md-start">> Ubicación de la experiencia</h5>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d35288.42631726812!2d-77.0546366062687!3d-12.075863608155123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c91a5000653d%3A0x1654d5501a2ea1e9!2sMuseo%20Larco!5e0!3m2!1ses-419!2spe!4v1636822320116!5m2!1ses-419!2spe" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <div class="col-12 col-md-8">
+                {{!-- <h5 class="fw-bold text-center text-md-start">> Comentarios sobre la experiencia</h5>
+                <div class="col-12 p-3" style="background-color: #E9E9E9; border-radius: 30px;">
+                    <form action="/destinos/{{destino.id_destino}}" method="POST">
+                        <div class="row justify-content-center align-items-center p-3">
+                            <div class="col-md-auto">
+                                <img src="https://www.movilzona.es/app/uploads-movilzona.es/2019/05/Foto-de-Perfil-en-WhatsApp.jpg?x=480&y=375&quality=40" alt="" width="90px" height="90px" class="rounded-circle">
+                            </div>
+                            <div class="col">
+                                <p class="fw-bold m-0">{{destino.nombre_perfil}} {{destino.apellido_perfil}}</p>
+                                <p class="m-0">{{timeago destino.fecha_creacion_perfil}}</p>
+                                <button class="btn bg-primary-eco float-end" type="submit">Comentar</button>
+                            </div>
+                            <div class="col-12 pt-3">
+                                <textarea class="form-control" name="comentario" id="comentario" rows="3" placeholder="Ingresa tu comentario..."></textarea>
+                            </div>
+                        </div>
+                    </form>
+                </div> --}}
+
+                {{#each comentarios}}
+                    <div class="col-12 py-5">
+                        <div class="row justify-content-center align-items-center">
+                            <div class="col-auto">
+                                <img src="https://www.movilzona.es/app/uploads-movilzona.es/2019/05/Foto-de-Perfil-en-WhatsApp.jpg?x=480&y=375&quality=40" alt="" width="75px" height="75px" class="rounded-circle">
+                            </div>
+                            <div class="col-2">
+                                <p class="fw-bold m-0">{{nombre_perfil}} {{apellido_perfil}}</p>
+                                <p class="m-0 text-muted">{{timeago fecha_creacion_comentario}}</p>
+                            </div>
+                            <div class="col-8">
+                                <p>{{contenido_comentario}}</p>
+                            </div>
+                            <div class="col-auto">
+                                <form action="" method="post">
+                                    <button class="btn" type="submit"><i class="fa fa-trash" aria-hidden="true" style="color: red"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</section>

@@ -48,3 +48,6 @@ INSERT INTO `ecoturismo`.`comentarios` (`id_comentario`, `id_usuario`, `id_desti
 INSERT INTO `ecoturismo`.`comentarios` (`id_comentario`, `id_usuario`, `id_destino`, `contenido_comentario`, `fecha_creacion_comentario`) VALUES ('4', '2', '3', 'tacna bad', '2021-11-29 15:59:40');
 INSERT INTO `ecoturismo`.`comentarios` (`id_comentario`, `id_usuario`, `id_destino`, `contenido_comentario`, `fecha_creacion_comentario`) VALUES ('5', '3', '1', 'tumbes god', '2021-11-29 15:59:40');
 INSERT INTO `ecoturismo`.`comentarios` (`id_comentario`, `id_usuario`, `id_destino`, `contenido_comentario`, `fecha_creacion_comentario`) VALUES ('6', '3', '1', 'tumbes bad', '2021-11-29 15:59:40');
+INSERT INTO `ecoturismo`.`comentarios` (`id_comentario`, `id_usuario`, `id_destino`, `contenido_comentario`, `fecha_creacion_comentario`) VALUES ('7', '1', '1', 'eliminación 1', '2021-11-29 15:59:40');
+INSERT INTO `ecoturismo`.`comentarios` (`id_comentario`, `id_usuario`, `id_destino`, `contenido_comentario`, `fecha_creacion_comentario`) VALUES ('8', '2', '2', 'eliminación 2', '2021-11-29 15:59:40');
+INSERT INTO `ecoturismo`.`comentarios` (`id_comentario`, `id_usuario`, `id_destino`, `contenido_comentario`, `fecha_creacion_comentario`) VALUES ('9', '3', '3', 'eliminación 3', '2021-11-29 15:59:40');
