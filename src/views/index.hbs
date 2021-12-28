@@ -3,7 +3,7 @@
 		<div class="col-12 col-md-6 text-center">
 			<h1 class="text-light fw-bold">¡Conoce los destinos turísticos ecológicos más populares de Perú a través de experiencias!</h1>
 			<button type="button" class="btn btn-primary-eco animate__animated animate__bounce">
-				<span class="fs-3 p-2">¡Quiero compartir mi experiencia!</span>
+				<a href="/destinos/crear" style="color: white"><span class="fs-3 p-2">¡Quiero compartir mi experiencia!</span></a>
 			</button>
 		</div>
 	</div>
@@ -20,9 +20,12 @@
 					{{#each Mejores}}
 						<a href="/destinos/{{id_destino}}">
 							<div class="card card-eco shadow m-3">
+								<div class="card-header">
+                                    <p class="fw-bold">{{titulo_destino}}</p>
+								</div>
 								<img class="mx-auto p-0 card-img-top" src="https://i.ytimg.com/vi/BFoZMAud8KE/maxresdefault.jpg" alt="">
 								<div class="card-footer">
-									<p class="fw-bold">{{titulo_destino}}</p>
+									<p>Ver más</p>
 								</div>
 							</div>
 						</a>
@@ -39,9 +42,12 @@
 					{{#each Ultimos}}
 						<a href="/destinos/{{id_destino}}">
 							<div class="card card-eco shadow m-3">
+								<div class="card-header">
+                                    <p class="fw-bold">{{titulo_destino}}</p>
+								</div>
 								<img class="mx-auto p-0 card-img-top" src="https://i.ytimg.com/vi/TrLBLghtnc4/maxresdefault.jpg" alt="">
 								<div class="card-footer">
-									<p class="fw-bold">{{titulo_destino}}</p>
+									<p>Ver más</p>
 								</div>
 							</div>
 						</a>
@@ -52,7 +58,7 @@
 	</div>
 </section>
 
-<a href="#" class="btn btn-flotante rounded-circle">
+<a href="/destinos/crear" class="btn btn-flotante rounded-circle">
 	<i class="fas fa-pencil-alt" style="font-size: 42px;"></i>
 	<span>Agregar Publicación</span>
 </a>
