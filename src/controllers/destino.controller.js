@@ -1,4 +1,6 @@
 const pool = require('../database')
+const fs = require('fs')
+const path = require('path')
 
 const destino = {}
 
@@ -168,7 +170,7 @@ destino.get_crear = async (req, res) => {
         regiones
     `
     )
-    console.log(regiones)
+    //console.log(regiones)
     const macroregiones = await pool.query(
         `
         SELECT
@@ -177,14 +179,19 @@ destino.get_crear = async (req, res) => {
             macroregiones
         `
         )
-    console.log(macroregiones)
+    //console.log(macroregiones)
     res.render('destinos/destinos_crear',{regiones,macroregiones})
 }
 
 destino.post_crear = async (req, res) => {
     const id_usuario = req.user.id_usuario
 
-    //console.log(id_usuario)
+    var img_destino
+    if(req.file != undefined){
+        img_destino = req.file.buffer
+    }else {
+        img_destino = null
+    }
     
     const {
         titulo_destino,
@@ -197,7 +204,7 @@ destino.post_crear = async (req, res) => {
         contenido_destino
     } = req.body
 
-    //console.log(req.body)
+    console.log(req.body)
     //console.log(ciudad_ubicacion)
 
     /**
@@ -258,7 +265,8 @@ destino.post_crear = async (req, res) => {
     const nuevo_destino = {
         id_ubicacion: ubicacion.insertId,
         titulo_destino,
-        contenido_destino
+        contenido_destino,
+        img_destino
     }
 
     const destino = await pool.query(
@@ -291,14 +299,14 @@ destino.post_crear = async (req, res) => {
         id_usuario,
         id_destino: destino.insertId
     }
-
+    //console.log(nueva_publicacion)
     await pool.query(
     `
     INSERT INTO
         publicaciones
     SET
         ?
-    `[nueva_publicacion])
+    `,[nueva_publicacion])
 
     res.redirect('/perfil')
 }

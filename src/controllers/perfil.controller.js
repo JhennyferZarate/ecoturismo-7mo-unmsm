@@ -1,5 +1,7 @@
 const pool = require('../database')
 const helpers = require('../library/helpers');
+const fs = require('fs')
+const path = require('path')
 
 const perfil = {}
 
@@ -107,16 +109,15 @@ perfil.get_cambiar_pass = async (req, res) => {
 
 perfil.post_cambiar_pass = async (req, res) => {
     const id_usuario = req.user.id_usuario
-    console.log(req.body);
+    //console.log(req.body);
     const {
         pass_usuario,
         nuevo_pass_usuario,
         copia_nuevo_pass_usuario
     } = req.body
-    console.log(nuevo_pass_usuario)
-    console.log(copia_nuevo_pass_usuario)
+    //console.log(nuevo_pass_usuario)
+    //console.log(copia_nuevo_pass_usuario)
     if (nuevo_pass_usuario == copia_nuevo_pass_usuario){
-
         const rows = await pool.query(`
             SELECT 
                 *
@@ -125,12 +126,12 @@ perfil.post_cambiar_pass = async (req, res) => {
             WHERE
                 id_usuario = ?            
         `,[id_usuario]);
-        console.log(rows);
+        //console.log(rows);
         const validPassword = await helpers.matchPassword(pass_usuario, rows[0].pass_usuario)
         if (validPassword){
-            console.log(nuevo_pass_usuario)
+            //console.log(nuevo_pass_usuario)
             const new_pass = await helpers.encryptPassword(nuevo_pass_usuario);
-            console.log(new_pass)
+            //console.log(new_pass)
             await pool.query(`
             UPDATE
                 usuarios
@@ -140,21 +141,34 @@ perfil.post_cambiar_pass = async (req, res) => {
                 id_usuario = ?
             `,[new_pass,id_usuario])
         } else {
-            console.log("contraseñas distintas")
+            //console.log("contraseñas distintas")
             return res.redirect('/perfil')
         }
         
     } else {
-        console.log("copia distinta")
+        //console.log("copia distinta")
         return res.redirect('/perfil')
     }
     res.redirect('/perfil')
 }
 
-// TEST BUSCAR ELIMINARME!
-perfil.buscar = async (req, res) => {
-    res.render('busqueda/buscar')
+perfil.escribir = async (req, res, next) => {
+    const Destinos = await pool.query(
+    `
+    SELECT
+        *
+    FROM
+        destinos
+    `)
+
+    Destinos.map(destino =>{
+        if(destino.img_destino){
+            fs.writeFileSync(path.join(__dirname,'../public/images/destinos/' + destino.titulo_destino + '.png'), destino.img_destino)
+        }else{
+            //console.log('img sin imagen')
+        }
+    })
+    return next()
 }
-// FIN TEST BUSCAR ELIMINAME!
 
 module.exports = perfil

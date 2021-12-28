@@ -1,26 +1,26 @@
 <section class="container-fluid py-5 bg-light">
     <div class="container mt-5 py-5">
-        <form action="/destinos/crear" method="post">
+        <form action="/destinos/crear" method="post" enctype="multipart/form-data">
             <div class="row g-5">
                 <h5 class="fw-bold"><i class="fas fa-share" style="transform: scaleX(-1);"></i> ¡Comparte tu experiencia de viaje!</h5>
                 <div class="col-12">
                     <div class="row">
                         <div class="col-12 col-md-4">
-                            <input type="file" id="seleccionArchivos" accept="image/">
+                            <input type="file" id="seleccionArchivos" class="form-control-file" accept="image/" name="img">
                             <div class="bg-secondary w-100 p-2 m-3" style="border-radius: 20px">
                                 <img id="imagenPrevisualizacion" width="100%" style="object-fit: cover;">
                             </div>
                         </div>
                         <div class="col-12 col-md-4">
                             <div class="mb-3">
-                                <label class="fw-bold" for="titulo">Titulo de tu publicación:</label>
+                                <label class="fw-bold form-control" for="titulo">Titulo de tu publicación:</label>
                                 <input class="form-control" type="text" id="titulo" name="titulo_destino" placeholder="Ingresa el título de tu publicación">
                             </div>
                             <div class="mb-3">
                                 <label class="fw-bold" for="region">Región:</label>
-                                <select class="form-select">
+                                <select class="form-select" name="region">
                                     {{#each regiones}}
-                                        <option value={{id_region}}>{{region}}</option>
+                                        <option value={{region}}  class="form-control-file">{{region}}</option>
                                     {{/each}}
                                 </select>
                             </div>
@@ -28,9 +28,9 @@
                         <div class="col-12 col-md-4">
                             <div class="mb-3">
                                 <label class="fw-bold" for="macroregion">Macrorregión:</label>
-                                <select class="form-select">
+                                <select class="form-select" name="macroregion">
                                     {{#each macroregiones}}
-                                        <option value={{id_macroregion}}>{{macroregion}}</option>
+                                        <option value={{macroregion}}  class="form-control-file">{{macroregion}}</option>
                                     {{/each}}
                                 </select>
                             </div>
