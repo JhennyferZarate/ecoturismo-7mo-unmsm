@@ -17,25 +17,25 @@
                                         <div class="col-12">
                                             <p class="mb-0">con</p>
                                         </div>
-                                        <div class="col-12">
+                                        {{!-- <div class="col-12">
                                             <button type="button" class="btn bt-block col-12 my-2 bg-primary text-light">Facebook</button>
                                             <button type="button" class="btn bt-block col-12 my-2 bg-danger text-light">Google</button>
                                         </div>
                                         <div class="col-12 my-4">
                                             <p class="mb-0">o registrate llenando</p>
+                                        </div> --}}
+                                        <div class="col-12 col-md-6 mb-3">
+                                            <input class="form-control" type="text" placeholder="Nombre" id="nombre_perfil" name="nombre_perfil" required>
                                         </div>
                                         <div class="col-12 col-md-6 mb-3">
-                                            <input class="form-control" type="text" placeholder="Nombre" id="nombre_perfil" name="nombre_perfil">
-                                        </div>
-                                        <div class="col-12 col-md-6 mb-3">
-                                            <input class="form-control" type="text" placeholder="Apellido" id="apellido_perfil" name="apellido_perfil">
+                                            <input class="form-control" type="text" placeholder="Apellido" id="apellido_perfil" name="apellido_perfil" required>
                                         </div>
                                         <div class="col-12 mb-3">
-                                            <input class="form-control" type="email" placeholder="Correo Electrónico" id="email_usuario" name="email_usuario">
+                                            <input class="form-control" type="email" placeholder="Correo Electrónico" id="email_usuario" name="email_usuario" required>
                                         </div>
                                         <div class="col-12 col-md-6 mb-3">
                                             <div class="input-group">
-                                                <input class="form-control" type="password" placeholder="Contraseña" id="pass_usuario" name="pass_usuario">
+                                                <input class="form-control" type="password" placeholder="Contraseña" id="pass_usuario" name="pass_usuario" required>
                                                 <div class="input-group-append">
                                                     <button class="btn btn-primary" type="button" onclick="mostrarPassword('pass_usuario', 'iconPass')"> <span id="iconPass"  class="fa fa-eye-slash"></span> </button>
                                                 </div>
@@ -43,7 +43,7 @@
                                         </div>
                                         <div class="col-12 col-md-6 mb-3">
                                             <div class="input-group">
-                                                <input class="form-control" type="password" placeholder="ConfirmarContraseña" id="confirmarPasswordRegistro">
+                                                <input class="form-control" type="password" placeholder="ConfirmarContraseña" id="confirmarPasswordRegistro" required>
                                                 <div class="input-group-append">
                                                     <button class="btn btn-primary" type="button" onclick="mostrarPassword('confirmarPasswordRegistro', 'iconConfirmarPass')"> <span id="iconConfirmarPass"  class="fa fa-eye-slash"></span> </button>
                                                 </div>
