@@ -1,5 +1,3 @@
-const pool = require('../database')
-
 const autenticacion = {}
 
 autenticacion.get_registro = async (req,res) => {
