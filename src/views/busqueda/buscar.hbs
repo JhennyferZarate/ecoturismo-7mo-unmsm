@@ -5,7 +5,7 @@
                 <form name="container-form"  method="POST" action="">
                     <ul class="list-group">
                         <li class="list-group-item mx-0" style="background: rgba(61,50,66,0.1); color: #162A35;"><b>Filtros</b></li>
-                        <li class="list-group-item mx-0" style="background: rgba(61,50,66,0.1); color: #162A35;">
+                        {{!-- <li class="list-group-item mx-0" style="background: rgba(61,50,66,0.1); color: #162A35;">
                             <div class="bg-light p-2" style="border-radius: 20px;">
                                 <p class="fw-bold">Tiempo</p>
                                 <div class="custom-control custom-checkbox">
@@ -25,24 +25,24 @@
                                     <label class="custom-control-label" for="masAntiguo">Más antiguo</label>
                                 </div>
                             </div>
-                        </li>
+                        </li> --}}
                         <li class="list-group-item mx-0" style="background: rgba(61,50,66,0.1); color: #162A35;">
                             <div class="bg-light p-2" style="border-radius: 20px;">
                                 <p class="fw-bold">Macroregiones</p>
-                                <div class="custom-control custom-checkbox">
+                                {{!-- <div class="custom-control custom-checkbox">
                                     <input type="checkbox" id="todos" name="macroregiones" class="custom-control-input" value="todos">
                                     <label class="custom-control-label" for="todos">Todos</label>
-                                </div>
+                                </div> --}}
                                 <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" id="norte" name="macroregiones" class="custom-control-input" value="norte">
+                                    <input type="checkbox" id="norte" name="macroregiones" class="custom-control-input" value="norte"  onchange="modificarValor(norte.value, norte.checked)">
                                     <label class="custom-control-label" for="norte">Norte</label>
                                 </div>
                                 <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" id="centro" name="macroregiones" class="custom-control-input" value="centro">
+                                    <input type="checkbox" id="centro" name="macroregiones" class="custom-control-input" value="centro" onchange="modificarValor(centro.value, centro.checked)">
                                     <label class="custom-control-label" for="centro">Centro</label>
                                 </div>
                                 <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" id="sur" name="macroregiones" class="custom-control-input" value="sur">
+                                    <input type="checkbox" id="sur" name="macroregiones" class="custom-control-input" value="sur" onchange="modificarValor(sur.value, sur.checked)">
                                     <label class="custom-control-label" for="sur">Sur</label>
                                 </div>
                             </div>
@@ -52,92 +52,132 @@
                                 <p class="fw-bold">Regiones</p>
                                 <p>Norte</p>
                                 <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" id="tumbes" name="regiones" class="custom-control-input" value="tumbes">
+                                    <input type="checkbox" id="tumbes" name="regiones" class="custom-control-input" value="tumbes" onchange="modificarValor(tumbes.value, tumbes.checked)">
                                     <label class="custom-control-label" for="tumbes">Tumbes</label>
                                 </div>
                                 <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" id="piura" name="regiones" class="custom-control-input" value="piura">
+                                    <input type="checkbox" id="piura" name="regiones" class="custom-control-input" value="piura" onchange="modificarValor(piura.value, piura.checked)">
                                     <label class="custom-control-label" for="piura">Piura</label>
                                 </div>
                                 <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" id="lambayeque" name="regiones" class="custom-control-input" value="lambayeque">
+                                    <input type="checkbox" id="lambayeque" name="regiones" class="custom-control-input" value="lambayeque" onchange="modificarValor(lambayeque.value, lambayeque.checked)">
                                     <label class="custom-control-label" for="lambayeque">Lambayeque</label>
                                 </div>
                                 <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" id="cajamarca" name="regiones" class="custom-control-input" value="cajamarca">
+                                    <input type="checkbox" id="cajamarca" name="regiones" class="custom-control-input" value="cajamarca" onchange="modificarValor(cajamarca.value, cajamarca.checked)">
                                     <label class="custom-control-label" for="cajamarca">Cajamarca</label>
                                 </div>
                                 <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" id="libertad" name="regiones" class="custom-control-input" value="libertad">
+                                    <input type="checkbox" id="libertad" name="regiones" class="custom-control-input" value="libertad" onchange="modificarValor(libertad.value, libertad.checked)">
                                     <label class="custom-control-label" for="libertad">La libertad</label>
                                 </div>
 
                                 <p>Centro</p>
                                 <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" id="lima" name="regiones" class="custom-control-input" value="lima">
+                                    <input type="checkbox" id="lima" name="regiones" class="custom-control-input" value="lima" onchange="modificarValor(lima.value, lima.checked)">
                                     <label class="custom-control-label" for="lima">Lima</label>
                                 </div>
                                 <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" id="ancash" name="regiones" class="custom-control-input" value="ancash">
+                                    <input type="checkbox" id="ancash" name="regiones" class="custom-control-input" value="ancash" onchange="modificarValor(ancash.value, ancash.checked)">
                                     <label class="custom-control-label" for="ancash">Ancash</label>
                                 </div>
                                 <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" id="junin" name="regiones" class="custom-control-input" value="junin">
+                                    <input type="checkbox" id="junin" name="regiones" class="custom-control-input" value="junin" onchange="modificarValor(junin.value, junin.checked)">
                                     <label class="custom-control-label" for="junin">Junin</label>
                                 </div>
                                 <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" id="pasco" name="regiones" class="custom-control-input" value="pasco">
+                                    <input type="checkbox" id="pasco" name="regiones" class="custom-control-input" value="pasco" onchange="modificarValor(pasco.value, pasco.checked)">
                                     <label class="custom-control-label" for="pasco">Cerro de Pasco</label>
                                 </div>
                                 <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" id="huanuco" name="regiones" class="custom-control-input" value="huanuco">
+                                    <input type="checkbox" id="huanuco" name="regiones" class="custom-control-input" value="huanuco" onchange="modificarValor(huanuco.value, huanuco.checked)">
                                     <label class="custom-control-label" for="huanuco">Huanuco</label>
+                                </div>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="huancavelica" name="regiones" class="custom-control-input" value="huancavelica" onchange="modificarValor(huancavelica.value, huancavelica.checked)">
+                                    <label class="custom-control-label" for="huancavelica">Huancavelica</label>
+                                </div>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="ayacucho" name="regiones" class="custom-control-input" value="ayacucho" onchange="modificarValor(ayacucho.value, ayacucho.checked)">
+                                    <label class="custom-control-label" for="ayacucho">Ayacucho</label>
+                                </div>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="ica" name="regiones" class="custom-control-input" value="ica" onchange="modificarValor(ica.value, ica.checked)">
+                                    <label class="custom-control-label" for="ica">Ica</label>
+                                </div>
+
+                                <p>Sur</p>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="arequipa" name="regiones" class="custom-control-input" value="arequipa" onchange="modificarValor(arequipa.value, arequipa.checked)">
+                                    <label class="custom-control-label" for="arequipa">Arequipa</label>
+                                </div>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="moquegua" name="regiones" class="custom-control-input" value="moquegua" onchange="modificarValor(moquegua.value, moquegua.checked)">
+                                    <label class="custom-control-label" for="moquegua">Moquegua</label>
+                                </div>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="tacna" name="regiones" class="custom-control-input" value="tacna" onchange="modificarValor(tacna.value, tacna.checked)">
+                                    <label class="custom-control-label" for="tacna">Tacna</label>
+                                </div>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="cuzco" name="regiones" class="custom-control-input" value="cuzco" onchange="modificarValor(cuzco.value, cuzco.checked)">
+                                    <label class="custom-control-label" for="cuzco">Cuzco</label>
+                                </div>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="madre" name="regiones" class="custom-control-input" value="madre" onchange="modificarValor(madre.value, madre.checked)">
+                                    <label class="custom-control-label" for="madre">Madre de Dios</label>
+                                </div>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="apurimac" name="regiones" class="custom-control-input" value="apurimac" onchange="modificarValor(apurimac.value, apurimac.checked)">
+                                    <label class="custom-control-label" for="apurimac">Apurímac</label>
                                 </div>
                             </div>
                         </li>
-                        <li class="list-group-item mx-0 text-center" style="background: rgba(61,50,66,0.1); color: #162A35;">
+                        {{!-- <li class="list-group-item mx-0 text-center" style="background: rgba(61,50,66,0.1); color: #162A35;">
                             <button class="btn btn-primary m-2" >Buscar</button> 
-                        </li>
+                        </li> --}}
                     </ul>
                 </form>
             </div>
 
             <div class="col-lg-9 col-md">
                 <div class="container">
-                    <div class="row justify-content-center">
+                    <div class="row justify-content-center" id="contenedorPosts">
                         {{#each destinos}}
-                        <div class="col-12 col-md-10 my-3">
-                            <div class="card mb-3 shadow overflow-hidden" style="max-height: 200px;">
-                                <div class="row g-0">
-                                    <div class="col-md-8">
-                                        <div class="card-body text-center pb-5">
-                                            <div class="row">
-                                                <div class="col-md-6 mb-3">
+                            <div class="{{region}} {{macroregion}}">
+                                <div class="col-12 col-md-10 my-3">
+                                    <div class="card mb-3 shadow overflow-hidden" style="max-height: 200px;">
+                                        <div class="row g-0">
+                                            <div class="col-md-8">
+                                                <div class="card-body text-center pb-5">
                                                     <div class="row">
-                                                        <div class="col-4">
-                                                            <img class="rounded-circle" src="https://www.nationalgeographic.com.es/medio/2018/02/27/playa-de-isuntza-lekeitio__1280x720.jpg" alt="" width="50px" height="50px">
+                                                        <div class="col-md-6 mb-3">
+                                                            <div class="row">
+                                                                <div class="col-4">
+                                                                    <img class="rounded-circle" src="https://www.nationalgeographic.com.es/medio/2018/02/27/playa-de-isuntza-lekeitio__1280x720.jpg" alt="" width="50px" height="50px">
+                                                                </div>
+                                                                <div class="col">
+                                                                    <p class="m-0">{{nombre_perfil}} {{apellido_perfil}}</p>
+                                                                    <p class="m-0">{{timeago fecha_creacion_perfil}}</p>
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                        <div class="col">
-                                                            <p class="m-0">{{nombre_perfil}} {{apellido_perfil}}</p>
-                                                            <p class="m-0">{{timeago fecha_creacion_perfil}}</p>
+                                                        <div class="col-md-6">
+                                                            <i class="fas fa-map-marker-alt m-2"></i><span>{{ciudad_ubicacion}}, {{region}}</span>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <i class="fas fa-map-marker-alt m-2"></i><span>{{ciudad_ubicacion}}, {{region}}</span>
+                                                    <h5 class="card-title">{{titulo_destino}}</h5>
+                                                    <p class="card-text text-truncate">{{contenido_destino}}</p>
+                                                    <a href="/destinos/{{id_destino}}"><p>Ver más</p></a>
                                                 </div>
                                             </div>
-                                            <h5 class="card-title">{{titulo_destino}}</h5>
-                                            <p class="card-text text-truncate">{{contenido_destino}}</p>
-                                            <a href="/destinos/{{id_destino}}"><p>Ver más</p></a>
+                                            <div class="col-md-4">
+                                                <img src="https://img.freepik.com/foto-gratis/disparo-vertical-hermosa-puesta-sol-playa_181624-18213.jpg?size=338&ext=jpg" class="rounded-end" alt="..." height="300px" width="100%">
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <img src="https://img.freepik.com/foto-gratis/disparo-vertical-hermosa-puesta-sol-playa_181624-18213.jpg?size=338&ext=jpg" class="rounded-end" alt="..." height="300px" width="100%">
                                     </div>
                                 </div>
                             </div>
-                        </div>
                         {{/each}}
                         <nav aria-label="Page navigation example">
                             <ul class="pagination">
@@ -154,6 +194,13 @@
         </div>
     </div>
 </main>
+
+<script>
+    function modificarValor(valor, condicion){
+        if(!condicion) $(`#contenedorPosts > div:not(.${valor})`).removeClass("hidden-aux");
+        else $(`#contenedorPosts > div:not(.${valor})`).addClass("hidden-aux");
+    }
+</script>
 
 <script>
     const url = "http://localhost:7000/destinos/filtro_destinos"
