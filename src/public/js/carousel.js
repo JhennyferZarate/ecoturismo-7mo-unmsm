@@ -1,3 +1,5 @@
+//funcion cuando todo este correctamente cargado
+// //esta version es la mas optima par autilizar
 $(function(){
     // cuando el documento esta cargado
     $('.carousel-prymary-eco').slick({
@@ -24,8 +26,12 @@ $(function(){
             breakpoint: 1024,
             // configuracion
             settings: {
+                // configuracion > 1024px
+                // mostrar 3 slides
                 slidesToShow: 3,
+                // slides para escrolear
                 slidesToScroll: 3,
+                // loop infinito
                 infinite: true,
             }
             },
@@ -34,8 +40,12 @@ $(function(){
             breakpoint: 600,
             // configuracion
             settings: {
+                // configuracion para 600px
+                // slides par amostrar 
                 slidesToShow: 2,
+                // slides para scroller
                 slidesToScroll: 2
+                // el loop infinito se queda heredado
             }
             },
             {
@@ -43,8 +53,11 @@ $(function(){
             breakpoint: 480,
             // configuracion
             settings: {
+                // configuracion para 480px 
                 slidesToShow: 1,
+                // slides par amostrar
                 slidesToScroll: 1
+                // slides para scrollear
             }
             }
         ]

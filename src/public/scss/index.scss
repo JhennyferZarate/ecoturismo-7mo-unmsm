@@ -1,21 +1,30 @@
 // configguracion general
 *{
+    // tipo de letra por defecto
     font-family: 'Nunito', sans-serif;
+    // tip de scroll bar 
+    // scrooll bar personalizado
     ::-webkit-scrollbar{
+        // tamaño minimo
         width: 5px;
         height: 5px;
+        // evento de utilizacion
         &-track{
+            // se ocurece
             background: rgba(0, 0, 0, 0.1);
         }
     }
 }
 
 // variables globales
+// color primario
 $primary-color: #802121;
+// colo secundario
 $secondary-color: #195C2C;
 
 // color de inputs
 input::placeholder{
+    // color blanco de placeholders
     color: white;
 }
 
@@ -23,47 +32,66 @@ input::placeholder{
 .bg{
     // landing principal
     &-landing-eco{
+        // backgroun externo
         background-image: url("/img/background_landing.png");
+        // objeto cover fit
         object-fit: cover;
+        // centrado
         background-position: center center;
+        // no debe repetirse
         background-repeat: no-repeat;
     }
     // oscuro
     &-dark-eco{
+        // fondo scuro
         background-color: #4A4A4A;
+        // letra blanca para hacer contraste
         color: white;
     }
     // background primario
     &-primary-eco{
+        // background primary
         background-color: $primary-color;
+        // color de contraste
         color: white;
         &:hover{
+            // el hover no cambia el color
             color: white;
         }
     }
     // color crema
     &-crema-eco{
+        // color crema personalizado
         background-color: #F8FFF6;
     }
 }
 
 // color para enlaces
 .color{
+    // color primario de texto
     &-primary-eco{
+        // el color no cambia con el hover
         &:hover{
+            // color personal de marca
             color: $primary-color;
         }
+        // color personalizado
         color: $primary-color;
     }
 }
 
 // color a enlaces
 a{
+    // el color no cambia en el evento hover
     &:hover{
+        // mismo color
         color: $primary-color;
+        // el hover modifica el texto 
         text-decoration: underline!important;
     }
+    // color primario
     color: $primary-color;
+    // decoracion nula
     text-decoration: none;
 }
 
@@ -71,35 +99,58 @@ a{
 .btn-flotante {
     // tamaño definido
     width: 125px; 
+    // tamaño personlizado
     height: 125px;
+    // sin decoracion a enlaces
     text-decoration: none;
+    // tamaño de letras
     font-size: 12px; 
+    // color definido
     color: #ffffff;
+    // espacio entre texto
     letter-spacing: 2px; 
+    // color del boton
     background-color: #284E16;
+    // espaciado
     padding: 18px 30px;
+    // posicion estatica
     position: fixed;
+    // tamaño definido
     bottom: 40px;
+    // esquina inferior derecha
     right: 40px;
+    // transicion de color
     transition: all 300ms ease 0ms;
+    // para evitar choques
     z-index: 99;
     &:hover {
+        // cambio de color
         background-color: #2c2fa5;
+        // se crea una sombra
         box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
+        // movvimiento superior
         transform: translateY(-7px);
     }
 }
 
 // boton flotante responsive (mas pequeño)
 @media only screen and (max-width: 600px) {
+    // hereda lo anteroi
     .btn-flotante {
+        // su tamaño es automatico
         width: auto;
+        // alto automatico
         height: auto;
+        // tamaño dee letra 
         font-size: 32px;
+        // paddin pequeño
         padding: 12px 20px;
+        // posicion modificada
         bottom: 20px;
+        // posicion modificada
         right: 20px;
         p, span{
+            // se quitan los textos
             display: none;
         }
     }
@@ -107,15 +158,24 @@ a{
 
 // card
 .card{
+    // card personalizada
     &-eco{
+        // imagen con tamaño definidos
         img{
+            // cubre su contenedor
             width: 100%;
+            // tamaño fijo
             height: 200px;
+            // cubre todo el contenedor
             object-fit: cover
         }
+        // transicion delgada
         transition: all 300ms ease 0ms;
+        // con hover
         &:hover {
+            // sonbra
             box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
+            // transicion
             transform: translateY(-7px);
         }
     }
@@ -125,19 +185,29 @@ a{
 .btn{
     // boton primario
     &-primary-eco{
+        // backgorund color por defecto
         background-color: $primary-color;
+        // border radius
         border-radius: 20px;
+        // color por defecto
         color: white;
+        // el hover no cambia el color
         &:hover{
+            // mismo color
             color: white;
         }
     }
     // boton secundario
     &-secondary-eco{
+        // color secundario
         background-color: $secondary-color;
+        // borde radius compartid
         border-radius: 20px;
+        // color definido
         color: white;
+        // el hover no cambia el color
         &:hover{
+            // mismo color
             color: white;
         }
     }
