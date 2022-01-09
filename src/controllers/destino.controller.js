@@ -97,7 +97,7 @@ destino.post_crear = async (req, res) => {
         titulo_destino,
         contenido_destino
     }
-    const destino = await db.destinoPostDestino(nuevo_destino)
+    await db.destinoPostDestino(nuevo_destino)
     /**
      * Insertar recomendaciones
      */

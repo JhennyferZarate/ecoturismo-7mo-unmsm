@@ -33,7 +33,8 @@ admin.get_inicio = async (req,res) => {
     res.render('destinos/destino_admin',{destino: destinos[0],usuario: usuarios[0],recomendaciones,comentarios})
 }
 
-admin.post_inicio = async (req,res) => {
+admin.post_inicio = async (req,res,next) => {
+    return next
 }
 
 module.exports = admin
