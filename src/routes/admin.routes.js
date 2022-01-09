@@ -1,4 +1,20 @@
-const pool = require('../database');
+/**
+ * Importamos los modulos:
+ *  EXPRESS.
+ *      ROUTER
+ *      este modulo nos permite crear rutas HTTP que nos permite
+ *      establecer las caracteristicas de acción
+ *      GET
+ *          obtener información
+ *      POST
+ *          enviar información
+ *      PUT
+ *          actulizar información
+ *      DELETE
+ *          eliminar información
+ *  ADMIN
+ *      
+ */
 const express = require('express')
 const router = express.Router()
 const admin = require('../controllers/admin.controller')
