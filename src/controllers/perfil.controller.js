@@ -66,10 +66,8 @@ perfil.post_cambiar_pass = async (req, res) => {
     res.redirect('/perfil')
 }
 
-// TEST BUSCAR ELIMINARME!
 perfil.buscar = async (req, res) => {
     res.render('busqueda/buscar')
 }
-// FIN TEST BUSCAR ELIMINAME!
 
 module.exports = perfil

@@ -7,7 +7,8 @@ destino.get_filtro = async (req,res) => {
     res.render('busqueda/buscar',{destinos})
 }
 
-destino.post_filtro = async (req,res) => {
+destino.post_filtro = async (req,res,next) => {
+    return next
 }
 
 destino.get_futuro = async (req,res) => {

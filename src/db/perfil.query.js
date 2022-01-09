@@ -6,7 +6,7 @@ const db = {}
  * GET QUERYS
  */
 db.perfilGetPerfil = async (id_usuario) => {
-    return await pool.query(
+    return pool.query(
     `
     SELECT
         *,
@@ -24,7 +24,7 @@ db.perfilGetPerfil = async (id_usuario) => {
 }
 
 db.perfilGetDestino = async (id_usuario) => {
-    return await pool.query(
+    return pool.query(
     `
     SELECT
         d.*
@@ -41,7 +41,7 @@ db.perfilGetDestino = async (id_usuario) => {
 }
 
 db.perfilGetCambioDatos = async (id_usuario) => {
-    return await pool.query(
+    return pool.query(
     `
     SELECT
         *
@@ -56,7 +56,7 @@ db.perfilGetCambioDatos = async (id_usuario) => {
 }
 
 db.perfilGetUsuarios = async (id_usuario) => {
-    return await pool.query(
+    return pool.query(
     `
     SELECT 
         *
@@ -71,7 +71,7 @@ db.perfilGetUsuarios = async (id_usuario) => {
  * POST QUERYS
  */
 db.perfilPostCambioPerfil = async (nuevo_perfil,id_usuario) => {
-    return await pool.query(
+    return pool.query(
     `
     UPDATE
         perfiles
@@ -83,7 +83,7 @@ db.perfilPostCambioPerfil = async (nuevo_perfil,id_usuario) => {
 }
 
 db.perfilPostCambioEmail = async (email_usuario,id_usuario) => {
-    return await pool.query(
+    return pool.query(
     `
     UPDATE
         usuarios
@@ -95,7 +95,7 @@ db.perfilPostCambioEmail = async (email_usuario,id_usuario) => {
 }
 
 db.perfilPostCambioPass = async (new_pass,id_usuario) => {
-    return await pool.query(`
+    return pool.query(`
     UPDATE
         usuarios
     SET 

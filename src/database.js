@@ -19,9 +19,8 @@ pool.getConnection((err, connection) => {
             consoles.error('DATABASE CONNECTION WAS REFUSED');
         }
     }
-    if (connection) connection.release();
+    if (connection) return connection.release();
     console.log('DB is connected');
-    return;
 });
 
 // promisify pool querys - > convertir a promesas lo que antes era coolbax

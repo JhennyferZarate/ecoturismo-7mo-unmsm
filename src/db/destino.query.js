@@ -6,7 +6,7 @@ const db = {}
  * GET QUERYS
  */
 db.destinoGetFiltro = async () => {
-    return await pool.query(
+    return pool.query(
     `
     SELECT
         *
@@ -26,7 +26,7 @@ db.destinoGetFiltro = async () => {
 }
 
 db.destinoGetDestino = async (id_destino) => {
-    return await pool.query(
+    return pool.query(
     `
     SELECT
         *
@@ -43,7 +43,7 @@ db.destinoGetDestino = async (id_destino) => {
 }
 
 db.destinoGetUsuario = async (id_usuario) => {
-    return await pool.query(
+    return pool.query(
     `
     SELECT
         *
@@ -54,7 +54,7 @@ db.destinoGetUsuario = async (id_usuario) => {
 }
 
 db.destinoGetRecomendacion = async (id_destino) => {
-    return await pool.query(
+    return pool.query(
     `
     SELECT
         *
@@ -67,7 +67,7 @@ db.destinoGetRecomendacion = async (id_destino) => {
 }
 
 db.destinoGetComentario = async (id_destino) => {
-    return await pool.query(
+    return pool.query(
     `
     SELECT
         *
@@ -83,7 +83,7 @@ db.destinoGetComentario = async (id_destino) => {
 }
 
 db.destinoGetRegion = async () => {
-    return await pool.query(
+    return pool.query(
     `
     SELECT
         *
@@ -93,7 +93,7 @@ db.destinoGetRegion = async () => {
 }
 
 db.destinoGetMacroregion = async () => {
-    return await pool.query(
+    return pool.query(
     `
     SELECT
         *
@@ -103,7 +103,7 @@ db.destinoGetMacroregion = async () => {
 }
 
 db.destinoGetVerificarRegion = async () => {
-    return await pool.query(
+    return pool.query(
     `
     SELECT
         *
@@ -115,7 +115,7 @@ db.destinoGetVerificarRegion = async () => {
 }
 
 db.destinoGetVerificarMacroregion = async () => {
-    return await pool.query(
+    return pool.query(
     `
     SELECT
         *
@@ -131,7 +131,7 @@ db.destinoGetVerificarMacroregion = async () => {
  * POST QUERYS
  */
 db.destinoPostComentario = async (nuevo_comentario) => {
-    return await pool.query(
+    return pool.query(
     `
     INSERT INTO
         comentarios
@@ -141,7 +141,7 @@ db.destinoPostComentario = async (nuevo_comentario) => {
 }
 
 db.destinoPostDenuncia= async (id_destino) => {
-    return await pool.query(
+    return pool.query(
     `
     UPDATE
         publicaciones AS pub
@@ -153,7 +153,7 @@ db.destinoPostDenuncia= async (id_destino) => {
 }
 
 db.destinoPostLike = async (id_destino) => {
-    return await pool.query(
+    return pool.query(
     `
     UPDATE
         publicaciones AS pub
@@ -165,7 +165,7 @@ db.destinoPostLike = async (id_destino) => {
 }
 
 db.destinoPostUbicacion = async (nueva_ubicacion) => {
-    return await pool.query(
+    return pool.query(
     `
     INSERT INTO
         ubicaciones
@@ -175,7 +175,7 @@ db.destinoPostUbicacion = async (nueva_ubicacion) => {
 }
 
 db.destinoPostDestino = async (nuevo_destino) => {
-    return await pool.query(
+    return pool.query(
     `
     INSERT INTO 
         destinos
@@ -185,7 +185,7 @@ db.destinoPostDestino = async (nuevo_destino) => {
 }
 
 db.destinoPostRecomendacion = async (id,recomendacion_1,recomendacion_2,recomendacion_3) => {
-    return await pool.query(
+    return pool.query(
     `
     INSERT INTO
         recomendaciones (id_destino,recomendacion)
@@ -197,7 +197,7 @@ db.destinoPostRecomendacion = async (id,recomendacion_1,recomendacion_2,recomend
 }
 
 db.destinoPostPublicacion = async (nueva_publicacion) => {
-    return await pool.query(
+    return pool.query(
     `
     INSERT INTO
         publicaciones

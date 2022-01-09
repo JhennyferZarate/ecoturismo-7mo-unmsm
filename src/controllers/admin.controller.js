@@ -7,7 +7,8 @@ admin.get_filtro = async (req,res) => {
     res.render('busqueda/buscar_admin',{destinos})
 }
 
-admin.post_filtro = async (req,res) => {
+admin.post_filtro = async (req,res,next) => {
+    return next
 }
 
 admin.get_inicio = async (req,res) => {

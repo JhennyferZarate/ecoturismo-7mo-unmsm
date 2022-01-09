@@ -3,7 +3,7 @@ const pool = require('../database');
 const db = {}
 
 db.indexGetMejores = async () => {
-    return await pool.query(
+    return pool.query(
     `
     SELECT 
         *
@@ -16,7 +16,7 @@ db.indexGetMejores = async () => {
 }
 
 db.indexGetUltimos = async () => {
-    return await pool.query(
+    return pool.query(
     `
     SELECT 
         *
