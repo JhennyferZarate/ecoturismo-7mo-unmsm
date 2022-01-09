@@ -1,7 +1,12 @@
+{{!-- carousel principal --}}
 <section class="vh-100 bg-landing-eco shadow">
+	{{!-- imagen de fondo --}}
 	<div class="row h-100 justify-content-center align-items-center m-0">
+		{{!-- contenedor principal --}}
 		<div class="col-12 col-md-6 text-center">
+			{{!-- texto principal --}}
 			<h1 class="text-light fw-bold">¡Conoce los destinos turísticos ecológicos más populares de Perú a través de experiencias!</h1>
+			{{!-- boton carousel --}}
 			<button type="button" class="btn btn-primary-eco animate__animated animate__bounce">
 				<a href="/destinos/crear" style="color: white"><span class="fs-3 p-2">¡Quiero compartir mi experiencia!</span></a>
 			</button>
@@ -9,20 +14,29 @@
 	</div>
 </section>
 
+{{!-- alto total --}}
 <section class="min-vh-100 py-5">
+	{{!-- contenedor principal --}}
 	<div class="container">
 		<div class="row my-5">
+			{{!-- titulo --}}
 			<div class="col-12">
 				<h2 class="fw-bold">Conoce los destinos</h2>
 			</div>
 			<div class="col-12">
+				{{!-- carousel de destinos extras --}}
 				<div class="carousel-prymary-eco">
+					{{!-- metodo de mejores  --}}
 					{{#each Mejores}}
+						{{!-- click al enlace--}}
 						<a href="/destinos/{{id_destino}}">
+							{{!-- card de destino --}}
 							<div class="card card-eco shadow m-3">
+								{{!-- titulo destino --}}
 								<div class="card-header">
                                     <p class="fw-bold">{{titulo_destino}}</p>
 								</div>
+								{{!-- imagen destino --}}
 								<img class="mx-auto p-0 card-img-top" src="https://i.ytimg.com/vi/BFoZMAud8KE/maxresdefault.jpg" alt="">
 								<div class="card-footer">
 									<p>Ver más</p>
@@ -34,18 +48,24 @@
 			</div>
 		</div>
 		<div class="row my-5">
+			{{!-- titulo de mas recientes --}}
 			<div class="col-12">
 				<h2 class="fw-bold">Publicaciones recientes</h2>
 			</div>
 			<div class="col-12">
+				{{!-- carousel ultimos --}}
 				<div class="carousel-prymary-eco">
 					{{#each Ultimos}}
+						{{!-- enlace al click --}}
 						<a href="/destinos/{{id_destino}}">
 							<div class="card card-eco shadow m-3">
+								{{!-- titulo ultimos --}}
 								<div class="card-header">
                                     <p class="fw-bold">{{titulo_destino}}</p>
 								</div>
+								{{!-- imagen ultimos --}}
 								<img class="mx-auto p-0 card-img-top" src="https://i.ytimg.com/vi/TrLBLghtnc4/maxresdefault.jpg" alt="">
+								{{!-- fondo ver mas --}}
 								<div class="card-footer">
 									<p>Ver más</p>
 								</div>
@@ -58,7 +78,9 @@
 	</div>
 </section>
 
+{{!-- boton flotante --}}
 <a href="/destinos/crear" class="btn btn-flotante rounded-circle">
+	{{!-- buscar documentacion del boton en archivos css --}}
 	<i class="fas fa-pencil-alt" style="font-size: 42px;"></i>
 	<span>Agregar Publicación</span>
 </a>

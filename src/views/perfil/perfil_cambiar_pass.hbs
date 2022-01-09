@@ -1,30 +1,41 @@
+{{!-- contenedor principal --}}
 <section class="container-fluid py-5 bg-crema-eco">
+    {{!-- contenedor  --}}
     <div class="container mt-5">
+        {{!-- alto total --}}
         <div class="row min-vh-100 justify-content-center align-items-center">
             <div class="col-12">
+                {{!-- titulo configuracion --}}
                 <h2 class="text-center text-capitalize fw-bold">editar contraseña</h2>
+                {{!-- card de modificacion --}}
                 <div class="card p-3 shadow">
                     <div class="card-body">
                         <div class="row">
+                            {{!-- foto perfil --}}
                             <div class="col-12 col-md-6 text-center">
                                 <img height="300px" class="m-3 rounded-circle" src="https://fotos-ayvisa.s3.eu-west-3.amazonaws.com/wp-content/uploads/2021/02/23202742/descargar-foto-perfil-instagram.jpg" alt="Foto de perfil">
                             </div>
+                            {{!-- total configuracion --}}
                             <div class="col-12 col-md-6">
                                 <form action="/perfil/cambiar_pass" method="POST">
+                                    {{!-- contraseña actual --}}
                                     <div class="mb-3 border-top border-3 p-2">
                                         <label for="actualPassword" class="form-label fw-bold">Ingresa la contraseña actual</label>
                                         <input type="password" class="form-control" id="actualPassword" name="pass_usuario" placeholder="Ingrese la contraseña actual">
                                     </div>
+                                    {{!-- nueva contraseña --}}
                                     <div class="mb-3 border-top border-3 p-2">
                                         <label for="nuevaPassword" class="form-label fw-bold">Ingresa la nueva contraseña</label>
                                         <input type="password" class="form-control" id="nuevaPassword" name="nuevo_pass_usuario"  placeholder="Ingrese la nueva actual">
                                     </div>
+                                    {{!-- repetir contraseña --}}
                                     <div class="mb-3 border-top border-3 p-2">
                                         <label for="confirmPassword" class="form-label fw-bold">Repita la contraseña</label>
                                         <input type="password" class="form-control" id="confirmPassword" name="copia_nuevo_pass_usuario" placeholder="Repita la contraseña">
                                     </div>
                                 </form>
                             </div>
+                            {{!-- botones configuracion --}}
                             <div class="col-12 text-center">
                                 <button id="guardarPass" type="submit" class="btn btn-secondary-eco text-uppercase m-2 px-4 py-2">guardar</button>
                                 <button type="submit" class="btn btn-secondary-eco text-uppercase m-2 px-4 py-2" onclick="history.go(-1);">cancelar</button>

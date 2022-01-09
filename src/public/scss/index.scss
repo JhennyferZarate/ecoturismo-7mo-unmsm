@@ -1,3 +1,4 @@
+// configguracion general
 *{
     font-family: 'Nunito', sans-serif;
     ::-webkit-scrollbar{
@@ -9,24 +10,30 @@
     }
 }
 
+// variables globales
 $primary-color: #802121;
 $secondary-color: #195C2C;
 
+// color de inputs
 input::placeholder{
     color: white;
 }
 
+// backgrounds
 .bg{
+    // landing principal
     &-landing-eco{
         background-image: url("/img/background_landing.png");
         object-fit: cover;
         background-position: center center;
         background-repeat: no-repeat;
     }
+    // oscuro
     &-dark-eco{
         background-color: #4A4A4A;
         color: white;
     }
+    // background primario
     &-primary-eco{
         background-color: $primary-color;
         color: white;
@@ -34,11 +41,13 @@ input::placeholder{
             color: white;
         }
     }
+    // color crema
     &-crema-eco{
         background-color: #F8FFF6;
     }
 }
 
+// color para enlaces
 .color{
     &-primary-eco{
         &:hover{
@@ -48,6 +57,7 @@ input::placeholder{
     }
 }
 
+// color a enlaces
 a{
     &:hover{
         color: $primary-color;
@@ -57,7 +67,9 @@ a{
     text-decoration: none;
 }
 
+// boton flotante
 .btn-flotante {
+    // tamaño definido
     width: 125px; 
     height: 125px;
     text-decoration: none;
@@ -78,6 +90,7 @@ a{
     }
 }
 
+// boton flotante responsive (mas pequeño)
 @media only screen and (max-width: 600px) {
     .btn-flotante {
         width: auto;
@@ -92,6 +105,7 @@ a{
     }
 }
 
+// card
 .card{
     &-eco{
         img{
@@ -107,7 +121,9 @@ a{
     }
 }
 
+// boton
 .btn{
+    // boton primario
     &-primary-eco{
         background-color: $primary-color;
         border-radius: 20px;
@@ -116,6 +132,7 @@ a{
             color: white;
         }
     }
+    // boton secundario
     &-secondary-eco{
         background-color: $secondary-color;
         border-radius: 20px;
