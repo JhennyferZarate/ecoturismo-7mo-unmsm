@@ -1,5 +1,4 @@
-//funcion cuando todo este correctamente cargado
-// //esta version es la mas optima par autilizar
+//esta version es la mas optima par autilizar
 $(function(){
     // cuando el documento esta cargado
     $('.carousel-prymary-eco').slick({
