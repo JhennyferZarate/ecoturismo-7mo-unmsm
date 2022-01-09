@@ -1,10 +1,13 @@
+{{!-- contenido padre --}}
 <section class="container-fluid py-5 bg-light">
-    <div class="container mt-5">
+    {{!-- contenedor --}}
+   <div class="container mt-5">
         <div class="row min-vh-100 justify-content-center align-items-center">
             <div class="col-12">
                 <div class="card mb-3">
                     <div class="row g-0">
                         <div class="col-md-4">
+                            {{!-- imagen  --}}
                             <img src="https://blog.foto24.com/wp-content/uploads/2019/02/2.2-683x1024.jpg" class="img-fluid rounded-start">
                         </div>
                         <div class="col-md-8 px-5">
@@ -12,9 +15,11 @@
                                 <form action="/registro" method="POST">
                                     <div class="row text-center">
                                         <div class="col-12 py-4">
+                                            {{!-- registro --}}
                                             <h5 class="text-center fw-bold text-uppercase">Registrate</h5>
                                         </div>
                                         <div class="col-12">
+                                            {{!-- opcioesn de registro --}}
                                             <p class="mb-0">con</p>
                                         </div>
                                         {{!-- <div class="col-12">
@@ -24,15 +29,19 @@
                                         <div class="col-12 my-4">
                                             <p class="mb-0">o registrate llenando</p>
                                         </div> --}}
+                                        {{!-- nombre prefil --}}
                                         <div class="col-12 col-md-6 mb-3">
                                             <input class="form-control" type="text" placeholder="Nombre" id="nombre_perfil" name="nombre_perfil" required>
                                         </div>
+                                        {{!-- apellido perfil --}}
                                         <div class="col-12 col-md-6 mb-3">
                                             <input class="form-control" type="text" placeholder="Apellido" id="apellido_perfil" name="apellido_perfil" required>
                                         </div>
+                                        {{!-- correo electornico --}}
                                         <div class="col-12 mb-3">
                                             <input class="form-control" type="email" placeholder="Correo Electrónico" id="email_usuario" name="email_usuario" required>
                                         </div>
+                                        {{!-- contraseña --}}
                                         <div class="col-12 col-md-6 mb-3">
                                             <div class="input-group">
                                                 <input class="form-control" type="password" placeholder="Contraseña" id="pass_usuario" name="pass_usuario" required>
@@ -41,6 +50,7 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        {{!-- contraseña repetir --}}
                                         <div class="col-12 col-md-6 mb-3">
                                             <div class="input-group">
                                                 <input class="form-control" type="password" placeholder="ConfirmarContraseña" id="confirmarPasswordRegistro" required>
@@ -49,9 +59,11 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        {{!-- boton de registro --}}
                                         <div class="col-12">
                                             <button type="submit" class="btn btn-secondary-eco mb-3">Registrarme</button>
                                         </div>
+                                        {{!-- iniciar sesion --}}
                                         <div class="col-12">
                                             <p>Si tengo cuenta... <a href="ingreso">Inicia Sesión</a></p>
                                         </div>
