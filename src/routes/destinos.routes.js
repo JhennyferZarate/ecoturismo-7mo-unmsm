@@ -29,13 +29,14 @@ const multer = require('multer')
  * y estas se puedan procesar.
  * Especialmente se procesan los formatos "img" o imagen.
  */
-multer.diskStorage({
+const storage = multer.diskStorage({
     filename: (req, file, cb) => {
         cb(null,file.originalname);
     }
 });
+
 const fileUpload = multer({
-    storage: diskstorage
+    storage: storage
 }).single('img') 
 
 /**
