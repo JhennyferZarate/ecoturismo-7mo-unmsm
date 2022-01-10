@@ -105,4 +105,4 @@ db.perfilPostCambioPass = async (new_pass,id_usuario) => {
     `,[new_pass,id_usuario])
 }
 
-module.exports = pool
+module.exports = db

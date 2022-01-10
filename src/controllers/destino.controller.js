@@ -198,12 +198,11 @@ destino.get_crear = async (req, res) => {
 destino.post_crear = async (req, res) => {
     const id_usuario = req.user.id_usuario
 
-    let img_destino
+    var img_destino
     if(req.file != undefined){
-        img_destino= req.file.buffer
-        console.log(img_destino)
+        img_destino = req.file.buffer
     }else {
-        img_destino= null
+        img_destino = null
     }
 
     const {
@@ -230,11 +229,11 @@ destino.post_crear = async (req, res) => {
         contenido_destino,
         img_destino
     }
-    const destino = await db.destinoPostDestino(nuevo_destino)
+    const destiny = await db.destinoPostDestino(nuevo_destino)
     await db.destinoPostRecomendacion(destino.insertId,recomendacion_1,recomendacion_2,recomendacion_3)
     const nueva_publicacion = {
         id_usuario,
-        id_destino: destino.insertId
+        id_destino: destiny.insertId
     }
     await db.destinoPostPublicacion(nueva_publicacion)
     res.redirect('/perfil')

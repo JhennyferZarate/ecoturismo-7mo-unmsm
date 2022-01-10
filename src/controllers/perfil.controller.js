@@ -8,7 +8,7 @@ perfil.get_inicio = async (req,res) => {
     /**
      * Información del usuario
      */
-    const Perfil = await db.perfilGetInicio(id_usuario)
+    const Perfil = await db.perfilGetPerfil(id_usuario)
     
     /**
      * Destinos creados por el usuario

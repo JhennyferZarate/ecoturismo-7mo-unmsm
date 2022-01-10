@@ -35,9 +35,6 @@ multer.diskStorage({
     }
 });
 
-const fileUpload = multer({
-}).single('img') 
-
 /**
  * Ruta que nos muestra una interfaz donde filtramos los destinos para
  * los usuarios
@@ -68,7 +65,7 @@ router.get('/futuro', destino.get_futuro)
  *      manda la información ingresada en el formulario de registro de destino
  *      para valdiada y luego ser almacenado en la base de datos.
  */
-router.post('/crear', fileUpload ,destino.post_crear)
+router.post('/crear',  multer({}).single('img') ,destino.post_crear)
 router.get('/crear', destino.get_crear)
 
 /**
