@@ -24,8 +24,8 @@ const { database } = require('./keys');
 const pool = mysql.createPool(database);
 
 /**
- * Ejecutamos el objeto pool con el método getConnection para conectarlo a la base
- * de datos. Esta método pasa por parametro los valores de la conexión y un posible
+ * Ejecutamos el objeto pool con la funcion getConnection para conectarlo a la base
+ * de datos. Esta funcion pasa por parametro los valores de la conexión y un posible
  * formato de error.
  */
 pool.getConnection((err, connection) => {

@@ -1,13 +1,31 @@
-//configuraciones de todas las funciones handlebars
+/**
+ * Importamos el módulo "timeago.js" que nos permite configurar
+ * el tiempo pasado.
+ * Este módulo lo utilizaremos para 
+ */
 const timeago = require('timeago.js');
 
+/**
+ * Creamos el objeto helpers que almacenará las propiedades de la
+ * libreria "timeago.js"
+ */
 const helpers = {};
 
-
+/**
+ * 
+ * @param {string} number
+ *  indica el número que identifica el contador de la libreria
+ * @param {string} index 
+ *  indica el indice que se mostrará relativo al tiempo que ha
+ *  pasado
+ * @param {string} totalSec
+ *  indica el total de segundo que han pasado desde que se creo
+ *  cualquier archivo
+ * @returns 
+ *  retorna un arreglo de string donde solo se selecciona la
+ *  opcio que indica el "index"
+ */
 const localeFunc = (number, index, totalSec) => {
-    // number: the timeago / timein number;
-    // index: the index of array below;
-    // totalSec: total seconds between date to be formatted and today's date;
     return [
         ['hace momentos', 'ahora mismo'],
         ['hace %s segundos', 'en %s segundos'],
@@ -26,11 +44,32 @@ const localeFunc = (number, index, totalSec) => {
     ][index];
     };
 
+/**
+ * Ejecutamos el objeto "timeago" con la funcion register
+ * que enlazará nuestra plantilla de respuestas en forma de
+ * arreglo y será relativo a nuestra ubicación geográfica
+ */
 timeago.register('my-locale', localeFunc);
 
-
+/**
+ * 
+ * @param {string} timestamp
+ *  parametro que valida el tiempo en que un archivo fue creado
+ *  este nos servirá como base para comparar con el tiempo actual
+ * @returns
+ *  retorna la diferencia en milisegundo entre el tiempo de
+ *  creación del archivo y la hora actual.
+ *  El formato creado previamente convierte los milisegundos
+ *  transurriendo en un array de string que depende de "index"
+ *  y revuelve un string indicando el tiempo transcurrido pero en
+ *  otro formato.
+ */
 helpers.timeago = (timestamp) => {
     return timeago.format(timestamp,'my-locale');
 };
 
+/**
+ * Exportamos el objeto helpers para que pueda ser utilizado en 
+ * los arhcivos donde sea importado y llamado.
+ */
 module.exports = helpers;

@@ -1,9 +1,44 @@
+/**
+ * Importamos los módulos:
+ *  PASSPORT
+ *      este modulo nos permitirá iniciar sesion y serializar
+ *      toda la información del usuario que se ha logeado
+ *  LOCALSTRATEGY
+ *      este módulo nos permitrá conectar el llamado del inicio
+ *      de sesion y registro donde sea llamado.
+ */
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 
+/**
+ * Importaremos dos archivos:
+ *  POOL
+ *      este archivo contendrá la base de datos y las funciones
+ *      internas que este contiene
+ *  HELPERS
+ *      este archivo contiene las herramientas para encriptar y
+ *      comparar strings.
+ */
 const pool = require('../database');
 const helpers = require('./helpers');
 
+/**
+ * Funcion que permite a los usuarios iniciar session.
+ * Recibe por parametro un email y una contraseña
+ * la contraseña es comparada con su correspidiente par realcionado
+ * al correo electronico previamente encriptado mediante hashing
+ * utilizando el objeto "helpers" que compara la encriptacion
+ * devolvemos un callback que permite o no serializar el usuario
+ * @param {string} local.signin
+ *  paratro string que conecta el llamado con esta funcion
+ * @param LocalStrategy
+ *      @param {string} email_usuario
+ *          email ingresado por el usario al momento de iniciar
+ *          session
+ *      @param {string} pass_usuario
+ *          contraseña ingresada por el usuario al momento de iniciar
+ *          session
+ */
 passport.use('local.signin', new LocalStrategy({
     usernameField: 'email_usuario',
     passwordField: 'pass_usuario',
@@ -23,6 +58,24 @@ passport.use('local.signin', new LocalStrategy({
     }
 }));
 
+/**
+ * Funcion que permite a los usuarios registrarse.
+ * Recibe por parametro un email y una contraseña
+ * la contraseña es encriptado mediante hashing
+ * utilizando el objeto "helpers" que se encripte.
+ * Comparamos con el registro de base de datos para confirmar y validar
+ * que no haya otro usuario con el mismo email y luego insetamos el 
+ * nuevo usuario
+ * @param {string} local.signup
+ *  paratro string que conecta el llamado con esta funcion
+ * @param LocalStrategy
+ *      @param {string} email_usuario
+ *          email ingresado por el usario al momento de iniciar
+ *          session
+ *      @param {string} pass_usuario
+ *          contraseña ingresada por el usuario al momento de iniciar
+ *          session
+ */
 passport.use('local.signup', new LocalStrategy({
     usernameField: 'email_usuario',
     passwordField: 'pass_usuario',
@@ -59,10 +112,19 @@ passport.use('local.signup', new LocalStrategy({
     }
 }));
 
+/**
+ * Funcion que permite serializar el usuario en el LocalStorage de nuestro proyecto
+ * Esto permite que el usuario guarde su información personal y tengo acceso a ciertas
+ * rutas.
+ */
 passport.serializeUser((user, done) => {
     done(null, user.id_usuario)
 });
 
+/**
+ * Funcion que permite deserializar el usuario en el momento que sea neceasrio para que 
+ * pueda usar la información de su pertenencia.
+ */
 passport.deserializeUser(async(id, done) => {
     const rows = await pool.query('SELECT * FROM usuarios WHERE id_usuario = ?', [id]);
     done(null, rows[0]);
