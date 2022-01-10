@@ -197,6 +197,15 @@ destino.get_crear = async (req, res) => {
 }
 destino.post_crear = async (req, res) => {
     const id_usuario = req.user.id_usuario
+
+    let img_destino
+    if(req.file != undefined){
+        img_destino= req.file.buffer
+        console.log(img_destino)
+    }else {
+        img_destino= null
+    }
+
     const {
         titulo_destino,
         region,
@@ -218,7 +227,8 @@ destino.post_crear = async (req, res) => {
     const nuevo_destino = {
         id_ubicacion: ubicacion.insertId,
         titulo_destino,
-        contenido_destino
+        contenido_destino,
+        img_destino
     }
     const destino = await db.destinoPostDestino(nuevo_destino)
     await db.destinoPostRecomendacion(destino.insertId,recomendacion_1,recomendacion_2,recomendacion_3)
