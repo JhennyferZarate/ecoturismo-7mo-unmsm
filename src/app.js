@@ -144,4 +144,8 @@ app.use('/admin',require('./routes/admin.routes'))
  */
 app.use(express.static(path.join(__dirname,'public')))
 
+/**
+ * Exportamos el objeto app para que pueda ejecutarlo el archivo
+ * "index.js"
+ */
 module.exports = app
