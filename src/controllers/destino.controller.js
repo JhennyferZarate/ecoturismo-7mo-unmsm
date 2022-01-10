@@ -68,8 +68,8 @@ destino.get_futuro = async (req,res) => {
  *      como objeto dentro del formato ".hbs" al ser renderizado.
  *  POST_INICIO:
  *      funcion que recibe la informacion enviada por los usuarios
- *      en esta ruta, convirtiendose en un callback al no haber
- *      acciones necesarias
+ *      en esta ruta, procesa los comentarios hechos en el destino
+ *      donde se encuentran.
  * @param {Request} req 
  *  Permite hacer consultas de requerimiento a la ruta HTTP donde
  *  se encuentre
@@ -94,6 +94,12 @@ destino.get_futuro = async (req,res) => {
  * @param {Object} comentarios
  * objeto que contiene los comentarios extraidas de la base de datos
  * que contengan en si mismo el id del destino pasado por parametro
+ * @param {Object} action
+ * objeto que contiene la información si lo que se ha enviado es un
+ * comentario.
+ * @param {Obejct} nuevo_comentario
+ * objeto que almacena la información del comentario enviado, almacenando
+ * el id_usuario, id_destino y el contenido del comentario.
  */
 destino.get_inicio = async (req,res) => {
     const id_usuario = req.user.id_usuario
