@@ -1,9 +1,45 @@
+/**
+ * GET QUERYS
+ * Lorem Ipsum is simply dummy text of the printing and typesetting 
+ * industry. Lorem Ipsum has been the industry's standard dummy text 
+ * ever since the 1500s, when an unknown printer took a galley of 
+ * type and scrambled it to make a type specimen book. It has 
+ * survived not only five centuries, but also the leap into electronic
+ *  typesetting, remaining essentially unchanged. It was popularised 
+ * in the 1960s with the release of Letraset sheets containing Lorem 
+ * Ipsum passages, and more recently with desktop publishing software
+ *  like Aldus PageMaker including versions of Lorem Ipsum.
+ */
 const pool = require('../database');
 
+/**
+ * GET QUERYS
+ * Lorem Ipsum is simply dummy text of the printing and typesetting 
+ * industry. Lorem Ipsum has been the industry's standard dummy text 
+ * ever since the 1500s, when an unknown printer took a galley of 
+ * type and scrambled it to make a type specimen book. It has 
+ * survived not only five centuries, but also the leap into electronic
+ *  typesetting, remaining essentially unchanged. It was popularised 
+ * in the 1960s with the release of Letraset sheets containing Lorem 
+ * Ipsum passages, and more recently with desktop publishing software
+ *  like Aldus PageMaker including versions of Lorem Ipsum.
+ */
 const db = {}
 
 /**
  * GET QUERYS
+ */
+/**
+ * GET QUERYS
+ * Lorem Ipsum is simply dummy text of the printing and typesetting 
+ * industry. Lorem Ipsum has been the industry's standard dummy text 
+ * ever since the 1500s, when an unknown printer took a galley of 
+ * type and scrambled it to make a type specimen book. It has 
+ * survived not only five centuries, but also the leap into electronic
+ *  typesetting, remaining essentially unchanged. It was popularised 
+ * in the 1960s with the release of Letraset sheets containing Lorem 
+ * Ipsum passages, and more recently with desktop publishing software
+ *  like Aldus PageMaker including versions of Lorem Ipsum.
  */
 db.destinoGetFiltro = async () => {
     return pool.query(
@@ -25,6 +61,18 @@ db.destinoGetFiltro = async () => {
     `)
 }
 
+/**
+ * GET QUERYS
+ * Lorem Ipsum is simply dummy text of the printing and typesetting 
+ * industry. Lorem Ipsum has been the industry's standard dummy text 
+ * ever since the 1500s, when an unknown printer took a galley of 
+ * type and scrambled it to make a type specimen book. It has 
+ * survived not only five centuries, but also the leap into electronic
+ *  typesetting, remaining essentially unchanged. It was popularised 
+ * in the 1960s with the release of Letraset sheets containing Lorem 
+ * Ipsum passages, and more recently with desktop publishing software
+ *  like Aldus PageMaker including versions of Lorem Ipsum.
+ */
 db.destinoGetDestino = async (id_destino) => {
     return pool.query(
     `
@@ -42,6 +90,18 @@ db.destinoGetDestino = async (id_destino) => {
     `,[id_destino])
 }
 
+/**
+ * GET QUERYS
+ * Lorem Ipsum is simply dummy text of the printing and typesetting 
+ * industry. Lorem Ipsum has been the industry's standard dummy text 
+ * ever since the 1500s, when an unknown printer took a galley of 
+ * type and scrambled it to make a type specimen book. It has 
+ * survived not only five centuries, but also the leap into electronic
+ *  typesetting, remaining essentially unchanged. It was popularised 
+ * in the 1960s with the release of Letraset sheets containing Lorem 
+ * Ipsum passages, and more recently with desktop publishing software
+ *  like Aldus PageMaker including versions of Lorem Ipsum.
+ */
 db.destinoGetUsuario = async (id_usuario) => {
     return pool.query(
     `
@@ -53,6 +113,18 @@ db.destinoGetUsuario = async (id_usuario) => {
     `,[id_usuario])
 }
 
+/**
+ * GET QUERYS
+ * Lorem Ipsum is simply dummy text of the printing and typesetting 
+ * industry. Lorem Ipsum has been the industry's standard dummy text 
+ * ever since the 1500s, when an unknown printer took a galley of 
+ * type and scrambled it to make a type specimen book. It has 
+ * survived not only five centuries, but also the leap into electronic
+ *  typesetting, remaining essentially unchanged. It was popularised 
+ * in the 1960s with the release of Letraset sheets containing Lorem 
+ * Ipsum passages, and more recently with desktop publishing software
+ *  like Aldus PageMaker including versions of Lorem Ipsum.
+ */
 db.destinoGetRecomendacion = async (id_destino) => {
     return pool.query(
     `
@@ -66,6 +138,18 @@ db.destinoGetRecomendacion = async (id_destino) => {
     `,[id_destino])
 }
 
+/**
+ * GET QUERYS
+ * Lorem Ipsum is simply dummy text of the printing and typesetting 
+ * industry. Lorem Ipsum has been the industry's standard dummy text 
+ * ever since the 1500s, when an unknown printer took a galley of 
+ * type and scrambled it to make a type specimen book. It has 
+ * survived not only five centuries, but also the leap into electronic
+ *  typesetting, remaining essentially unchanged. It was popularised 
+ * in the 1960s with the release of Letraset sheets containing Lorem 
+ * Ipsum passages, and more recently with desktop publishing software
+ *  like Aldus PageMaker including versions of Lorem Ipsum.
+ */
 db.destinoGetComentario = async (id_destino) => {
     return pool.query(
     `
@@ -82,6 +166,18 @@ db.destinoGetComentario = async (id_destino) => {
     `,[id_destino])
 }
 
+/**
+ * GET QUERYS
+ * Lorem Ipsum is simply dummy text of the printing and typesetting 
+ * industry. Lorem Ipsum has been the industry's standard dummy text 
+ * ever since the 1500s, when an unknown printer took a galley of 
+ * type and scrambled it to make a type specimen book. It has 
+ * survived not only five centuries, but also the leap into electronic
+ *  typesetting, remaining essentially unchanged. It was popularised 
+ * in the 1960s with the release of Letraset sheets containing Lorem 
+ * Ipsum passages, and more recently with desktop publishing software
+ *  like Aldus PageMaker including versions of Lorem Ipsum.
+ */
 db.destinoGetRegion = async () => {
     return pool.query(
     `
@@ -92,6 +188,18 @@ db.destinoGetRegion = async () => {
     `)
 }
 
+/**
+ * GET QUERYS
+ * Lorem Ipsum is simply dummy text of the printing and typesetting 
+ * industry. Lorem Ipsum has been the industry's standard dummy text 
+ * ever since the 1500s, when an unknown printer took a galley of 
+ * type and scrambled it to make a type specimen book. It has 
+ * survived not only five centuries, but also the leap into electronic
+ *  typesetting, remaining essentially unchanged. It was popularised 
+ * in the 1960s with the release of Letraset sheets containing Lorem 
+ * Ipsum passages, and more recently with desktop publishing software
+ *  like Aldus PageMaker including versions of Lorem Ipsum.
+ */
 db.destinoGetMacroregion = async () => {
     return pool.query(
     `
@@ -102,6 +210,18 @@ db.destinoGetMacroregion = async () => {
     `)
 }
 
+/**
+ * GET QUERYS
+ * Lorem Ipsum is simply dummy text of the printing and typesetting 
+ * industry. Lorem Ipsum has been the industry's standard dummy text 
+ * ever since the 1500s, when an unknown printer took a galley of 
+ * type and scrambled it to make a type specimen book. It has 
+ * survived not only five centuries, but also the leap into electronic
+ *  typesetting, remaining essentially unchanged. It was popularised 
+ * in the 1960s with the release of Letraset sheets containing Lorem 
+ * Ipsum passages, and more recently with desktop publishing software
+ *  like Aldus PageMaker including versions of Lorem Ipsum.
+ */
 db.destinoGetVerificarRegion = async () => {
     return pool.query(
     `
@@ -114,6 +234,18 @@ db.destinoGetVerificarRegion = async () => {
     `,[region])
 }
 
+/**
+ * GET QUERYS
+ * Lorem Ipsum is simply dummy text of the printing and typesetting 
+ * industry. Lorem Ipsum has been the industry's standard dummy text 
+ * ever since the 1500s, when an unknown printer took a galley of 
+ * type and scrambled it to make a type specimen book. It has 
+ * survived not only five centuries, but also the leap into electronic
+ *  typesetting, remaining essentially unchanged. It was popularised 
+ * in the 1960s with the release of Letraset sheets containing Lorem 
+ * Ipsum passages, and more recently with desktop publishing software
+ *  like Aldus PageMaker including versions of Lorem Ipsum.
+ */
 db.destinoGetVerificarMacroregion = async () => {
     return pool.query(
     `
@@ -130,6 +262,18 @@ db.destinoGetVerificarMacroregion = async () => {
 /**
  * POST QUERYS
  */
+/**
+ * GET QUERYS
+ * Lorem Ipsum is simply dummy text of the printing and typesetting 
+ * industry. Lorem Ipsum has been the industry's standard dummy text 
+ * ever since the 1500s, when an unknown printer took a galley of 
+ * type and scrambled it to make a type specimen book. It has 
+ * survived not only five centuries, but also the leap into electronic
+ *  typesetting, remaining essentially unchanged. It was popularised 
+ * in the 1960s with the release of Letraset sheets containing Lorem 
+ * Ipsum passages, and more recently with desktop publishing software
+ *  like Aldus PageMaker including versions of Lorem Ipsum.
+ */
 db.destinoPostComentario = async (nuevo_comentario) => {
     return pool.query(
     `
@@ -140,6 +284,18 @@ db.destinoPostComentario = async (nuevo_comentario) => {
     `,[nuevo_comentario])
 }
 
+/**
+ * GET QUERYS
+ * Lorem Ipsum is simply dummy text of the printing and typesetting 
+ * industry. Lorem Ipsum has been the industry's standard dummy text 
+ * ever since the 1500s, when an unknown printer took a galley of 
+ * type and scrambled it to make a type specimen book. It has 
+ * survived not only five centuries, but also the leap into electronic
+ *  typesetting, remaining essentially unchanged. It was popularised 
+ * in the 1960s with the release of Letraset sheets containing Lorem 
+ * Ipsum passages, and more recently with desktop publishing software
+ *  like Aldus PageMaker including versions of Lorem Ipsum.
+ */
 db.destinoPostDenuncia= async (id_destino) => {
     return pool.query(
     `
@@ -152,6 +308,18 @@ db.destinoPostDenuncia= async (id_destino) => {
     `,[id_destino])
 }
 
+/**
+ * GET QUERYS
+ * Lorem Ipsum is simply dummy text of the printing and typesetting 
+ * industry. Lorem Ipsum has been the industry's standard dummy text 
+ * ever since the 1500s, when an unknown printer took a galley of 
+ * type and scrambled it to make a type specimen book. It has 
+ * survived not only five centuries, but also the leap into electronic
+ *  typesetting, remaining essentially unchanged. It was popularised 
+ * in the 1960s with the release of Letraset sheets containing Lorem 
+ * Ipsum passages, and more recently with desktop publishing software
+ *  like Aldus PageMaker including versions of Lorem Ipsum.
+ */
 db.destinoPostLike = async (id_destino) => {
     return pool.query(
     `
@@ -164,6 +332,18 @@ db.destinoPostLike = async (id_destino) => {
     `,[id_destino])
 }
 
+/**
+ * GET QUERYS
+ * Lorem Ipsum is simply dummy text of the printing and typesetting 
+ * industry. Lorem Ipsum has been the industry's standard dummy text 
+ * ever since the 1500s, when an unknown printer took a galley of 
+ * type and scrambled it to make a type specimen book. It has 
+ * survived not only five centuries, but also the leap into electronic
+ *  typesetting, remaining essentially unchanged. It was popularised 
+ * in the 1960s with the release of Letraset sheets containing Lorem 
+ * Ipsum passages, and more recently with desktop publishing software
+ *  like Aldus PageMaker including versions of Lorem Ipsum.
+ */
 db.destinoPostUbicacion = async (nueva_ubicacion) => {
     return pool.query(
     `
@@ -174,6 +354,18 @@ db.destinoPostUbicacion = async (nueva_ubicacion) => {
     `,[nueva_ubicacion])
 }
 
+/**
+ * GET QUERYS
+ * Lorem Ipsum is simply dummy text of the printing and typesetting 
+ * industry. Lorem Ipsum has been the industry's standard dummy text 
+ * ever since the 1500s, when an unknown printer took a galley of 
+ * type and scrambled it to make a type specimen book. It has 
+ * survived not only five centuries, but also the leap into electronic
+ *  typesetting, remaining essentially unchanged. It was popularised 
+ * in the 1960s with the release of Letraset sheets containing Lorem 
+ * Ipsum passages, and more recently with desktop publishing software
+ *  like Aldus PageMaker including versions of Lorem Ipsum.
+ */
 db.destinoPostDestino = async (nuevo_destino) => {
     return pool.query(
     `
@@ -184,6 +376,18 @@ db.destinoPostDestino = async (nuevo_destino) => {
     `,[nuevo_destino])
 }
 
+/**
+ * GET QUERYS
+ * Lorem Ipsum is simply dummy text of the printing and typesetting 
+ * industry. Lorem Ipsum has been the industry's standard dummy text 
+ * ever since the 1500s, when an unknown printer took a galley of 
+ * type and scrambled it to make a type specimen book. It has 
+ * survived not only five centuries, but also the leap into electronic
+ *  typesetting, remaining essentially unchanged. It was popularised 
+ * in the 1960s with the release of Letraset sheets containing Lorem 
+ * Ipsum passages, and more recently with desktop publishing software
+ *  like Aldus PageMaker including versions of Lorem Ipsum.
+ */
 db.destinoPostRecomendacion = async (id,recomendacion_1,recomendacion_2,recomendacion_3) => {
     return pool.query(
     `
@@ -196,6 +400,18 @@ db.destinoPostRecomendacion = async (id,recomendacion_1,recomendacion_2,recomend
     `)
 }
 
+/**
+ * GET QUERYS
+ * Lorem Ipsum is simply dummy text of the printing and typesetting 
+ * industry. Lorem Ipsum has been the industry's standard dummy text 
+ * ever since the 1500s, when an unknown printer took a galley of 
+ * type and scrambled it to make a type specimen book. It has 
+ * survived not only five centuries, but also the leap into electronic
+ *  typesetting, remaining essentially unchanged. It was popularised 
+ * in the 1960s with the release of Letraset sheets containing Lorem 
+ * Ipsum passages, and more recently with desktop publishing software
+ *  like Aldus PageMaker including versions of Lorem Ipsum.
+ */
 db.destinoPostPublicacion = async (nueva_publicacion) => {
     return pool.query(
     `
@@ -206,4 +422,16 @@ db.destinoPostPublicacion = async (nueva_publicacion) => {
     `[nueva_publicacion])
 }
 
+/**
+ * GET QUERYS
+ * Lorem Ipsum is simply dummy text of the printing and typesetting 
+ * industry. Lorem Ipsum has been the industry's standard dummy text 
+ * ever since the 1500s, when an unknown printer took a galley of 
+ * type and scrambled it to make a type specimen book. It has 
+ * survived not only five centuries, but also the leap into electronic
+ *  typesetting, remaining essentially unchanged. It was popularised 
+ * in the 1960s with the release of Letraset sheets containing Lorem 
+ * Ipsum passages, and more recently with desktop publishing software
+ *  like Aldus PageMaker including versions of Lorem Ipsum.
+ */
 module.exports = db
