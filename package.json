@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node src/index.js",
     "dev": "nodemon src/",
-    "test": "set NODE_OPTIONS=--experimental-vm-modules && jest --verbose"
+    "test": "set NODE_OPTIONS=--experimental-vm-modules && jest --verbose",
+    "test:coverage": "jest --coverage"
   },
   "keywords": [],
   "author": "Grupo 1 Metodos Formales UNMSM 2021-2 FISI 7mo ciclo",
