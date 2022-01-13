@@ -1,0 +1,1 @@
+const route = require('../../src/routes/destinos.routes');
