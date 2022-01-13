@@ -1,7 +1,5 @@
 const time = require('../../src/library/handlebars');
 
-
-
 describe('Time ago debe ser definido', () => {
     test('Debe ser definido', async () => {
         expect(time).toBeDefined()

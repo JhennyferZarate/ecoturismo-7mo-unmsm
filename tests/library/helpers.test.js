@@ -1,6 +1,6 @@
 const helpers = require('../../src/library/helpers');
 
-describe.skip('Helper encriptado', () => {
+describe('Helper encriptado', () => {
     let encrypt,match,pass
     test('Debe ser definido', async () =>{
         expect(helpers).not.toBeUndefined();
