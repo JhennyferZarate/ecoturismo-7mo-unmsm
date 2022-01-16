@@ -39,7 +39,7 @@ admin.get_filtro = async (req,res) => {
     res.render('busqueda/buscar_admin',{destinos})
 }
 admin.post_filtro = async (req,res,next) => {
-    return next
+    return res.redirect('/admin/filtro_destinos')
 }
 
 /**

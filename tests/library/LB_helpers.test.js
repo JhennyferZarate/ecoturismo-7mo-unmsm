@@ -1,4 +1,5 @@
 const helpers = require('../../src/library/helpers');
+const {app,server} = require('../../src/index')
 
 describe('Helper encriptado', () => {
     let encrypt,match,pass
@@ -28,3 +29,9 @@ describe('Helper encriptado', () => {
         expect(match).not.toBeTruthy()
     })
 })
+
+afterAll(() => {
+    server.close((err) => {
+        console.log('server closed: ',err)
+    })
+});

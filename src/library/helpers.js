@@ -37,11 +37,7 @@ helpers.encryptPassword = async(password) => {
  *  es la misma o no
  */
 helpers.matchPassword = async(password, savedPassword) => {
-    try {
-        return await bcrypt.compare(password, savedPassword);
-    } catch (e) {
-        console.log(e);
-    }
+    return await bcrypt.compare(password, savedPassword);
 };
 
 /**

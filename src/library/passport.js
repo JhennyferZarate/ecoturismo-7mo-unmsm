@@ -129,3 +129,5 @@ passport.deserializeUser(async(id, done) => {
     const rows = await pool.query('SELECT * FROM usuarios WHERE id_usuario = ?', [id]);
     done(null, rows[0]);
 });
+
+module.exports = {passport}
