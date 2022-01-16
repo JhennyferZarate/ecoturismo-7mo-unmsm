@@ -1,8 +1,9 @@
 const supertest = require('supertest')
 const {app, server} = require('../../src/index')
 const api = supertest(app)
-const {pool} = require('../../src/database')
+const pool = require('../../src/database')
 const {passport} = require('../../src/library/passport')
+
 
 describe('GET + POST: Autenticacion', () => {
     test('GET: Login ', async() => {
@@ -11,6 +12,7 @@ describe('GET + POST: Autenticacion', () => {
             .expect(200)
             .expect('Content-Type', "text/html; charset=utf-8")
     })
+    
     test('POST: Login ', async() => {
         // await api
         //     .get('/admin/filtro_destinos')
@@ -22,11 +24,11 @@ describe('GET + POST: Autenticacion', () => {
         await api
             .get('/ingreso')
             .expect(200)
-            .expect('Content-Type', "text/plain; charset=utf-8")
+            .expect('Content-Type', "text/html; charset=utf-8")
             //.expect('Content-Type', "text/plain; charset=utf-8")
     })
     
-    test.skip('POST: registro ', async() => {
+    test('POST: registro ', async() => {
         // jest.setTimeout(10000)
         // const response = await api.get('/admin/destinos/1')
         // expect(response.req.params.id).toBe(1)
@@ -38,8 +40,8 @@ describe('GET + POST: Autenticacion', () => {
     })
 })
 
+
 afterAll(() => {
-    server.close((err) => {
-        console.log('server closed: ',err)
-    })
-});
+    pool.end()
+    server.close()
+})

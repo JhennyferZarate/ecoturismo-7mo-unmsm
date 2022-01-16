@@ -1,5 +1,4 @@
 const time = require('../../src/library/handlebars');
-const {app,server} = require('../../src/index')
 
 describe('Time ago debe ser definido', () => {
     test('Debe ser definido', async () => {
@@ -18,9 +17,3 @@ describe('Time ago debe ser definido', () => {
         expect(result).toBe("hace 8 meses")
     })
 })
-
-afterAll(() => {
-    server.close((err) => {
-        console.log('server closed: ',err)
-    })
-});
