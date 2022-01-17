@@ -17,7 +17,7 @@ CREATE TABLE `ecoturismo_test`.`perfiles` (
     PRIMARY KEY (`id_usuario`),
     CONSTRAINT `fk_perfil_usuario`
         FOREIGN KEY (`id_usuario`)
-        REFERENCES `ecoturismo`.`usuarios` (`id_usuario`)
+        REFERENCES `ecoturismo_test`.`usuarios` (`id_usuario`)
         ON DELETE CASCADE
         ON UPDATE CASCADE);
 
@@ -104,7 +104,7 @@ CREATE TABLE `ecoturismo_test`.`comentarios` (
         ON UPDATE CASCADE);
 
 #tabla publicaciones
-CREATE TABLE `ecoturismo_test`.`pubicaciones` (
+CREATE TABLE `ecoturismo_test`.`publicaciones` (
     `id_publicacion` INT NOT NULL AUTO_INCREMENT,
     `id_usuario` INT NOT NULL,
     `id_destino` INT NOT NULL,

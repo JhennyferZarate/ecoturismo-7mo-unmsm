@@ -38,9 +38,9 @@ INSERT INTO `ecoturismo`.`recomendaciones` (`id_recomendacion`, `id_destino`, `r
 INSERT INTO `ecoturismo`.`recomendaciones` (`id_recomendacion`, `id_destino`, `recomendacion`) VALUES ('8', '3', 'ruidoso tacna');
 INSERT INTO `ecoturismo`.`recomendaciones` (`id_recomendacion`, `id_destino`, `recomendacion`) VALUES ('9', '3', 'grande tacna');
 
-INSERT INTO `ecoturismo`.`pubicaciones` (`id_publicacion`, `id_usuario`, `id_destino`, `like_publicacion`, `denuncia_publicacion`) VALUES ('1', '2', '3', '5', '0');
-INSERT INTO `ecoturismo`.`pubicaciones` (`id_publicacion`, `id_usuario`, `id_destino`, `like_publicacion`, `denuncia_publicacion`) VALUES ('2', '3', '1', '6', '3');
-INSERT INTO `ecoturismo`.`pubicaciones` (`id_publicacion`, `id_usuario`, `id_destino`, `like_publicacion`, `denuncia_publicacion`) VALUES ('3', '1', '2', '10', '5');
+INSERT INTO `ecoturismo`.`publicaciones` (`id_publicacion`, `id_usuario`, `id_destino`, `like_publicacion`, `denuncia_publicacion`) VALUES ('1', '2', '3', '5', '0');
+INSERT INTO `ecoturismo`.`publicaciones` (`id_publicacion`, `id_usuario`, `id_destino`, `like_publicacion`, `denuncia_publicacion`) VALUES ('2', '3', '1', '6', '3');
+INSERT INTO `ecoturismo`.`publicaciones` (`id_publicacion`, `id_usuario`, `id_destino`, `like_publicacion`, `denuncia_publicacion`) VALUES ('3', '1', '2', '10', '5');
 
 INSERT INTO `ecoturismo`.`comentarios` (`id_comentario`, `id_usuario`, `id_destino`, `contenido_comentario`, `fecha_creacion_comentario`) VALUES ('1', '1', '2', 'lima god', '2021-11-29 15:59:40');
 INSERT INTO `ecoturismo`.`comentarios` (`id_comentario`, `id_usuario`, `id_destino`, `contenido_comentario`, `fecha_creacion_comentario`) VALUES ('2', '1', '2', 'lima bad', '2021-11-29 15:59:40');

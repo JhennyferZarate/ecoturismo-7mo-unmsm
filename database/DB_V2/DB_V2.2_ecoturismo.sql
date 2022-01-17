@@ -109,7 +109,7 @@ CREATE TABLE `ecoturismo`.`comentarios` (
     ON UPDATE CASCADE);
 
 #tabla publicaciones
-CREATE TABLE `ecoturismo`.`pubicaciones` (
+CREATE TABLE `ecoturismo`.`publicaciones` (
   `id_publicacion` INT NOT NULL AUTO_INCREMENT,
   `id_usuario` INT NOT NULL,
   `id_destino` INT NOT NULL,

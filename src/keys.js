@@ -1,10 +1,16 @@
+const {MYSQL_DATABASE, MYSQL_DATABASE_TEST, NODE_ENV} = process.env
+
+const connectionString = NODE_ENV === 'test'
+    ? MYSQL_DATABASE_TEST
+    : MYSQL_DATABASE
+
 module.exports = {
     // LOCAL
     database: {
         host: `${process.env.MYSQL_HOST}`,
         user: `${process.env.MYSQL_USER}`,
         password: `${process.env.MYSQL_PASSWORD}`,
-        database: `${process.env.MYSQL_DATABASE}`
+        database: connectionString
     }
     // AMBIENTE TEST
     /*

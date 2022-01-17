@@ -10,8 +10,8 @@ const app = require('./app')
  * donde serán ejecutados.
  * Luego ejecutamos la función para que pueda ser utilizada.
  */
-const server = app.listen(app.get('port'), () => {
-    console.log('servidor en el puerto: ',app.get('port'))
+const server = app.listen(app.get('port'), async () => {
+    return console.log('servidor en el puerto: ',app.get('port'))
 })
 
 module.exports = {app, server}
