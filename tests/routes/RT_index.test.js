@@ -1,4 +1,4 @@
-/*
+
 const supertest = require('supertest')
 const {app,server} = require('../../src/index')
 const api = supertest(app)
@@ -13,9 +13,11 @@ describe('GET: Index', () => {
     })
 })
 
-afterAll(() => {
-    server.close((err) => {
-        console.log('server closed: ',err)
-    })
+beforeAll(async () => {
+    await server.close();
 })
-*/
+
+afterAll(async () => {
+    await pool.end()
+    await server.close();
+})
