@@ -28,7 +28,7 @@ const usuario_ingreso = {
 
 describe('GET + POST: Autenticacion', () => {
 
-    test('GET: registro ', async() => {
+    test('GET: html registro ', async() => {
         await api
             .get('/registro')
             .expect(200)
@@ -36,7 +36,7 @@ describe('GET + POST: Autenticacion', () => {
             //.expect('Content-Type', "text/plain; charset=utf-8")
     })
     
-    test('POST: registro ', async() => {
+    test('POST: enviar registro ', async() => {
         await api
             .post('/registro')
             .send(usuario_registro)
@@ -44,14 +44,14 @@ describe('GET + POST: Autenticacion', () => {
             //.expect('Content-Type', "/application\/json/")
     })
 
-    test('GET: Login ', async() => {
+    test('GET: html ingreso ', async() => {
         await api
             .get('/ingreso')
             .expect(200)
             .expect('Content-Type', "text/html; charset=utf-8")
     })
     
-    test('POST: Login ', async() => {
+    test('POST: enviar ingreso ', async() => {
         await api
             .post('/ingreso')
             .send(usuario_ingreso)
@@ -59,7 +59,7 @@ describe('GET + POST: Autenticacion', () => {
             //.expect('Content-Type', "/application\/json/")
     })
 
-    test('GET: Salida', async() => {
+    test('GET: cerrar sesion', async() => {
         await api
             .get('/salida')
             .expect(302)
@@ -69,9 +69,4 @@ describe('GET + POST: Autenticacion', () => {
 
 beforeAll(async () => {
     await server.close();
-})
-
-afterAll(async () => {
-    await pool.end()
-    await server.close()
 })

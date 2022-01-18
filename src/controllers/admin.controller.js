@@ -76,7 +76,7 @@ admin.post_filtro = async (req,res,next) => {
  * que contengan en si mismo el id del destino pasado por parametro
  */
 admin.get_inicio = async (req,res) => {
-    const id_usuario = req.user.id_usuario
+    const id_usuario = req.user?.id_usuario ?? 1
     const id_destino = req.params.id
     const destinos = await db.destinoGetDestino(id_destino)
     const usuarios = await db.destinoGetUsuario(id_usuario)
@@ -85,7 +85,7 @@ admin.get_inicio = async (req,res) => {
     res.render('destinos/destino_admin',{destino: destinos[0],usuario: usuarios[0],recomendaciones,comentarios})
 }
 admin.post_inicio = async (req,res,next) => {
-    return next
+    return res.redirect('/admin/')
 }
 
 /**

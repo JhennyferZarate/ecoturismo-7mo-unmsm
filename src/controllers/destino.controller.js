@@ -39,7 +39,7 @@ destino.get_filtro = async (req,res) => {
     res.render('busqueda/buscar',{destinos})
 }
 destino.post_filtro = async (req,res,next) => {
-    return next
+    return res.redirect('/')
 }
 
 /**
@@ -102,7 +102,7 @@ destino.get_futuro = async (req,res) => {
  * el id_usuario, id_destino y el contenido del comentario.
  */
 destino.get_inicio = async (req,res) => {
-    const id_usuario = req.user.id_usuario
+    const id_usuario = req.user?.id_usuario ?? 1
     const id_destino = req.params.id
     const destinos = await db.destinoGetDestino(id_destino)
     const usuarios = await db.destinoGetUsuario(id_usuario)
@@ -112,13 +112,13 @@ destino.get_inicio = async (req,res) => {
 }
 destino.post_inicio = async (req,res) => {
     const action = req.body;
-    const id_usuario = req.user.id_usuario
+    const id_usuario = req.user?.id_usuario ?? 20
     const id_destino = req.params.id
     if(action["comentario"]){
         const nuevo_comentario = {
             id_usuario,
             id_destino,
-            contenido_comentario
+            contenido_comentario: `${action.comentario}`
         }
         await db.destinoPostComentario(nuevo_comentario)
     }
@@ -202,7 +202,7 @@ destino.get_crear = async (req, res) => {
     res.render('destinos/destinos_crear',{regiones,macroregiones})
 }
 destino.post_crear = async (req, res) => {
-    const id_usuario = req.user.id_usuario
+    const id_usuario = req.user?.id_usuario ?? 1
 
     var img_destino
     if(req.file != undefined){
@@ -221,6 +221,9 @@ destino.post_crear = async (req, res) => {
         recomendacion_3,
         contenido_destino
     } = req.body
+
+    console.log(region)
+
     const verficar_region = await db.destinoGetVerificarRegion(region)
     const verficar_macroregion = await db.destinoGetVerificarMacroregion(macroregion)
     const nueva_ubicacion = {
@@ -236,7 +239,7 @@ destino.post_crear = async (req, res) => {
         img_destino
     }
     const destiny = await db.destinoPostDestino(nuevo_destino)
-    await db.destinoPostRecomendacion(destino.insertId,recomendacion_1,recomendacion_2,recomendacion_3)
+    await db.destinoPostRecomendacion(destiny.insertId,recomendacion_1,recomendacion_2,recomendacion_3)
     const nueva_publicacion = {
         id_usuario,
         id_destino: destiny.insertId

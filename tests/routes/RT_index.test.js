@@ -2,9 +2,9 @@
 const supertest = require('supertest')
 const {app,server} = require('../../src/index')
 const api = supertest(app)
-const {pool} = require('../../src/database')
+const pool = require('../../src/database')
 
-describe('GET: Index', () => {
+describe('GET: página principal', () => {
     test('GET index: ', async() => {
         api
             .get('/index')
@@ -14,10 +14,5 @@ describe('GET: Index', () => {
 })
 
 beforeAll(async () => {
-    await server.close();
-})
-
-afterAll(async () => {
-    await pool.end()
     await server.close();
 })

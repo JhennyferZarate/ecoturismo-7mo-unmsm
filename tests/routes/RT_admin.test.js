@@ -1,55 +1,39 @@
-/*
 const supertest = require('supertest')
-const {app,server} = require('../../src/index')
+const {app, server} = require('../../src/index')
 const api = supertest(app)
-const {pool} = require('../../src/database')
 
+describe('GET + POST: Admin', () => {
 
-describe.skip('GET + POST: Admin', () => {
-    test('GET: Admin: ', async() => {
+    test('GET: filtro destinos', async() => {
         await api
-            .get('/admin')
-            .expect(404)
+        .get('/admin/filtro_destinos')
+        .expect(200)
+        .expect('Content-Type', "text/html; charset=utf-8")
+        //.expect('Content-Type', "/application\/json/")
     })
-    test.skip('GET: Filtro Destinos: ', async() => {
+
+    test('POST: filtro destinos', async() => {
         await api
-            .get('/admin/filtro_destinos')
-            .expect(200)
-            .expect('Content-Type', "text/html; charset=utf-8")
-            //.expect('Content-Type', "/application\/json/")
+        .post('/admin/filtro_destinos')
+        .expect(302)
+        .expect('Content-Type', "text/plain; charset=utf-8")
     })
-    test.skip('POST: Filtro Destinos: ', async() => {
+
+    test('GET: destinos', async() => {
         await api
-            .post('/admin/filtro_destinos')
-            .expect(302)
-            .expect('Content-Type', "text/plain; charset=utf-8")
-            //.expect('Content-Type', "text/plain; charset=utf-8")
+        .get('/admin/destinos/1')
+        .expect(200)
+        .expect('Content-Type', "text/html; charset=utf-8")
     })
     
-    test.skip('GET: destino ', async() => {
-        jest.setTimeout(10000)
-        const response = await api.get('/admin/destinos/1')
-        expect(response.req.params.id).toBe(1)
-        //await api
-        //    .get('/admin/destinos/1')
-        //    .expect(200)
-        //    .expect('Content-Type', "text/html; charset=utf-8")
-        //    .expect('Content-Type', "/application\/json/")
-    })
-    
-    test('POST: destino ', async() => {
-        jest.setTimeout(10000)
+    test('POST: cambios destinos', async() => {
         await api
-            .post('/admin/destinos/1')
-            .expect(300)
-            .expect('Content-Type', "text/html; charset=utf-8")
+        .post('/admin/destinos/1')
+        .expect(302)
+        .expect('Content-Type', "text/plain; charset=utf-8")
     })
-    
 })
 
-afterAll(() => {
-    server.close((err) => {
-        console.log('server closed: ',err)
-    })
+beforeAll(async () => {
+    await server.close()
 })
-*/

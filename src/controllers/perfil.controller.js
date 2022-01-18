@@ -4,6 +4,7 @@
  * a la base de datos.
  */
 const db = require('../db/perfil.query')
+const app = require('../app')
 
 /**
  * Importaremos el archivo:
@@ -43,7 +44,7 @@ const perfil = {}
  * datos que contengan en si mismo el id del destino pasado como parametro
  */
 perfil.get_inicio = async (req,res) => {
-    const id_usuario = req.user.id_usuario
+    const id_usuario = req.user?.id_usuario ?? 1
     const Perfil = await db.perfilGetPerfil(id_usuario)
     const destinos = await db.perfilGetDestino(id_usuario)
     res.render('perfil/perfil', {perfil: Perfil[0],destinos})
@@ -83,12 +84,12 @@ perfil.get_inicio = async (req,res) => {
  * teniendo en cuenta el nombre_perfil, apellido_perfil y email_perfil.
  */
 perfil.get_cambiar_datos = async (req,res) => {
-    const id_usuario = req.user.id_usuario
+    const id_usuario = req.user?.id_usuario ?? 1
     const Perfil = await db.perfilGetCambioDatos(id_usuario)
     res.render('perfil/perfil_cambiar_datos',{perfil:Perfil[0]})
 }
 perfil.post_cambiar_datos = async (req,res) => {
-    const id_usuario = req.user.id_usuario
+    const id_usuario = req.user?.id_usuario ?? 1
     const {
         nombre_perfil,
         apellido_perfil,
@@ -140,7 +141,7 @@ perfil.get_cambiar_pass = async (req, res) => {
     res.render('perfil/perfil_cambiar_pass')
 }
 perfil.post_cambiar_pass = async (req, res) => {
-    const id_usuario = req.user.id_usuario
+    const id_usuario = req.user?.id_usuario ?? 1
     const {
         pass_usuario,
         nuevo_pass_usuario,

@@ -222,7 +222,7 @@ db.destinoGetMacroregion = async () => {
  * Ipsum passages, and more recently with desktop publishing software
  *  like Aldus PageMaker including versions of Lorem Ipsum.
  */
-db.destinoGetVerificarRegion = async () => {
+db.destinoGetVerificarRegion = async (region) => {
     return pool.query(
     `
     SELECT
@@ -246,7 +246,7 @@ db.destinoGetVerificarRegion = async () => {
  * Ipsum passages, and more recently with desktop publishing software
  *  like Aldus PageMaker including versions of Lorem Ipsum.
  */
-db.destinoGetVerificarMacroregion = async () => {
+db.destinoGetVerificarMacroregion = async (macroregion) => {
     return pool.query(
     `
     SELECT
@@ -419,7 +419,7 @@ db.destinoPostPublicacion = async (nueva_publicacion) => {
         publicaciones
     SET
         ?
-    `[nueva_publicacion])
+    `,[nueva_publicacion])
 }
 
 /**
