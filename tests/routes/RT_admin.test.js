@@ -35,5 +35,5 @@ describe('GET + POST: Admin', () => {
 })
 
 beforeAll(async () => {
-    await server.close()
+    server.close()
 })

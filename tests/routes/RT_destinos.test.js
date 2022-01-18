@@ -95,6 +95,6 @@ describe('GET + POST: Destinos', () => {
     //linea de comentario
 })
 
-beforeAll(async () => {
-    await server.close()
+beforeAll(() => {
+    server.close()
 })
