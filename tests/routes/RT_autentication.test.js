@@ -68,5 +68,5 @@ describe('GET + POST: Autenticacion', () => {
 })
 
 beforeAll(async () => {
-    server.close();
+    await server.close();
 })

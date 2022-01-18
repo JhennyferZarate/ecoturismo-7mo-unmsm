@@ -70,5 +70,5 @@ describe('GET + POST: Perfil', () => {
 })
 
 beforeAll(async () => {
-    server.close()
+    await server.close()
 })

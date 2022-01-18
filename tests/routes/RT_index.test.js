@@ -13,6 +13,6 @@ describe('GET: página principal', () => {
     })
 })
 
-beforeAll(() => {
-    server.close();
+beforeAll(async() => {
+    await server.close();
 })

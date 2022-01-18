@@ -96,5 +96,5 @@ describe('GET + POST: Destinos', () => {
 })
 
 beforeAll(() => {
-    server.close()
+    await server.close()
 })
