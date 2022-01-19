@@ -112,7 +112,7 @@ destino.get_inicio = async (req,res) => {
 }
 destino.post_inicio = async (req,res) => {
     const action = req.body;
-    const id_usuario = req.user?.id_usuario ?? 20
+    const id_usuario = req.user?.id_usuario ?? 1
     const id_destino = req.params.id
     if(action["comentario"]){
         const nuevo_comentario = {
@@ -221,8 +221,6 @@ destino.post_crear = async (req, res) => {
         recomendacion_3,
         contenido_destino
     } = req.body
-
-    console.log(region)
 
     const verficar_region = await db.destinoGetVerificarRegion(region)
     const verficar_macroregion = await db.destinoGetVerificarMacroregion(macroregion)

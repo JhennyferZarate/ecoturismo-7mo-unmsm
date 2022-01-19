@@ -92,7 +92,6 @@ describe('GET + POST: Destinos', () => {
         .expect(302)
         .expect('Content-Type', "text/plain; charset=utf-8")
     })
-    //linea de comentario
 })
 
 beforeAll(async () => {
